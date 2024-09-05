@@ -1,16 +1,16 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "rapidez/blade-components",
+    "description": "Collection of awesome Blade Components, used by Rapidez",
     "keywords": [
         "rapidez",
-        ":package_slug"
+        "blade-components"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/rapidez/blade-components",
     "license": "GPL-3.0",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Roy Duineveld",
+            "email": "royduineveld@gmail.com",
             "role": "Developer"
         }
     ],
@@ -18,11 +18,12 @@
     "prefer-stable": true,
     "require": {
         "php": "^8.1|^8.2",
-        "rapidez/core": "^1.0"
+        "blade-ui-kit/blade-heroicons": "^2.4",
+        "gehrisandro/tailwind-merge-laravel": "^1.2"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src"
+            "Rapidez\\BladeComponents\\": "src"
         }
     },
     "config": {
@@ -31,7 +32,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Rapidez\\BladeComponents\\BladeComponentsServiceProvider"
             ]
         }
     }
