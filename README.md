@@ -3,10 +3,10 @@
 This package includes some Tailwind CSS styled Blade components, the components do not need or require Rapidez. This package is only used within Rapidez by default, but **can be used in any Laravel project**.
 
 - [Input](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/index.blade.php)
-- [Checkbox](https://github.com/rapidez/blade-components/blob/master/resources/views/components/checkbox/index.blade.php)
-- [Radio](https://github.com/rapidez/blade-components/blob/master/resources/views/components/radio/index.blade.php)
-- [Select](https://github.com/rapidez/blade-components/blob/master/resources/views/components/select/index.blade.php)
-- [Textarea](https://github.com/rapidez/blade-components/blob/master/resources/views/components/textarea/index.blade.php)
+- [Checkbox](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/checkbox/index.blade.php)
+- [Radio](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/radio/index.blade.php)
+- [Select](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/select/index.blade.php)
+- [Textarea](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/textarea/index.blade.php)
 - [Label](https://github.com/rapidez/blade-components/blob/master/resources/views/components/label/index.blade.php)
 
 The idea with these components is to have a good starting point and centralized styling. Most of the components use a [Anonymous Index](https://laravel.com/docs/master/blade#anonymous-index-components), this way you have a default and variants can be added next to it.
