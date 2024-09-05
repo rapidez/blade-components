@@ -48,7 +48,7 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
 
 ```blade
 <label>
-    <x-rapidez::input.label>Something</x-rapidez::input.label>
+    <x-rapidez::label>Something</x-rapidez::label>
     <x-rapidez::input name="something" class="extra-styling" />
 </label>
 ```
