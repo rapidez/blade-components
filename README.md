@@ -15,6 +15,21 @@ We don't provide a input + label combination component as you'll end up with att
 
 ![](.github/media/screenshot.png)
 
+**Buttons**
+
+- [Base](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/base.blade.php)
+- [Index](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/index.blade.php)
+- [Primary](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/primary.blade.php)
+- [Outline](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/outline.blade.php)
+- [Enhanced](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/enhanced.blade.php)
+- [Slider](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/slider.blade.php)
+
+The base button doesn't have any styling; here, we only use the `x-tag`.
+All other buttons use the `button/index`, which contains the basic styling for buttons, such as padding, hover effects, and the disabled state.
+The button variants contain styling for the background and text color. There is only one exception: the `button/slider`, which has more custom styling than the other button variants.
+
+![](.github/media/buttons.png)
+
 ## Installation
 
 ```
@@ -24,10 +39,12 @@ composer require rapidez/blade-components
 And make sure these colors are present in your Tailwind config:
 ```js
 colors: {
+    primary: '#2FBC85',
     neutral: '#334155',
-    inactive: '#64748b',
-    border: '#e7ebef',
-    disabled: '#ebe8de',
+    inactive: '#64748B',
+    border: '#E7EBEF',
+    disabled: '#EBE8DE',
+    enhanced: '#36B422'
 }
 ```
 
@@ -59,6 +76,26 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
 <x-rapidez::input.checkbox name="something">
     @lang('Translatable label')
 </x-rapidez::input.checkbox>
+```
+
+## x-tag
+
+It is a Blade version of a [dynamic Vue component](https://vuejs.org/guide/essentials/component-basics.html#dynamic-components)
+
+### Usage
+
+```blade
+<x-tag is="span" class="font-bold">
+    Something
+</x-tag>
+```
+
+which will result in
+
+```html
+<span class="font-bold">
+    Something
+</span>
 ```
 
 ## Preview

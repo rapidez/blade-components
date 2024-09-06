@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 
         <title>Preview</title>
 
@@ -12,10 +12,12 @@
             theme: {
                 extend: {
                     colors: {
+                        primary: '#2FBC85',
                         neutral: '#334155',
-                        inactive: '#64748b',
-                        border: '#e7ebef',
-                        disabled: '#ebe8de',
+                        inactive: '#64748B',
+                        border: '#E7EBEF',
+                        disabled: '#EBE8DE',
+                        enhanced: '#36B422'
                     }
                 }
             }
@@ -142,7 +144,19 @@
             </div>
 
             <h2 class="font-bold text-lg">Button components</h2>
-            Soon...
+            <div class="grid grid-cols-4 gap-5">
+                <x-rapidez::button>Default</x-rapidez::button>
+                <x-rapidez::button.primary>Primary</x-rapidez::button.primary>
+                <x-rapidez::button.outline>Outline</x-rapidez::button.outline>
+                <x-rapidez::button.enhanced>Enhanced</x-rapidez::button.enhanced>
+                <div class="flex flex-col gap-2">
+                    <strong>Slider:</strong>
+                    <div class="flex items-center gap-2">
+                        <x-rapidez::button.slider><</x-rapidez::button.slider>
+                        <x-rapidez::button.slider>></x-rapidez::button.slider>
+                    </div>
+                </div>
+            </div>
 
             <h2 class="font-bold text-lg">Slideover component</h2>
             Soon...
