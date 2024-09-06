@@ -5,18 +5,21 @@ If you want to change styling for buttons go to the button/index.
 when you add a for on the button the button will be a <label>.
 If the button doesn't have a href or label it will be a <button>
 Examples:
+
 ```
-    <x-rapidez::button href="something">Something</x-rapidez::button>
+<x-rapidez::button href="something">Something</x-rapidez::button>
 ```
+
 ```
-    <x-rapidez::button for="something">Something</x-rapidez::button>
+<x-rapidez::button for="something">Something</x-rapidez::button>
 ```
+
 ```
-    <x-rapidez::button>Something</x-rapidez::button>
+<x-rapidez::button>Something</x-rapidez::button>
 ```
 --}}
 @php
-    $tag = $attributes->hasAny('href', ':href', 'v-bind:href') ? 'a' : 'button';
+    $tag = $attributes->hasAny('href', ':href', 'v-bind:href', 'x-bind:href') ? 'a' : 'button';
     $tag = $attributes->has('for') ? 'label' : $tag;
 @endphp
 
