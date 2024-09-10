@@ -36,7 +36,7 @@ you can add grid-rows-[1fr] on a breakpoint like this to cancel the grid-rows-[0
 @props(['id' => uniqid('accordion-'), 'name' => '', 'type' => 'checkbox', 'opened' => false])
 @slots(['label', 'content'])
 
-<div {{ $attributes->class('flex flex-col group') }}>
+<div {{ $attributes->twMerge('flex flex-col group') }}>
     <input
         id="{{ $id }}"
         name="{{ $name }}"
