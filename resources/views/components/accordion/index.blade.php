@@ -1,11 +1,11 @@
 {{--
-This is a customizable accordion component that uses peer to toggle its content.
+This is a customizable accordion component that uses the `peer` utility to toggle its content visibility.
 
 Properties:
     id:         A unique identifier for each accordion instance, automatically generated if not provided.
-    type:       This is checkbox by default. If you want to close all other accordions, set this to `radio`.
-    name:       This is required if you use radio.
-    opened:     This is closed by default.
+    type:       The default is `checkbox`. Set this to `radio` if you want to allow only one accordion to be open at a time.
+    name:       Required if you use `radio` to group accordions together.
+    opened:     The accordion is closed by default. Set to `true` to have it open initially.
 
 Slots:
     label:      Defines the clickable label that toggles the accordion.
@@ -17,17 +17,6 @@ Example:
             Label
         </x-rapidez::accordion.label>
         <x-rapidez::accordion.content>
-            Content
-        </x-rapidez::accordion.content>
-    </x-rapidez::accordion>
-
-If you want to only have the accordion on mobile,
-you can add grid-rows-[1fr] on a breakpoint like this to cancel the grid-rows-[0fr] on the content:
-    <x-rapidez::accordion>
-        <x-rapidez::accordion.label>
-            Label
-        </x-rapidez::accordion.label>
-        <x-rapidez::accordion.content class="sm:grid-rows-[1fr]">
             Content
         </x-rapidez::accordion.content>
     </x-rapidez::accordion>
