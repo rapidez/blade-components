@@ -36,7 +36,9 @@ Example:
     <label for="{{ $id }}" {{ $label->attributes->twMerge('flex items-center gap-2 justify-between cursor-pointer') }}>
         {{ $label }}
     </label>
-    <div {{ $content->attributes->twMerge('grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all *:overflow-hidden') }}>
-        {{ $content }}
+    <div {{ $content->attributes->twMerge('grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all') }}>
+        <div class="overflow-hidden">
+            {{ $content }}
+        </div>
     </div>
 </div>
