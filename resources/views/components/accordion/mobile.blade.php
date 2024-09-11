@@ -3,7 +3,7 @@ This is a responsive version of the accordion component.
 
 Responsive behavior adjustments:
     - The `label` slot applies `md:cursor-auto`,
-      making it non-clickable on larger screens,
+      overriding the default cursor-pointer on larger screens.
 
     - The `content` slot uses `md:grid-rows-[1fr]`
       to collapse the content on smaller screens,
