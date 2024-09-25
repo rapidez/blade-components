@@ -6,7 +6,7 @@
         "blade-components"
     ],
     "homepage": "https://github.com/rapidez/blade-components",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Roy Duineveld",
