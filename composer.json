@@ -6,7 +6,7 @@
         "blade-components"
     ],
     "homepage": "https://github.com/rapidez/blade-components",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Roy Duineveld",
@@ -20,6 +20,9 @@
         "php": "^8.1|^8.2",
         "blade-ui-kit/blade-heroicons": "^2.4",
         "gehrisandro/tailwind-merge-laravel": "^1.2"
+    },
+    "require-dev": {
+        "orchestra/workbench": "^9.6"
     },
     "autoload": {
         "psr-4": {
@@ -35,5 +38,8 @@
                 "Rapidez\\BladeComponents\\BladeComponentsServiceProvider"
             ]
         }
+    },
+    "scripts": {
+        "generate-demo": "@php vendor/bin/testbench generate-demo --ansi"
     }
 }
