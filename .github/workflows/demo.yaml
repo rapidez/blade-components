@@ -28,7 +28,7 @@ jobs:
           php-version: '8.2'
 
       - name: Fix permissions
-        run: sudo chmod -R 0777 vendor/orchestra/testbench-core/laravel/bootstrap/*
+        run: sudo chmod -R 0777 vendor/orchestra/testbench-core/laravel/
 
       - name: Generate demo
         run: ./vendor/bin/testbench components
