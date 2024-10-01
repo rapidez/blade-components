@@ -29,7 +29,7 @@ jobs:
         run: sudo chmod -R 0777 vendor/orchestra/testbench-core/laravel/
 
       - name: Generate demo
-        run: ./vendor/bin/testbench components
+        run: composer generate-demo
 
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v4

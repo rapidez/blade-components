@@ -22,7 +22,7 @@
         "gehrisandro/tailwind-merge-laravel": "^1.2"
     },
     "require-dev": {
-        "orchestra/testbench": "^9.5"
+        "orchestra/workbench": "^9.6"
     },
     "autoload": {
         "psr-4": {
@@ -40,12 +40,6 @@
         }
     },
     "scripts": {
-        "post-autoload-dump": [
-            "@clear",
-            "@prepare"
-        ],
-        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
-        "prepare": "@php vendor/bin/testbench package:discover --ansi",
-        "build": "@php vendor/bin/testbench workbench:build --ansi"
+        "generate-demo": "@php vendor/bin/testbench generate-demo --ansi"
     }
 }
