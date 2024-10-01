@@ -17,15 +17,13 @@ jobs:
           ref: ${{ github.event.release.target_commitish }}
           token: ${{ secrets.RAPIDEZ_ACTIONS_ACCOUNT_PAT }}
 
-      - name: Composer install
-        uses: php-actions/composer@v6
-        with:
-          php_version: '8.2'
-
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
+
+      - name: Install dependencies
+        run: composer install
 
       - name: Fix permissions
         run: sudo chmod -R 0777 vendor/orchestra/testbench-core/laravel/
@@ -38,4 +36,4 @@ jobs:
         with:
           branch: ${{ github.event.release.target_commitish }}
           commit_message: Update demo
-          file_pattern: 'demo/*.html'
+          file_pattern: demo/components.html
