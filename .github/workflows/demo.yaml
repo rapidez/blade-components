@@ -1,6 +1,7 @@
 name: "Generate demo"
 
 on:
+  push:
   workflow_dispatch:
   release:
     types: [ published, edited, deleted ]
