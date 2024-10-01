@@ -20,7 +20,12 @@ jobs:
       - name: Composer install
         uses: php-actions/composer@v6
         with:
-          php_version: "8.1"
+          php_version: '8.2'
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
 
       - name: Generate demo
         run: ./vendor/bin/testbench components
