@@ -21,6 +21,9 @@
         "blade-ui-kit/blade-heroicons": "^2.4",
         "gehrisandro/tailwind-merge-laravel": "^1.2"
     },
+    "require-dev": {
+        "orchestra/workbench": "^9.6"
+    },
     "autoload": {
         "psr-4": {
             "Rapidez\\BladeComponents\\": "src"
@@ -35,5 +38,8 @@
                 "Rapidez\\BladeComponents\\BladeComponentsServiceProvider"
             ]
         }
+    },
+    "scripts": {
+        "generate-demo": "@php vendor/bin/testbench generate-demo --ansi"
     }
 }
