@@ -21,6 +21,9 @@
         "blade-ui-kit/blade-heroicons": "^2.4",
         "gehrisandro/tailwind-merge-laravel": "^1.2"
     },
+    "require-dev": {
+        "orchestra/testbench": "^9.5"
+    },
     "autoload": {
         "psr-4": {
             "Rapidez\\BladeComponents\\": "src"
@@ -35,5 +38,14 @@
                 "Rapidez\\BladeComponents\\BladeComponentsServiceProvider"
             ]
         }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi"
     }
 }

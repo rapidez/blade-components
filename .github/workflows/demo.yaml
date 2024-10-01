@@ -1,0 +1,27 @@
+name: "Generate demo"
+
+on:
+  workflow_dispatch:
+  release:
+    types: [ published, edited, deleted ]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.release.target_commitish }}
+          token: ${{ secrets.RAPIDEZ_ACTIONS_ACCOUNT_PAT }}
+
+      - name: Generate changelog
+        run: ./vendor/bin/testbench components
+
+      - name: Commit
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: ${{ github.event.release.target_commitish }}
+          commit_message: Update demo
+          file_pattern: components.html
