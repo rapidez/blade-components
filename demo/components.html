@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <title>Preview</title>
+
+        <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: '#334155',
+                        inactive: '#64748b',
+                        border: '#e7ebef',
+                        disabled: '#ebe8de',
+                    }
+                }
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <div class="flex flex-col container mx-auto my-20 gap-5">
+            <h1 class="font-bold text-xl">Rapidez Blade Components preview</h1>
+
+            <h2 class="font-bold text-lg">Input components</h2>
+
+            <div class="grid grid-cols-3 gap-5 [&>fieldset]:border [&>fieldset]:rounded [&>fieldset]:p-5">
+                <h3 class="font-bold text-md">Base components</h3>
+                <h3 class="font-bold text-md">Components with a label</h3>
+                <h3 class="font-bold text-md">Components with a required label</h3>
+
+                <fieldset>
+                    <legend>Input</legend>
+                    <input class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
+                </fieldset>
+
+                <fieldset>
+                    <legend>Input</legend>
+                    <label>
+                        <span class="font-medium text-inactive text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
+    Something
+</span>
+                        <input class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Input</legend>
+                    <label>
+                        <span class="font-medium text-inactive text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
+    Something
+</span>
+                        <input required="required" class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Checkbox</legend>
+                    <input type="checkbox" class="cursor-pointer border rounded-md size-5 text-neutral border-border focus:outline-none focus:ring-0 focus:ring-offset-0" />
+                </fieldset>
+
+                <fieldset>
+                    <legend>Checkbox</legend>
+                    <label class="inline-flex text-neutral text-sm cursor-pointer has-[:required]:after:content-['*']">
+    <input type="checkbox" class="cursor-pointer border rounded-md size-5 text-neutral border-border focus:outline-none focus:ring-0 focus:ring-offset-0 mr-2.5" />
+    Something
+</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Checkbox</legend>
+                    <label class="inline-flex text-neutral text-sm cursor-pointer has-[:required]:after:content-['*']">
+    <input type="checkbox" class="cursor-pointer border rounded-md size-5 text-neutral border-border focus:outline-none focus:ring-0 focus:ring-offset-0 mr-2.5" required="required" />
+    Something
+</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Radio</legend>
+                    <input type="radio" class="cursor-pointer border size-5 text-neutral border-border focus:outline-none focus:ring-0 focus:ring-offset-0" />
+                </fieldset>
+
+                <fieldset>
+                    <legend>Radio</legend>
+                    <label class="inline-flex text-neutral text-sm cursor-pointer has-[:required]:after:content-['*']">
+    <input type="radio" class="cursor-pointer border size-5 text-neutral border-border focus:outline-none focus:ring-0 focus:ring-offset-0 mr-2.5" />
+    Something
+</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Radio</legend>
+                    <label class="inline-flex text-neutral text-sm cursor-pointer has-[:required]:after:content-['*']">
+    <input type="radio" class="cursor-pointer border size-5 text-neutral border-border focus:outline-none focus:ring-0 focus:ring-offset-0 mr-2.5" required="required" />
+    Something
+</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Select</legend>
+                    <select class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive">
+    <option>Option</option>
+</select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Select</legend>
+                    <label>
+                        <span class="font-medium text-inactive text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
+    Something
+</span>
+                        <select class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive">
+    <option>Option</option>
+</select>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Select</legend>
+                    <label>
+                        <span class="font-medium text-inactive text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
+    Something
+</span>
+                        <select required="required" class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive">
+    <option>Option</option>
+</select>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Textarea</legend>
+                    <textarea class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive"></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Textarea</legend>
+                    <label>
+                        <span class="font-medium text-inactive text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
+    Something
+</span>
+                        <textarea class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive"></textarea>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Textarea</legend>
+                    <label>
+                        <span class="font-medium text-inactive text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
+    Something
+</span>
+                        <textarea required="required" class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive"></textarea>
+                    </label>
+                </fieldset>
+            </div>
+
+            <h2 class="font-bold text-lg">Button components</h2>
+            Soon...
+
+            <h2 class="font-bold text-lg">Slideover component</h2>
+            Soon...
+        </div>
+    </body>
+</html>
