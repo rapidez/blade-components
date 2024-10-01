@@ -17,6 +17,9 @@ jobs:
           ref: ${{ github.event.release.target_commitish }}
           token: ${{ secrets.RAPIDEZ_ACTIONS_ACCOUNT_PAT }}
 
+      - name: Composer install
+        uses: php-actions/composer@v6
+
       - name: Generate changelog
         run: ./vendor/bin/testbench components
 
