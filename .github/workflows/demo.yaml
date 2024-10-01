@@ -38,4 +38,4 @@ jobs:
         with:
           branch: ${{ github.event.release.target_commitish }}
           commit_message: Update demo
-          file_pattern: demo/components.html
+          file_pattern: 'demo/*.html'
