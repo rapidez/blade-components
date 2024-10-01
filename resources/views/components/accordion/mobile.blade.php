@@ -1,18 +1,20 @@
 {{--
-This is a responsive version of the accordion component.
+The responsive accordion version, only functions on smaller screens.
 
-Responsive behavior adjustments:
-    - The `label` slot applies `md:cursor-auto`,
-      overriding the default cursor-pointer on larger screens.
+- `md:cursor-auto` overrides the cursor-pointer on larger screens.
+- `md:grid-rows-[1fr]` to collapse the content on smaller screens.
 
-    - The `content` slot uses `md:grid-rows-[1fr]`
-      to collapse the content on smaller screens,
-      overriding the default `grid-rows-[0fr]`.
-
-These changes ensure that the accordion functions only as an accordion on smaller screens.
-
-TODO: implement attribute merging on label and slot
-
+## Example
+```
+<x-rapidez::mobile>
+    <x-rapidez::accordion.label>
+        Label
+    </x-rapidez::accordion.label>
+    <x-rapidez::accordion.content>
+        Content
+    </x-rapidez::accordion.content>
+</x-rapidez::mobile>
+```
 --}}
 
 <x-rapidez::accordion :$attributes>

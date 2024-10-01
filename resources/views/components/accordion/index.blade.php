@@ -1,28 +1,30 @@
 {{--
-This is a customizable accordion component that uses the `peer` utility to toggle its content visibility.
+No-js accordion component using the Tailwind CSS `peer` utility.
 
-Properties:
-    id:         A unique identifier for each accordion instance, automatically generated if not provided.
-    type:       The default is `checkbox`. Set this to `radio` if you want to allow only one accordion to be open at a time.
-    name:       Required if you use `radio` to group accordions together.
-    opened:     The accordion is closed by default. Set to `true` to have it open initially.
+## Properties
+- `id`      A unique identifier for each accordion instance, automatically generated if not provided.
+- `type`    Default `checkbox`, set to `radio` if you want only one accordion to be open at a time.
+- `name`    Required if you use `radio` to group accordions together.
+- `opened`  Default `false`, set to `true` to have it open initially.
 
-Slots:
-    label:      Defines the clickable label that toggles the accordion.
-    content:    The collapsible section that appears when the accordion is opened.
+## Slots
+- `label`   Defines the clickable label that toggles the accordion.
+- `content` The collapsible section that appears when the accordion is opened.
 
-Example:
-    <x-rapidez::accordion>
-        <x-rapidez::accordion.label>
-            Label
-        </x-rapidez::accordion.label>
-        <x-rapidez::accordion.content>
-            Content
-        </x-rapidez::accordion.content>
-    </x-rapidez::accordion>
+## Example
+```
+<x-rapidez::accordion>
+    <x-rapidez::accordion.label>
+        Label
+    </x-rapidez::accordion.label>
+    <x-rapidez::accordion.content>
+        Content
+    </x-rapidez::accordion.content>
+</x-rapidez::accordion>
+```
 --}}
 
-@props(['id' => uniqid('accordion-'), 'name' => '', 'type' => 'checkbox', 'opened' => false])
+@props(['id' => uniqid('accordion-'), 'type' => 'checkbox', 'name' => '', 'opened' => false])
 @slots(['label', 'content'])
 
 <div {{ $attributes->twMerge('flex flex-col group') }}>
