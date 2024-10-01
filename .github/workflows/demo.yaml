@@ -19,8 +19,10 @@ jobs:
 
       - name: Composer install
         uses: php-actions/composer@v6
+        with:
+          php_version: "8.1"
 
-      - name: Generate changelog
+      - name: Generate demo
         run: ./vendor/bin/testbench components
 
       - name: Commit
