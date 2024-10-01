@@ -12,7 +12,10 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#2FBC85',
+                        primary: {
+                            DEFAULT: '#2FBC85',
+                            text: '#FFFFFF',
+                        },
                         neutral: '#334155',
                         inactive: '#64748B',
                         border: '#E7EBEF',

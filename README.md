@@ -39,12 +39,17 @@ composer require rapidez/blade-components
 And make sure these colors are present in your Tailwind config:
 ```js
 colors: {
-    primary: '#2FBC85',
-    neutral: '#334155',
-    inactive: '#64748B',
-    border: '#E7EBEF',
-    disabled: '#EBE8DE',
-    enhanced: '#36B422'
+    colors: {
+        primary: {
+            DEFAULT: '#2FBC85',
+            text: '#FFFFFF',
+        },
+        neutral: '#334155',
+        inactive: '#64748B',
+        border: '#E7EBEF',
+        disabled: '#EBE8DE',
+        enhanced: '#36B422'
+    }
 }
 ```
 
