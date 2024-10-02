@@ -162,6 +162,131 @@
 
             <h2 class="font-bold text-lg">Slideover component</h2>
             Soon...
+
+            <h2 class="font-bold text-lg">Accordion component</h2>
+
+            <div class="grid grid-cols-3 gap-5">
+                <h3 class="font-bold text-md">Default</h3>
+                <h3 class="font-bold text-md">Radio</h3>
+                <h3 class="font-bold text-md">Mobile only</h3>
+
+                <div class="flex flex-col gap-3">
+                    @slots(['label', 'content'])
+
+<div class="flex flex-col group rounded border p-3">
+    <input
+        id="accordion-66fcfb94b1e03"
+        name=""
+        type="checkbox"
+                class="peer hidden"
+    />
+    <label for="accordion-66fcfb94b1e03" class="flex items-center gap-2 justify-between cursor-pointer font-bold">
+        Question 1
+    </label>
+    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
+        <div class="overflow-hidden">
+            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+        </div>
+    </div>
+</div>
+                    @slots(['label', 'content'])
+
+<div class="flex flex-col group rounded border p-3">
+    <input
+        id="accordion-66fcfb94b503a"
+        name=""
+        type="checkbox"
+                class="peer hidden"
+    />
+    <label for="accordion-66fcfb94b503a" class="flex items-center gap-2 justify-between cursor-pointer font-bold">
+        Question 2
+    </label>
+    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
+        <div class="overflow-hidden">
+            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+        </div>
+    </div>
+</div>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    @slots(['label', 'content'])
+
+<div class="flex flex-col group rounded border p-3">
+    <input
+        id="accordion-66fcfb94b51fe"
+        name="questions"
+        type="radio"
+                class="peer hidden"
+    />
+    <label for="accordion-66fcfb94b51fe" class="flex items-center gap-2 justify-between cursor-pointer font-bold">
+        Question 1
+    </label>
+    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
+        <div class="overflow-hidden">
+            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+        </div>
+    </div>
+</div>
+                    @slots(['label', 'content'])
+
+<div class="flex flex-col group rounded border p-3">
+    <input
+        id="accordion-66fcfb94b53a5"
+        name="questions"
+        type="radio"
+                class="peer hidden"
+    />
+    <label for="accordion-66fcfb94b53a5" class="flex items-center gap-2 justify-between cursor-pointer font-bold">
+        Question 2
+    </label>
+    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
+        <div class="overflow-hidden">
+            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+        </div>
+    </div>
+</div>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    @slots(['label', 'content'])
+
+<div class="flex flex-col group rounded border p-3">
+    <input
+        id="accordion-66fcfb94b79ba"
+        name=""
+        type="checkbox"
+                class="peer hidden"
+    />
+    <label for="accordion-66fcfb94b79ba" attributes="class=\"md:cursor-auto font-bold\"" class="flex items-center gap-2 justify-between cursor-pointer">
+        Question 1
+    </label>
+    <div attributes="class=\"md:grid-rows-[1fr]\"" class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
+        <div class="overflow-hidden">
+            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+        </div>
+    </div>
+</div>
+                    @slots(['label', 'content'])
+
+<div class="flex flex-col group rounded border p-3">
+    <input
+        id="accordion-66fcfb94b8cc8"
+        name=""
+        type="checkbox"
+                class="peer hidden"
+    />
+    <label for="accordion-66fcfb94b8cc8" attributes="class=\"md:cursor-auto font-bold\"" class="flex items-center gap-2 justify-between cursor-pointer">
+        Question 2
+    </label>
+    <div attributes="class=\"md:grid-rows-[1fr]\"" class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
+        <div class="overflow-hidden">
+            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
