@@ -146,6 +146,71 @@
 
             <h2 class="font-bold text-lg">Slideover component</h2>
             Soon...
+
+            <h2 class="font-bold text-lg">Accordion component</h2>
+
+            <div class="grid grid-cols-3 gap-5">
+                <h3 class="font-bold text-md">Default</h3>
+                <h3 class="font-bold text-md">Radio</h3>
+                <h3 class="font-bold text-md">Mobile only</h3>
+
+                <div class="flex flex-col gap-3">
+                    <x-rapidez::accordion class="rounded border p-3">
+                        <x-slot:label class="font-bold">
+                            Question 1
+                        </x-slot:label>
+                        <x-slot:content class="">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </x-slot:content>
+                    </x-rapidez::accordion>
+                    <x-rapidez::accordion class="rounded border p-3">
+                        <x-slot:label class="font-bold">
+                            Question 2
+                        </x-slot:label>
+                        <x-slot:content class="">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </x-slot:content>
+                    </x-rapidez::accordion>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <x-rapidez::accordion type="radio" name="questions" class="rounded border p-3">
+                        <x-slot:label class="font-bold">
+                            Question 1
+                        </x-slot:label>
+                        <x-slot:content class="">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </x-slot:content>
+                    </x-rapidez::accordion>
+                    <x-rapidez::accordion type="radio" name="questions" class="rounded border p-3">
+                        <x-slot:label class="font-bold">
+                            Question 2
+                        </x-slot:label>
+                        <x-slot:content class="">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </x-slot:content>
+                    </x-rapidez::accordion>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <x-rapidez::accordion.mobile class="rounded border p-3">
+                        <x-slot:label class="font-bold">
+                            Question 1
+                        </x-slot:label>
+                        <x-slot:content class="">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </x-slot:content>
+                    </x-rapidez::accordion.mobile>
+                    <x-rapidez::accordion.mobile class="rounded border p-3">
+                        <x-slot:label class="font-bold">
+                            Question 2
+                        </x-slot:label>
+                        <x-slot:content class="">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </x-slot:content>
+                    </x-rapidez::accordion.mobile>
+                </div>
+            </div>
         </div>
     </body>
 </html>

@@ -14,12 +14,12 @@ No-js accordion component using the Tailwind CSS `peer` utility.
 ## Example
 ```
 <x-rapidez::accordion>
-    <x-rapidez::accordion.label>
+    <x-slot:label>
         Label
-    </x-rapidez::accordion.label>
-    <x-rapidez::accordion.content>
+    </x-slot:label>
+    <x-slot:content>
         Content
-    </x-rapidez::accordion.content>
+    </x-slot:content>
 </x-rapidez::accordion>
 ```
 --}}
