@@ -69,6 +69,10 @@ There is a preview Blade file included with all the components, to view that in 
 Route::view('components', 'rapidez::components-preview');
 ```
 
+## Development
+
+When you're working on this package you can use `composer preview-demo` to get a preview in the browser. There is also another script: `generate-demo` which runs automatically on push.
+
 ## License
 
 GNU General Public License v3. Please see [License File](LICENSE) for more information.
