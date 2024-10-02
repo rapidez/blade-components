@@ -155,7 +155,7 @@
                 <h3 class="font-bold text-md">Mobile only</h3>
 
                 <div class="flex flex-col gap-3">
-                    <x-rapidez::accordion class="rounded border p-3">
+                    <x-rapidez::accordion id="checkbox-question-1" class="rounded border p-3">
                         <x-slot:label class="font-bold">
                             Question 1
                         </x-slot:label>
@@ -163,7 +163,7 @@
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
-                    <x-rapidez::accordion class="rounded border p-3">
+                    <x-rapidez::accordion id="checkbox-question-2" class="rounded border p-3">
                         <x-slot:label class="font-bold">
                             Question 2
                         </x-slot:label>
@@ -174,7 +174,7 @@
                 </div>
 
                 <div class="flex flex-col gap-3">
-                    <x-rapidez::accordion type="radio" name="questions" class="rounded border p-3">
+                    <x-rapidez::accordion id="radio-question-1" type="radio" name="questions" class="rounded border p-3">
                         <x-slot:label class="font-bold">
                             Question 1
                         </x-slot:label>
@@ -182,7 +182,7 @@
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
-                    <x-rapidez::accordion type="radio" name="questions" class="rounded border p-3">
+                    <x-rapidez::accordion id="radio-question-2" type="radio" name="questions" class="rounded border p-3">
                         <x-slot:label class="font-bold">
                             Question 2
                         </x-slot:label>
@@ -193,7 +193,7 @@
                 </div>
 
                 <div class="flex flex-col gap-3">
-                    <x-rapidez::accordion.mobile class="rounded border p-3">
+                    <x-rapidez::accordion.mobile id="mobile-question-1" class="rounded border p-3">
                         <x-slot:label class="font-bold">
                             Question 1
                         </x-slot:label>
@@ -201,7 +201,7 @@
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion.mobile>
-                    <x-rapidez::accordion.mobile class="rounded border p-3">
+                    <x-rapidez::accordion.mobile id="mobile-question-2" class="rounded border p-3">
                         <x-slot:label class="font-bold">
                             Question 2
                         </x-slot:label>
