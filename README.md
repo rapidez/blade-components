@@ -22,6 +22,7 @@ We don't provide a input + label combination component as you'll end up with att
 - [Base](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/base.blade.php)
 - [Index](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/index.blade.php)
 - [Primary](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/primary.blade.php)
+- [Secondary](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/secondary.blade.php)
 - [Outline](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/outline.blade.php)
 - [Enhanced](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/enhanced.blade.php)
 - [Slider](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/slider.blade.php)
