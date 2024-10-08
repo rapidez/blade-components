@@ -2,6 +2,8 @@
 
 This package includes some Tailwind CSS styled Blade components, the components do not need or require Rapidez. This package is only used within Rapidez by default, but **can be used in any Laravel project**.
 
+### Inputs
+
 - [Input](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/index.blade.php)
 - [Checkbox](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/checkbox/index.blade.php)
 - [Radio](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/radio/index.blade.php)
@@ -15,7 +17,7 @@ We don't provide a input + label combination component as you'll end up with att
 
 ![](.github/media/screenshot.png)
 
-**Buttons**
+### Buttons
 
 - [Base](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/base.blade.php)
 - [Index](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/index.blade.php)
@@ -42,6 +44,10 @@ colors: {
     colors: {
         primary: {
             DEFAULT: '#2FBC85',
+            text: '#FFFFFF',
+        },
+        secondary: {
+            DEFAULT: '#F97316',
             text: '#FFFFFF',
         },
         neutral: '#334155',

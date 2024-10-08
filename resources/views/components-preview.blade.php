@@ -16,6 +16,10 @@
                             DEFAULT: '#2FBC85',
                             text: '#FFFFFF',
                         },
+                        secondary: {
+                            DEFAULT: '#F97316',
+                            text: '#FFFFFF',
+                        },
                         neutral: '#334155',
                         inactive: '#64748B',
                         border: '#E7EBEF',
@@ -147,9 +151,10 @@
             </div>
 
             <h2 class="font-bold text-lg">Button components</h2>
-            <div class="grid grid-cols-4 gap-5">
+            <div class="grid grid-cols-5 gap-5">
                 <x-rapidez::button>Default</x-rapidez::button>
                 <x-rapidez::button.primary>Primary</x-rapidez::button.primary>
+                <x-rapidez::button.secondary>Secondary</x-rapidez::button.secondary>
                 <x-rapidez::button.outline>Outline</x-rapidez::button.outline>
                 <x-rapidez::button.enhanced>Enhanced</x-rapidez::button.enhanced>
                 <div class="flex flex-col gap-2">

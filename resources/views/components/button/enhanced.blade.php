@@ -1,6 +1,6 @@
 {{--
-This is the enhanced button the button can be used for the add to cart buttons
-and it can be used inside the checkout.
+The enhanced button is a variant specifically used for anything conversion related.
+Like purchasing a product or completing the checkout.
 Example:
 
 ```

@@ -6,6 +6,6 @@ Example:
 <x-rapidez::button.primary>Something</x-rapidez::button.primary>
 ```
 --}}
-<x-rapidez::button {{ $attributes->twMerge('bg-primary text-primary-text border-b border-black/15') }}>
+<x-rapidez::button {{ $attributes->twMerge('bg-primary text-primary-text') }}>
     {{ $slot }}
 </x-rapidez::button>
