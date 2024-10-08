@@ -18,8 +18,10 @@ Examples:
 <x-rapidez::button>Something</x-rapidez::button>
 ```
 --}}
+@props(['tag' => 'button'])
+
 @php
-    $tag = $attributes->hasAny('href', ':href', 'v-bind:href', 'x-bind:href') ? 'a' : 'button';
+    $tag = $attributes->hasAny('href', ':href', 'v-bind:href', 'x-bind:href') ? 'a' : $tag;
     $tag = $attributes->has('for') ? 'label' : $tag;
 @endphp
 
