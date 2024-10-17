@@ -13,7 +13,7 @@ The idea with these components is to have a good starting point and centralized 
 
 We don't provide a input + label combination component as you'll end up with attribute merging issues. We can't guess where the attribute should go; the input or the label. We could provide a 99% use case but you'll eventually end up with exceptions and complexity within the components. But; we do provide it for the checkbox and radio as you can see within those components. If you don't need the label you can use the `base` component as you can find within the examples.
 
-![](.github/media/screenshot.png)
+[![](.github/media/screenshot.png)](https://rapidez.github.io/blade-components/demo/components.html)
 
 ## Installation
 
@@ -68,6 +68,10 @@ There is a preview Blade file included with all the components, to view that in 
 ```php
 Route::view('components', 'rapidez::components-preview');
 ```
+
+## Development
+
+When you're working on this package you can use `composer preview-demo` to get a preview in the browser. There is also another script: `generate-demo` which runs automatically on push.
 
 ## License
 
