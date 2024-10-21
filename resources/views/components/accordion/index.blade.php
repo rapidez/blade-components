@@ -35,7 +35,13 @@ No-js accordion component using the Tailwind CSS `peer` utility.
         @checked($opened)
         class="peer hidden"
     />
-    <label for="{{ $id }}" {{ $label->attributes->twMerge('flex items-center gap-2 justify-between cursor-pointer') }}>
+    <label
+        for="{{ $id }}"
+        {{ $label->attributes->twMerge('flex items-center gap-2 justify-between cursor-pointer') }}
+        @if ($type === 'radio')
+            onclick="event.preventDefault(); document.getElementById('{{ $id }}').toggleAttribute('checked');"
+        @endif
+    >
         {{ $label }}
     </label>
     <div {{ $content->attributes->twMerge('grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all') }}>
