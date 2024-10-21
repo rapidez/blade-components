@@ -222,7 +222,7 @@
     <label
         for="radio-question-1"
         class="flex items-center gap-2 justify-between cursor-pointer font-bold"
-                    onclick="event.preventDefault(); document.getElementById('radio-question-1').toggleAttribute('checked');"
+                    onclick="event.preventDefault(); document.getElementById('radio-question-1').checked = !document.getElementById('radio-question-1').checked;"
             >
         Question 1
     </label>
@@ -242,7 +242,7 @@
     <label
         for="radio-question-2"
         class="flex items-center gap-2 justify-between cursor-pointer font-bold"
-                    onclick="event.preventDefault(); document.getElementById('radio-question-2').toggleAttribute('checked');"
+                    onclick="event.preventDefault(); document.getElementById('radio-question-2').checked = !document.getElementById('radio-question-2').checked;"
             >
         Question 2
     </label>
