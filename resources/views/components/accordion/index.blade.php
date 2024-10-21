@@ -39,7 +39,7 @@ No-js accordion component using the Tailwind CSS `peer` utility.
         for="{{ $id }}"
         {{ $label->attributes->twMerge('flex items-center gap-2 justify-between cursor-pointer') }}
         @if ($type === 'radio')
-            onclick="event.preventDefault(); document.getElementById('{{ $id }}').toggleAttribute('checked');"
+            onclick="event.preventDefault(); document.getElementById('{{ $id }}').checked = !document.getElementById('{{ $id }}').checked;"
         @endif
     >
         {{ $label }}
