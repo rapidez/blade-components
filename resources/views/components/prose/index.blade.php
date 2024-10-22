@@ -6,6 +6,6 @@ Example:
 <x-rapidez::prose>Example text</x-rapidez::prose>
 ```
 --}}
-<div {{ $attributes->twMerge('prose-base prose-sm') }}>
+<div {{ $attributes->twMerge('prose-custom prose-sm') }}>
     {{ $slot }}
 </div>
