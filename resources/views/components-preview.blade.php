@@ -11,7 +11,7 @@
         --}}
         <style type="text/tailwindcss">
             @layer utilities {
-                .prose-base {
+                .prose-custom {
                     @apply prose font-sans text-neutral text-pretty max-w-none
                     prose-headings:text-neutral prose-a:text-primary prose-strong:text-neutral prose-blockquote:text-neutral
                     prose-a:prose-headings:no-underline prose-a:prose-headings:text-neutral prose-th:text-left;
