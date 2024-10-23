@@ -2,14 +2,14 @@
 
 This package includes some Tailwind CSS styled Blade components, the components do not need or require Rapidez. This package is only used within Rapidez by default, but **can be used in any Laravel project**.
 
-- [Input](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/index.blade.php)
-- [Checkbox](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/checkbox/index.blade.php)
-- [Radio](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/radio/index.blade.php)
-- [Select](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/select/index.blade.php)
-- [Textarea](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/textarea/index.blade.php)
-- [Label](https://github.com/rapidez/blade-components/blob/master/resources/views/components/label/index.blade.php)
+- [Input](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/input.blade.php)
+- [Checkbox](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/checkbox/checkbox.blade.php)
+- [Radio](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/radio/radio.blade.php)
+- [Select](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/select/select.blade.php)
+- [Textarea](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/textarea/textarea.blade.php)
+- [Label](https://github.com/rapidez/blade-components/blob/master/resources/views/components/label/label.blade.php)
 
-The idea with these components is to have a good starting point and centralized styling. Most of the components use a [Anonymous Index](https://laravel.com/docs/master/blade#anonymous-index-components), this way you have a default and variants can be added next to it.
+The idea with these components is to have a good starting point and centralized styling. Most of the components use a [Anonymous Index](https://laravel.com/docs/master/blade#anonymous-index-components), this way you have a default and variants can be added next to it. We're using the (currently undocumented) [component name guessing](https://github.com/laravel/framework/pull/52669) here.
 
 We don't provide a input + label combination component as you'll end up with attribute merging issues. We can't guess where the attribute should go; the input or the label. We could provide a 99% use case but you'll eventually end up with exceptions and complexity within the components. But; we do provide it for the checkbox and radio as you can see within those components. If you don't need the label you can use the `base` component as you can find within the examples.
 
