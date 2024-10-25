@@ -19,7 +19,7 @@
             }
         </style>
 
-        <title>Preview</title>
+        <title>Rapidez Blade Components Preview</title>
 
         <script>
         tailwind.config = {
