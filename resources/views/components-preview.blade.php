@@ -212,7 +212,7 @@
 
                 <div class="flex flex-col gap-3">
                     <h3 class="font-bold text-md">With rotating chevron</h3>
-                    <x-rapidez::accordion class="border rounded p-4">
+                    <x-rapidez::accordion class="border rounded p-4" id="rotating-accordion">
                         <x-slot:label>
                             <span>Click me to toggle</span>
                             <svg class="w-5 h-5 group-has-[:checked]:rotate-180 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -229,7 +229,7 @@
                 </div>
                 <div class="flex flex-col gap-3">
                     <h3 class="font-bold text-md">Navigation example with background</h3>
-                    <x-rapidez::accordion class="border rounded p-4">
+                    <x-rapidez::accordion class="border rounded p-4" id="navigation-accordion">
                         <x-slot:label>
                             <div class="flex items-center justify-between w-full">
                                 <span>Shop Categories</span>
