@@ -1,5 +1,5 @@
 {{--
-No-js accordion component using the Tailwind CSS `peer` utility.
+No-js accordion component using the Tailwind CSS `peer` and `group` utilities.
 
 ## Properties
 - `id`      A unique identifier for each accordion instance, automatically generated if not provided.
@@ -11,11 +11,25 @@ No-js accordion component using the Tailwind CSS `peer` utility.
 - `label`   Defines the clickable label that toggles the accordion.
 - `content` The collapsible section that appears when the accordion is opened.
 
-## Example
+## Examples
+Basic usage:
 ```
 <x-rapidez::accordion>
     <x-slot:label>
         Label
+    </x-slot:label>
+    <x-slot:content>
+        Content
+    </x-slot:content>
+</x-rapidez::accordion>
+```
+
+With rotating chevron:
+```
+<x-rapidez::accordion>
+    <x-slot:label>
+        <span>Label</span>
+        <x-heroicon-o-chevron-down class="transition-transform size-5 group-has-[:checked]:rotate-180" />
     </x-slot:label>
     <x-slot:content>
         Content
