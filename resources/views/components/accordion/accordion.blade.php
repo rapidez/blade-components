@@ -1,5 +1,5 @@
 {{--
-No-js accordion component using the Tailwind CSS `peer` and `group` utilities.
+Accordion component using the Tailwind CSS `peer` and `group` utilities.
 
 ## Properties
 - `id`      A unique identifier for each accordion instance, automatically generated if not provided.
