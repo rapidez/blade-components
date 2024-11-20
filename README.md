@@ -8,7 +8,7 @@ This package includes some Tailwind CSS styled Blade components, the components 
 - [Select](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/select/select.blade.php)
 - [Textarea](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/textarea/textarea.blade.php)
 - [Label](https://github.com/rapidez/blade-components/blob/master/resources/views/components/label/label.blade.php)
-- [Accordion](https://github.com/rapidez/blade-components/blob/master/resources/views/components/accordion/index.blade.php)
+- [Accordion](https://github.com/rapidez/blade-components/blob/master/resources/views/components/accordion/accordion.blade.php)
 
 The idea with these components is to have a good starting point and centralized styling. Most of the components use a [Anonymous Index](https://laravel.com/docs/master/blade#anonymous-index-components), this way you have a default and variants can be added next to it. We're using the (currently undocumented) [component name guessing](https://github.com/laravel/framework/pull/52669) here.
 
