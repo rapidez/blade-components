@@ -8,24 +8,47 @@
         <title>Rapidez Blade Components Preview</title>
 
         <script>
+        function color(variable, fallback) {
+            return 'color-mix(in srgb, var(' + variable + ', ' + fallback + ') calc(100% * <alpha-value>), transparent)'
+        }
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         primary: {
-                            DEFAULT: '#2FBC85',
-                            text: '#FFFFFF',
+                            DEFAULT: color('--primary', '#2FBC85'),
+                            text: color('--primary-text', tailwind.colors.white),
                         },
                         secondary: {
-                            DEFAULT: '#F97316',
-                            text: '#FFFFFF',
+                            DEFAULT: color('--secondary', '#202F60'),
+                            text: color('--secondary-text', tailwind.colors.white),
                         },
-                        neutral: '#334155',
-                        inactive: '#64748B',
-                        border: '#E7EBEF',
-                        disabled: '#EBE8DE',
-                        enhanced: '#36B422'
-                    }
+                        conversion: {
+                            DEFAULT: color('--conversion', '#36B422'),
+                            text: color('--conversion-text', tailwind.colors.white),
+                        },
+                        foreground: {
+                            emphasis: color('--foreground-emphasis', tailwind.colors.slate[900]),
+                            DEFAULT: color('--foreground', tailwind.colors.slate[800]),
+                            muted: color('--foreground-muted', tailwind.colors.slate[600]),
+                        },
+                        border: {
+                            emphasis: color('--border-emphasis', tailwind.colors.slate[500]),
+                            DEFAULT: color('--border', tailwind.colors.slate[200]),
+                            muted: color('--border-muted', tailwind.colors.slate[100]),
+                        },
+                        background: {
+                            emphasis: color('--background-emphasis', tailwind.colors.slate[900]),
+                            DEFAULT: color('--background', tailwind.colors.slate[800]),
+                            muted: color('--background-muted', tailwind.colors.slate[50]),
+                        },
+                    },
+                    textColor: (theme) => theme('colors.foreground'),
+                    borderColor: (theme) => ({
+                        default: theme('colors.border'),
+                        ...theme('colors.border'),
+                    }),
+                    backgroundColor: (theme) => theme('colors.background'),
                 }
             }
         }
@@ -156,7 +179,7 @@
                 <x-rapidez::button.primary>Primary</x-rapidez::button.primary>
                 <x-rapidez::button.secondary>Secondary</x-rapidez::button.secondary>
                 <x-rapidez::button.outline>Outline</x-rapidez::button.outline>
-                <x-rapidez::button.enhanced>Enhanced</x-rapidez::button.enhanced>
+                <x-rapidez::button.conversion>Conversion</x-rapidez::button.conversion>
                 <div class="flex flex-col gap-2">
                     <strong>Slider:</strong>
                     <div class="flex items-center gap-2">

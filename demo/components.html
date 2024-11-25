@@ -1,350 +1,395 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://cdn.tailwindcss.com"></script>
 
-        <title>Rapidez Blade Components Preview</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 
-        <script>
+    <title>Rapidez Blade Components Preview</title>
+
+    <script>
+        function color(variable, fallback) {
+            return 'color-mix(in srgb, var(' + variable + ', ' + fallback + ') calc(100% * <alpha-value>), transparent)'
+        }
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        neutral: '#334155',
-                        inactive: '#64748b',
-                        border: '#e7ebef',
-                        disabled: '#ebe8de',
-                    }
+                        primary: {
+                            DEFAULT: color('--primary', '#2FBC85'),
+                            text: color('--primary-text', tailwind.colors.white),
+                        },
+                        secondary: {
+                            DEFAULT: color('--secondary', '#202F60'),
+                            text: color('--secondary-text', tailwind.colors.white),
+                        },
+                        conversion: {
+                            DEFAULT: color('--conversion', '#36B422'),
+                            text: color('--conversion-text', tailwind.colors.white),
+                        },
+                        foreground: {
+                            emphasis: color('--foreground-emphasis', tailwind.colors.slate[900]),
+                            DEFAULT: color('--foreground', tailwind.colors.slate[800]),
+                            muted: color('--foreground-muted', tailwind.colors.slate[600]),
+                        },
+                        border: {
+                            emphasis: color('--border-emphasis', tailwind.colors.slate[500]),
+                            DEFAULT: color('--border', tailwind.colors.slate[200]),
+                            muted: color('--border-muted', tailwind.colors.slate[100]),
+                        },
+                        background: {
+                            emphasis: color('--background-emphasis', tailwind.colors.slate[900]),
+                            DEFAULT: color('--background', tailwind.colors.slate[800]),
+                            muted: color('--background-muted', tailwind.colors.slate[50]),
+                        },
+                    },
+                    textColor: (theme) => theme('colors.foreground'),
+                    borderColor: (theme) => ({
+                        default: theme('colors.border'),
+                        ...theme('colors.border'),
+                    }),
+                    backgroundColor: (theme) => theme('colors.background'),
                 }
             }
         }
         </script>
-    </head>
-    <body>
-        <div class="flex flex-col container mx-auto my-20 gap-5 px-5">
-            <h1 class="font-bold text-xl">Rapidez Blade Components preview</h1>
+</head>
 
-            <h2 class="font-bold text-lg">Input components</h2>
+<body>
+    <div class="flex flex-col container mx-auto my-20 gap-5 px-5">
+        <h1 class="font-bold text-xl">Rapidez Blade Components preview</h1>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 [&>fieldset]:border [&>fieldset]:rounded [&>fieldset]:p-5">
-                <h3 class="font-bold text-md">Base components</h3>
-                <h3 class="font-bold text-md">Components with a label</h3>
-                <h3 class="font-bold text-md">Components with a required label</h3>
+        <h2 class="font-bold text-lg">Input components</h2>
 
-                <fieldset>
-                    <legend>Input</legend>
-                    <input class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
-                </fieldset>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 [&>fieldset]:border [&>fieldset]:rounded [&>fieldset]:p-5">
+            <h3 class="font-bold text-md">Base components</h3>
+            <h3 class="font-bold text-md">Components with a label</h3>
+            <h3 class="font-bold text-md">Components with a required label</h3>
 
-                <fieldset>
-                    <legend>Input</legend>
-                    <label>
-                        <span class="font-medium text-inactive text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
-    Something
-</span>
-                        <input class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
+            <fieldset>
+                <legend>Input</legend>
+                <input
+                    class="w-full py-3 px-5 border rounded-md border-default outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted placeholder:text-muted [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
+            </fieldset>
+
+            <fieldset>
+                <legend>Input</legend>
+                <label>
+                    <span
+                        class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
+                        Something
+                    </span>
+                    <input
+                        class="w-full py-3 px-5 border rounded-md border-default outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted placeholder:text-muted [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Input</legend>
+                <label>
+                    <span
+                        class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
+                        Something
+                    </span>
+                    <input required="required"
+                        class="w-full py-3 px-5 border rounded-md border-default outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted placeholder:text-muted [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Checkbox</legend>
+                <input type="checkbox"
+                    class="cursor-pointer border rounded-md size-5 text border-default focus:outline-none focus:ring-0 focus:ring-offset-0" />
+            </fieldset>
+
+            <fieldset>
+                <legend>Checkbox</legend>
+                <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
+                    <input type="checkbox"
+                        class="cursor-pointer border rounded-md size-5 text border-default focus:outline-none focus:ring-0 focus:ring-offset-0 mr-2.5" />
+                    Something
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Checkbox</legend>
+                <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
+                    <input type="checkbox"
+                        class="cursor-pointer border rounded-md size-5 text border-default focus:outline-none focus:ring-0 focus:ring-offset-0 mr-2.5"
+                        required="required" />
+                    Something
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Radio</legend>
+                <input type="radio"
+                    class="cursor-pointer border size-5 text border-default focus:outline-none focus:ring-0 focus:ring-offset-0" />
+            </fieldset>
+
+            <fieldset>
+                <legend>Radio</legend>
+                <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
+                    <input type="radio"
+                        class="cursor-pointer border size-5 text border-default focus:outline-none focus:ring-0 focus:ring-offset-0 mr-2.5" />
+                    Something
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Radio</legend>
+                <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
+                    <input type="radio"
+                        class="cursor-pointer border size-5 text border-default focus:outline-none focus:ring-0 focus:ring-offset-0 mr-2.5"
+                        required="required" />
+                    Something
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Select</legend>
+                <select
+                    class="w-full py-3 px-5 border rounded-md border-default outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted placeholder:text-muted">
+                    <option>Option</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Select</legend>
+                <label>
+                    <span
+                        class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
+                        Something
+                    </span>
+                    <select
+                        class="w-full py-3 px-5 border rounded-md border-default outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted placeholder:text-muted">
+                        <option>Option</option>
+                    </select>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Select</legend>
+                <label>
+                    <span
+                        class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
+                        Something
+                    </span>
+                    <select required="required"
+                        class="w-full py-3 px-5 border rounded-md border-default outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted placeholder:text-muted">
+                        <option>Option</option>
+                    </select>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Textarea</legend>
+                <textarea
+                    class="w-full py-3 px-5 border rounded-md border-default outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted placeholder:text-muted"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Textarea</legend>
+                <label>
+                    <span
+                        class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
+                        Something
+                    </span>
+                    <textarea
+                        class="w-full py-3 px-5 border rounded-md border-default outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted placeholder:text-muted"></textarea>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Textarea</legend>
+                <label>
+                    <span
+                        class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
+                        Something
+                    </span>
+                    <textarea required="required"
+                        class="w-full py-3 px-5 border rounded-md border-default outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted placeholder:text-muted"></textarea>
+                </label>
+            </fieldset>
+        </div>
+
+        <h2 class="font-bold text-lg">Button components</h2>
+        <div class="grid grid-cols-5 gap-5">
+            <button class="relative inline-flex items-center justify-center text-white transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed">
+                Default
+            </button>
+            <button class="relative inline-flex items-center justify-center transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-primary text-primary-text">
+                Primary
+            </button>
+            <button class="relative inline-flex items-center justify-center transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-secondary text-secondary-text">
+                Secondary
+            </button>
+            <button class="relative inline-flex items-center justify-center transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-transparent border text-default hover:border-emphasis">
+                Outline
+            </button>
+            <button class="relative inline-flex items-center justify-center transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-conversion text-conversion-text border-b border-black/15">
+                Conversion
+            </button>
+            <div class="flex flex-col gap-2">
+                <strong>Slider:</strong>
+                <div class="flex items-center gap-2">
+                    <button class="relative transition bg text-base font-medium min-h-12 hover:bg-opacity-80 border-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed inline-flex bg-white p-0 rounded-full size-14 items-center justify-center shadow text-default border">
+                        <
+                    </button>
+                    <button class="relative transition bg text-base font-medium min-h-12 hover:bg-opacity-80 border-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed inline-flex bg-white p-0 rounded-full size-14 items-center justify-center shadow text-default border">
+                        >
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="font-bold text-lg">Slideover component</h2>
+        Soon...
+
+        <h2 class="font-bold text-lg">Accordion component</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            <div class="flex flex-col gap-3">
+                <h3 class="font-bold text-md">Default</h3>
+                <div class="flex flex-col group rounded border p-3">
+                    <input id="checkbox-question-1" name="" type="checkbox" class="peer hidden" />
+                    <label for="checkbox-question-1"
+                        class="flex items-center gap-2 justify-between cursor-pointer font-bold">
+                        Question 1
                     </label>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Input</legend>
-                    <label>
-                        <span class="font-medium text-inactive text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
-    Something
-</span>
-                        <input required="required" class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
+                    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
+                        <div class="overflow-hidden">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti
+                            dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi
+                            velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col group rounded border p-3">
+                    <input id="checkbox-question-2" name="" type="checkbox" class="peer hidden" />
+                    <label for="checkbox-question-2"
+                        class="flex items-center gap-2 justify-between cursor-pointer font-bold">
+                        Question 2
                     </label>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Checkbox</legend>
-                    <input type="checkbox" class="cursor-pointer border rounded-md size-5 text-neutral border-border focus:outline-none focus:ring-0 focus:ring-offset-0" />
-                </fieldset>
-
-                <fieldset>
-                    <legend>Checkbox</legend>
-                    <label class="inline-flex text-neutral text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="checkbox" class="cursor-pointer border rounded-md size-5 text-neutral border-border focus:outline-none focus:ring-0 focus:ring-offset-0 mr-2.5" />
-    Something
-</label>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Checkbox</legend>
-                    <label class="inline-flex text-neutral text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="checkbox" class="cursor-pointer border rounded-md size-5 text-neutral border-border focus:outline-none focus:ring-0 focus:ring-offset-0 mr-2.5" required="required" />
-    Something
-</label>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Radio</legend>
-                    <input type="radio" class="cursor-pointer border size-5 text-neutral border-border focus:outline-none focus:ring-0 focus:ring-offset-0" />
-                </fieldset>
-
-                <fieldset>
-                    <legend>Radio</legend>
-                    <label class="inline-flex text-neutral text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="radio" class="cursor-pointer border size-5 text-neutral border-border focus:outline-none focus:ring-0 focus:ring-offset-0 mr-2.5" />
-    Something
-</label>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Radio</legend>
-                    <label class="inline-flex text-neutral text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="radio" class="cursor-pointer border size-5 text-neutral border-border focus:outline-none focus:ring-0 focus:ring-offset-0 mr-2.5" required="required" />
-    Something
-</label>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Select</legend>
-                    <select class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive">
-    <option>Option</option>
-</select>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Select</legend>
-                    <label>
-                        <span class="font-medium text-inactive text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
-    Something
-</span>
-                        <select class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive">
-    <option>Option</option>
-</select>
-                    </label>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Select</legend>
-                    <label>
-                        <span class="font-medium text-inactive text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
-    Something
-</span>
-                        <select required="required" class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive">
-    <option>Option</option>
-</select>
-                    </label>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Textarea</legend>
-                    <textarea class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive"></textarea>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Textarea</legend>
-                    <label>
-                        <span class="font-medium text-inactive text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
-    Something
-</span>
-                        <textarea class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive"></textarea>
-                    </label>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Textarea</legend>
-                    <label>
-                        <span class="font-medium text-inactive text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
-    Something
-</span>
-                        <textarea required="required" class="w-full py-3 px-5 border rounded-md border-border outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-neutral disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-inactive"></textarea>
-                    </label>
-                </fieldset>
+                    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
+                        <div class="overflow-hidden">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti
+                            dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi
+                            velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <h2 class="font-bold text-lg">Button components</h2>
-            Soon...
-
-            <h2 class="font-bold text-lg">Slideover component</h2>
-            Soon...
-
-            <h2 class="font-bold text-lg">Accordion component</h2>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                <div class="flex flex-col gap-3">
-                    <h3 class="font-bold text-md">Default</h3>
-                    <div class="flex flex-col group rounded border p-3">
-    <input
-        id="checkbox-question-1"
-        name=""
-        type="checkbox"
-                class="peer hidden"
-    />
-    <label
-        for="checkbox-question-1"
-        class="flex items-center gap-2 justify-between cursor-pointer font-bold"
-            >
-        Question 1
-    </label>
-    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
-        <div class="overflow-hidden">
-            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
-        </div>
-    </div>
-</div>
-                    <div class="flex flex-col group rounded border p-3">
-    <input
-        id="checkbox-question-2"
-        name=""
-        type="checkbox"
-                class="peer hidden"
-    />
-    <label
-        for="checkbox-question-2"
-        class="flex items-center gap-2 justify-between cursor-pointer font-bold"
-            >
-        Question 2
-    </label>
-    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
-        <div class="overflow-hidden">
-            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
-        </div>
-    </div>
-</div>
+            <div class="flex flex-col gap-3">
+                <h3 class="font-bold text-md">Radio</h3>
+                <div class="flex flex-col group rounded border p-3">
+                    <input id="radio-question-1" name="questions" type="radio" class="peer hidden" />
+                    <label for="radio-question-1"
+                        class="flex items-center gap-2 justify-between cursor-pointer font-bold"
+                        onclick="event.preventDefault(); document.getElementById('radio-question-1').checked = !document.getElementById('radio-question-1').checked;">
+                        Question 1
+                    </label>
+                    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
+                        <div class="overflow-hidden">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti
+                            dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi
+                            velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </div>
+                    </div>
                 </div>
-
-                <div class="flex flex-col gap-3">
-                    <h3 class="font-bold text-md">Radio</h3>
-                    <div class="flex flex-col group rounded border p-3">
-    <input
-        id="radio-question-1"
-        name="questions"
-        type="radio"
-                class="peer hidden"
-    />
-    <label
-        for="radio-question-1"
-        class="flex items-center gap-2 justify-between cursor-pointer font-bold"
-                    onclick="event.preventDefault(); document.getElementById('radio-question-1').checked = !document.getElementById('radio-question-1').checked;"
-            >
-        Question 1
-    </label>
-    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
-        <div class="overflow-hidden">
-            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
-        </div>
-    </div>
-</div>
-                    <div class="flex flex-col group rounded border p-3">
-    <input
-        id="radio-question-2"
-        name="questions"
-        type="radio"
-                class="peer hidden"
-    />
-    <label
-        for="radio-question-2"
-        class="flex items-center gap-2 justify-between cursor-pointer font-bold"
-                    onclick="event.preventDefault(); document.getElementById('radio-question-2').checked = !document.getElementById('radio-question-2').checked;"
-            >
-        Question 2
-    </label>
-    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
-        <div class="overflow-hidden">
-            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
-        </div>
-    </div>
-</div>
+                <div class="flex flex-col group rounded border p-3">
+                    <input id="radio-question-2" name="questions" type="radio" class="peer hidden" />
+                    <label for="radio-question-2"
+                        class="flex items-center gap-2 justify-between cursor-pointer font-bold"
+                        onclick="event.preventDefault(); document.getElementById('radio-question-2').checked = !document.getElementById('radio-question-2').checked;">
+                        Question 2
+                    </label>
+                    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
+                        <div class="overflow-hidden">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti
+                            dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi
+                            velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="flex flex-col gap-3">
-                    <h3 class="font-bold text-md">Mobile only</h3>
-                    <div class="flex flex-col group rounded border p-3">
-    <input
-        id="mobile-question-1"
-        name=""
-        type="checkbox"
-                class="peer hidden"
-    />
-    <label
-        for="mobile-question-1"
-        class="flex items-center gap-2 justify-between cursor-pointer md:cursor-auto font-bold"
-            >
-        Question 1
-    </label>
-    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all md:grid-rows-[1fr]">
-        <div class="overflow-hidden">
-            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
-        </div>
-    </div>
-</div>
-                    <div class="flex flex-col group rounded border p-3">
-    <input
-        id="mobile-question-2"
-        name=""
-        type="checkbox"
-                class="peer hidden"
-    />
-    <label
-        for="mobile-question-2"
-        class="flex items-center gap-2 justify-between cursor-pointer md:cursor-auto font-bold"
-            >
-        Question 2
-    </label>
-    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all md:grid-rows-[1fr]">
-        <div class="overflow-hidden">
-            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
-        </div>
-    </div>
-</div>
+            <div class="flex flex-col gap-3">
+                <h3 class="font-bold text-md">Mobile only</h3>
+                <div class="flex flex-col group rounded border p-3">
+                    <input id="mobile-question-1" name="" type="checkbox" class="peer hidden" />
+                    <label for="mobile-question-1"
+                        class="flex items-center gap-2 justify-between cursor-pointer md:cursor-auto font-bold">
+                        Question 1
+                    </label>
+                    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all md:grid-rows-[1fr]">
+                        <div class="overflow-hidden">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti
+                            dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi
+                            velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </div>
+                    </div>
                 </div>
+                <div class="flex flex-col group rounded border p-3">
+                    <input id="mobile-question-2" name="" type="checkbox" class="peer hidden" />
+                    <label for="mobile-question-2"
+                        class="flex items-center gap-2 justify-between cursor-pointer md:cursor-auto font-bold">
+                        Question 2
+                    </label>
+                    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all md:grid-rows-[1fr]">
+                        <div class="overflow-hidden">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti
+                            dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi
+                            velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <div class="flex flex-col gap-3">
-                    <h3 class="font-bold text-md">With rotating chevron</h3>
-                    <div class="flex flex-col group border rounded p-4">
-    <input
-        id="rotating-accordion"
-        name=""
-        type="checkbox"
-                class="peer hidden"
-    />
-    <label
-        for="rotating-accordion"
-        class="flex items-center gap-2 justify-between cursor-pointer"
-            >
-        <span>Click me to toggle</span>
-                            <svg class="w-5 h-5 group-has-[:checked]:rotate-180 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                            </svg>
-    </label>
-    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
-        <div class="overflow-hidden">
-            <div class="pt-4">
-                                This accordion demonstrates the rotating chevron using group-has-[:checked]:rotate-180 class.
+            <div class="flex flex-col gap-3">
+                <h3 class="font-bold text-md">With rotating chevron</h3>
+                <div class="flex flex-col group border rounded p-4">
+                    <input id="rotating-accordion" name="" type="checkbox" class="peer hidden" />
+                    <label for="rotating-accordion" class="flex items-center gap-2 justify-between cursor-pointer">
+                        <span>Click me to toggle</span>
+                        <svg class="w-5 h-5 group-has-[:checked]:rotate-180 transition-transform"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </label>
+                    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
+                        <div class="overflow-hidden">
+                            <div class="pt-4">
+                                This accordion demonstrates the rotating chevron using group-has-[:checked]:rotate-180
+                                class.
                                 When you click the header, the chevron will rotate 180 degrees.
                             </div>
-        </div>
-    </div>
-</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex flex-col gap-3">
-                    <h3 class="font-bold text-md">Navigation example with background</h3>
-                    <div class="flex flex-col group border rounded p-4">
-    <input
-        id="navigation-accordion"
-        name=""
-        type="checkbox"
-                class="peer hidden"
-    />
-    <label
-        for="navigation-accordion"
-        class="flex items-center gap-2 justify-between cursor-pointer"
-            >
-        <div class="flex items-center justify-between w-full">
-                                <span>Shop Categories</span>
-                                <svg class="w-5 h-5 group-has-[:checked]:rotate-180 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-    </label>
-    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
-        <div class="overflow-hidden">
-            <ul class="p-5 bg-red-500 text-white rounded-lg mt-2">
+            </div>
+            <div class="flex flex-col gap-3">
+                <h3 class="font-bold text-md">Navigation example with background</h3>
+                <div class="flex flex-col group border rounded p-4">
+                    <input id="navigation-accordion" name="" type="checkbox" class="peer hidden" />
+                    <label for="navigation-accordion" class="flex items-center gap-2 justify-between cursor-pointer">
+                        <div class="flex items-center justify-between w-full">
+                            <span>Shop Categories</span>
+                            <svg class="w-5 h-5 group-has-[:checked]:rotate-180 transition-transform"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </label>
+                    <div class="grid peer-checked:grid-rows-[1fr] grid-rows-[0fr] transition-all">
+                        <div class="overflow-hidden">
+                            <ul class="p-5 bg-red-500 text-white rounded-lg mt-2">
                                 <li><a href="/what-is-new.html" class="block hover:underline">What's New</a></li>
                                 <li><a href="/women.html" class="block hover:underline">Women</a></li>
                                 <li><a href="/men.html" class="block hover:underline">Men</a></li>
@@ -352,11 +397,12 @@
                                 <li><a href="/training.html" class="block hover:underline">Training</a></li>
                                 <li><a href="/sale.html" class="block hover:underline">Sale</a></li>
                             </ul>
-        </div>
-    </div>
-</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

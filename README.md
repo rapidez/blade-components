@@ -23,7 +23,7 @@ We don't provide a input + label combination component as you'll end up with att
 - [Primary](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/primary.blade.php)
 - [Secondary](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/secondary.blade.php)
 - [Outline](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/outline.blade.php)
-- [Enhanced](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/enhanced.blade.php)
+- [Conversion](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/conversion.blade.php)
 - [Slider](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/slider.blade.php)
 
 The base button doesn't have any styling; here, we only use the `x-tag`.
@@ -38,24 +38,53 @@ The button variants contain styling for the background and text color. There is 
 composer require rapidez/blade-components
 ```
 
-And make sure these colors are present in your Tailwind config:
+Make sure these colors are present in your `tailwind.config.js` file:
 ```js
 colors: {
     colors: {
         primary: {
-            DEFAULT: '#2FBC85',
-            text: '#FFFFFF',
+            DEFAULT: color('--primary', '#2FBC85'),
+            text: color('--primary-text', colors.white),
         },
         secondary: {
-            DEFAULT: '#F97316',
-            text: '#FFFFFF',
+            DEFAULT: color('--secondary', '#202F60'),
+            text: color('--secondary-text', colors.white),
         },
-        neutral: '#334155',
-        inactive: '#64748B',
-        border: '#E7EBEF',
-        disabled: '#EBE8DE',
-        enhanced: '#36B422'
-    }
+        conversion: {
+            DEFAULT: color('--conversion', '#36B422'),
+            text: color('--conversion-text', colors.white),
+        },
+        foreground: {
+            emphasis: color('--foreground-emphasis', colors.slate[900]),
+            DEFAULT: color('--foreground', colors.slate[800]),
+            muted: color('--foreground-muted', colors.slate[600]),
+        },
+        border: {
+            emphasis: color('--border-emphasis', colors.slate[500]),
+            DEFAULT: color('--border', colors.slate[200]),
+            muted: color('--border-muted', colors.slate[100]),
+        },
+        background: {
+            emphasis: color('--background-emphasis', colors.slate[900]),
+            DEFAULT: color('--background', colors.slate[800]),
+            muted: color('--background-muted', colors.slate[50]),
+        },
+    },
+    textColor: (theme) => theme('colors.foreground'),
+    borderColor: (theme) => ({
+        default: theme('colors.border'),
+        ...theme('colors.border'),
+    }),
+    backgroundColor: (theme) => theme('colors.background'),
+}
+```
+
+And make sure you add this in your `tailwind.config.js` file:
+```js
+import colors from 'tailwindcss/colors'
+
+function color(variable, fallback) {
+    return 'color-mix(in srgb, var(' + variable + ', ' + fallback + ') calc(100% * <alpha-value>), transparent)'
 }
 ```
 
