@@ -38,8 +38,8 @@
                             muted: color('--border-muted', tailwind.colors.slate[100]),
                         },
                         background: {
-                            emphasis: color('--background-emphasis', tailwind.colors.slate[900]),
-                            DEFAULT: color('--background', tailwind.colors.slate[800]),
+                            emphasis: color('--background-emphasis', tailwind.colors.slate[200]),
+                            DEFAULT: color('--background', tailwind.colors.slate[100]),
                             muted: color('--background-muted', tailwind.colors.slate[50]),
                         },
                     },
@@ -175,16 +175,16 @@
 
             <h2 class="font-bold text-lg">Button components</h2>
             <div class="grid grid-cols-5 gap-5">
-                <x-rapidez::button>Default</x-rapidez::button>
-                <x-rapidez::button.primary>Primary</x-rapidez::button.primary>
-                <x-rapidez::button.secondary>Secondary</x-rapidez::button.secondary>
-                <x-rapidez::button.outline>Outline</x-rapidez::button.outline>
-                <x-rapidez::button.conversion>Conversion</x-rapidez::button.conversion>
+                <x-rapidez::button>Button/Button</x-rapidez::button>
+                <x-rapidez::button.primary>Button/Primary</x-rapidez::button.primary>
+                <x-rapidez::button.secondary>Button/Secondary</x-rapidez::button.secondary>
+                <x-rapidez::button.outline>Button/Outline</x-rapidez::button.outline>
+                <x-rapidez::button.conversion>Button/Conversion</x-rapidez::button.conversion>
                 <div class="flex flex-col gap-2">
                     <strong>Slider:</strong>
                     <div class="flex items-center gap-2">
-                        <x-rapidez::button.slider><</x-rapidez::button.slider>
-                        <x-rapidez::button.slider>></x-rapidez::button.slider>
+                        <x-rapidez::button.slider>&lt;</x-rapidez::button.slider>
+                        <x-rapidez::button.slider>&gt;</x-rapidez::button.slider>
                     </div>
                 </div>
             </div>

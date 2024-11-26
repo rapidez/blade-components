@@ -39,8 +39,8 @@
                             muted: color('--border-muted', tailwind.colors.slate[100]),
                         },
                         background: {
-                            emphasis: color('--background-emphasis', tailwind.colors.slate[900]),
-                            DEFAULT: color('--background', tailwind.colors.slate[800]),
+                            emphasis: color('--background-emphasis', tailwind.colors.slate[200]),
+                            DEFAULT: color('--background', tailwind.colors.slate[100]),
                             muted: color('--background-muted', tailwind.colors.slate[50]),
                         },
                     },
@@ -216,29 +216,29 @@
 
         <h2 class="font-bold text-lg">Button components</h2>
         <div class="grid grid-cols-5 gap-5">
-            <button class="relative inline-flex items-center justify-center text-white transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed">
-                Default
+            <button class="relative inline-flex items-center justify-center text-white transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed">
+                Button/Button
             </button>
-            <button class="relative inline-flex items-center justify-center transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-primary text-primary-text">
-                Primary
+            <button class="relative inline-flex items-center justify-center transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-primary text-primary-text">
+                Button/Primary
             </button>
-            <button class="relative inline-flex items-center justify-center transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-secondary text-secondary-text">
-                Secondary
+            <button class="relative inline-flex items-center justify-center transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-secondary text-secondary-text">
+                Button/Secondary
             </button>
-            <button class="relative inline-flex items-center justify-center transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-transparent border text-default hover:border-emphasis">
-                Outline
+            <button class="relative inline-flex items-center justify-center transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-transparent border text-default hover:border-emphasis">
+                Button/Outline
             </button>
-            <button class="relative inline-flex items-center justify-center transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-conversion text-conversion-text border-b border-black/15">
-                Conversion
+            <button class="relative inline-flex items-center justify-center transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-conversion text-conversion-text border-b border-b-black/15">
+                Button/Conversion
             </button>
             <div class="flex flex-col gap-2">
                 <strong>Slider:</strong>
                 <div class="flex items-center gap-2">
-                    <button class="relative transition bg text-base font-medium min-h-12 hover:bg-opacity-80 border-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed inline-flex bg-white p-0 rounded-full size-14 items-center justify-center shadow text-default border">
-                        <
+                    <button class="relative transition bg text-base font-medium min-h-12 hover:bg-opacity-80 border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed inline-flex bg-white p-0 rounded-full size-14 items-center justify-center shadow text-default border">
+                        &lt;
                     </button>
-                    <button class="relative transition bg text-base font-medium min-h-12 hover:bg-opacity-80 border-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed inline-flex bg-white p-0 rounded-full size-14 items-center justify-center shadow text-default border">
-                        >
+                    <button class="relative transition bg text-base font-medium min-h-12 hover:bg-opacity-80 border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed inline-flex bg-white p-0 rounded-full size-14 items-center justify-center shadow text-default border">
+                        &gt;
                     </button>
                 </div>
             </div>

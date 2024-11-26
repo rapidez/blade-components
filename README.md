@@ -19,7 +19,7 @@ We don't provide a input + label combination component as you'll end up with att
 ### Buttons
 
 - [Base](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/base.blade.php)
-- [Index](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/index.blade.php)
+- [Button](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/button.blade.php)
 - [Primary](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/primary.blade.php)
 - [Secondary](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/secondary.blade.php)
 - [Outline](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/outline.blade.php)
@@ -27,7 +27,7 @@ We don't provide a input + label combination component as you'll end up with att
 - [Slider](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/slider.blade.php)
 
 The base button doesn't have any styling; here, we only use the `x-tag`.
-All other buttons use the `button/index`, which contains the basic styling for buttons, such as padding, hover effects, and the disabled state.
+All other buttons use the `button/button`, which contains the basic styling for buttons, such as padding, hover effects, and the disabled state.
 The button variants contain styling for the background and text color. There is only one exception: the `button/slider`, which has more custom styling than the other button variants.
 
 ![](.github/media/buttons.png)
@@ -65,8 +65,8 @@ colors: {
             muted: color('--border-muted', colors.slate[100]),
         },
         background: {
-            emphasis: color('--background-emphasis', colors.slate[900]),
-            DEFAULT: color('--background', colors.slate[800]),
+            emphasis: color('--background-emphasis', colors.slate[200]),
+            DEFAULT: color('--background', colors.slate[100]),
             muted: color('--background-muted', colors.slate[50]),
         },
     },
