@@ -1,7 +1,4 @@
 {{--
-This is the secondary button.
-Example:
-
 ```
 <x-rapidez::button.secondary>Something</x-rapidez::button.secondary>
 ```

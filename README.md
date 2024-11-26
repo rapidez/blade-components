@@ -26,9 +26,7 @@ We don't provide a input + label combination component as you'll end up with att
 - [Conversion](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/conversion.blade.php)
 - [Slider](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/slider.blade.php)
 
-The base button doesn't have any styling; here, we only use the `x-tag`.
-All other buttons use the `button/button`, which contains the basic styling for buttons, such as padding, hover effects, and the disabled state.
-The button variants contain styling for the background and text color. There is only one exception: the `button/slider`, which has more custom styling than the other button variants.
+The base button doesn't have any styling; here, we only use the `x-tag`. All other buttons use the `button/button`, which contains the basic styling for buttons, such as padding, hover effects, and the disabled state. The button variants contain styling for the background and text color. There is only one exception: the `button/slider`, which has more custom styling than the other button variants.
 
 ![](.github/media/buttons.png)
 

@@ -175,11 +175,11 @@
 
             <h2 class="font-bold text-lg">Button components</h2>
             <div class="grid grid-cols-5 gap-5">
-                <x-rapidez::button>Button/Button</x-rapidez::button>
-                <x-rapidez::button.primary>Button/Primary</x-rapidez::button.primary>
-                <x-rapidez::button.secondary>Button/Secondary</x-rapidez::button.secondary>
-                <x-rapidez::button.outline>Button/Outline</x-rapidez::button.outline>
-                <x-rapidez::button.conversion>Button/Conversion</x-rapidez::button.conversion>
+                <x-rapidez::button>Button</x-rapidez::button>
+                <x-rapidez::button.primary>Primary</x-rapidez::button.primary>
+                <x-rapidez::button.secondary>Secondary</x-rapidez::button.secondary>
+                <x-rapidez::button.outline>Outline</x-rapidez::button.outline>
+                <x-rapidez::button.conversion>Conversion</x-rapidez::button.conversion>
                 <div class="flex flex-col gap-2">
                     <strong>Slider:</strong>
                     <div class="flex items-center gap-2">

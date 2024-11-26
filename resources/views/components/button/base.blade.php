@@ -1,9 +1,9 @@
 {{--
 This is the base for all the buttons. In here we don't need classes.
-If you want to change styling for buttons go to the button/index.
-<x-tag> Is a dynamic tag when a button has a href it will be a <a>,
-when you add a for on the button the button will be a <label>.
-If the button doesn't have a href or label it will be a <button>
+If you want to change styling for buttons go to the button/button.
+- `href` attribute results in an `<a>`
+- `for` attribute results in a `<label>`
+- Fallback/default is `<button>`
 Examples:
 
 ```

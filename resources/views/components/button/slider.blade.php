@@ -1,7 +1,4 @@
 {{--
-This button is used for sliders.
-Example:
-
 ```
 <x-rapidez::button.slider>Icon</x-rapidez::button.slider>
 ```
