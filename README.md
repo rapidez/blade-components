@@ -9,6 +9,7 @@ This package includes some Tailwind CSS styled Blade components, the components 
 - [Textarea](https://github.com/rapidez/blade-components/blob/master/resources/views/components/input/textarea/textarea.blade.php)
 - [Label](https://github.com/rapidez/blade-components/blob/master/resources/views/components/label/label.blade.php)
 - [Accordion](https://github.com/rapidez/blade-components/blob/master/resources/views/components/accordion/accordion.blade.php)
+- [Buttons](#buttons)
 
 The idea with these components is to have a good starting point and centralized styling. Most of the components use a [Anonymous Index](https://laravel.com/docs/master/blade#anonymous-index-components), this way you have a default and variants can be added next to it. We're using the (currently undocumented) [component name guessing](https://github.com/laravel/framework/pull/52669) here.
 
@@ -16,7 +17,11 @@ We don't provide a input + label combination component as you'll end up with att
 
 [![](.github/media/screenshot.png)](https://rapidez.github.io/blade-components/demo/components.html)
 
-### Buttons
+<a name="buttons"></a>
+
+The base button doesn't have any styling; here, we only use the `x-tag`. All other buttons use the `button/button`, which contains the basic styling for buttons, such as padding, hover effects, and the disabled state. The button variants contain styling for the background and text color. There is only one exception: the `button/slider`, which has more custom styling than the other button variants.
+
+![](.github/media/buttons.png)
 
 - [Base](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/base.blade.php)
 - [Button](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/button.blade.php)
@@ -25,10 +30,6 @@ We don't provide a input + label combination component as you'll end up with att
 - [Outline](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/outline.blade.php)
 - [Conversion](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/conversion.blade.php)
 - [Slider](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/slider.blade.php)
-
-The base button doesn't have any styling; here, we only use the `x-tag`. All other buttons use the `button/button`, which contains the basic styling for buttons, such as padding, hover effects, and the disabled state. The button variants contain styling for the background and text color. There is only one exception: the `button/slider`, which has more custom styling than the other button variants.
-
-![](.github/media/buttons.png)
 
 ## Installation
 
@@ -116,11 +117,22 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
 </x-rapidez::input.checkbox>
 ```
 
-## x-tag
+#### Accordion
+
+```blade
+<x-rapidez::accordion>
+    <x-slot:label>Accordion Title</x-slot:label>
+    <x-slot:content>
+        Accordion content goes here
+    </x-slot:content>
+</x-rapidez::accordion>
+```
+
+#### x-tag
 
 It is a Blade version of a [dynamic Vue component](https://vuejs.org/guide/essentials/component-basics.html#dynamic-components)
 
-### Usage
+##### Usage
 
 ```blade
 <x-tag is="span" class="font-bold">
@@ -134,17 +146,6 @@ which will result in
 <span class="font-bold">
     Something
 </span>
-```
-
-#### Accordion
-
-```blade
-<x-rapidez::accordion>
-    <x-slot:label>Accordion Title</x-slot:label>
-    <x-slot:content>
-        Accordion content goes here
-    </x-slot:content>
-</x-rapidez::accordion>
 ```
 
 ## Preview
