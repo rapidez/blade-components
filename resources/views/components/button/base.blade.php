@@ -25,6 +25,6 @@ Examples:
     $tag = $attributes->has('for') ? 'label' : $tag;
 @endphp
 
-<x-tag is="{{ $tag }}" {{ $attributes }}>
+<x-rapidez::tag is="{{ $tag }}" {{ $attributes }}>
     {{ $slot }}
-</x-tag>
+</x-rapidez::tag>
