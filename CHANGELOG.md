@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.0.1...1.0.1)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.0.2...1.0.2)
+## [1.0.2](https://github.com/rapidez/blade-components/releases/tag/1.0.2) - 2024-11-27
+
+### Fixed
+
+- Tag component prefix (#9)
+
 ## [1.0.1](https://github.com/rapidez/blade-components/releases/tag/1.0.1) - 2024-11-27
 
 ### Fixed
