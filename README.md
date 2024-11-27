@@ -19,7 +19,7 @@ We don't provide a input + label combination component as you'll end up with att
 
 <a name="buttons"></a>
 
-The base button doesn't have any styling; here, we only use the `x-tag`. All other buttons use the `button/button`, which contains the basic styling for buttons, such as padding, hover effects, and the disabled state. The button variants contain styling for the background and text color. There is only one exception: the `button/slider`, which has more custom styling than the other button variants.
+The base button doesn't have any styling; here, we only use the `x-rapidez::tag`. All other buttons use the `button/button`, which contains the basic styling for buttons, such as padding, hover effects, and the disabled state. The button variants contain styling for the background and text color. There is only one exception: the `button/slider`, which has more custom styling than the other button variants.
 
 ![](.github/media/buttons.png)
 
@@ -128,16 +128,16 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
 </x-rapidez::accordion>
 ```
 
-#### x-tag
+#### Tag
 
 It is a Blade version of a [dynamic Vue component](https://vuejs.org/guide/essentials/component-basics.html#dynamic-components)
 
 ##### Usage
 
 ```blade
-<x-tag is="span" class="font-bold">
+<x-rapidez::tag is="span" class="font-bold">
     Something
-</x-tag>
+</x-rapidez::tag>
 ```
 
 which will result in
