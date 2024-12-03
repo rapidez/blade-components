@@ -6,7 +6,7 @@
         <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 
         <style type="text/tailwindcss">
-            {{ file_get_contents('../../../../../resources/css/components/prose.css') }}
+            {{ file_get_contents(base_path('../../../../resources/css/components/prose.css')) }}
         </style>
 
         <title>Rapidez Blade Components Preview</title>
