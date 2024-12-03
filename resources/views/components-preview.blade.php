@@ -5,10 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 
-        {{--
-            We need this for the prose preview because we can't load a custom css file.
-            Taliwind CDN docs: https://tailwindcss.com/docs/installation/play-cdn.
-        --}}
         <style type="text/tailwindcss">
             {{ file_get_contents('../../../../../resources/css/components/prose.css') }}
         </style>
@@ -19,6 +15,7 @@
         function color(variable, fallback) {
             return 'color-mix(in srgb, var(' + variable + ', ' + fallback + ') calc(100% * <alpha-value>), transparent)'
         }
+
         tailwind.config = {
             theme: {
                 extend: {

@@ -10,6 +10,7 @@ This package includes some Tailwind CSS styled Blade components, the components 
 - [Label](https://github.com/rapidez/blade-components/blob/master/resources/views/components/label/label.blade.php)
 - [Accordion](https://github.com/rapidez/blade-components/blob/master/resources/views/components/accordion/accordion.blade.php)
 - [Buttons](#buttons)
+- [Prose](https://github.com/rapidez/blade-components/blob/master/resources/views/components/prose/prose.blade.php)
 
 The idea with these components is to have a good starting point and centralized styling. Most of the components use a [Anonymous Index](https://laravel.com/docs/master/blade#anonymous-index-components), this way you have a default and variants can be added next to it. We're using the (currently undocumented) [component name guessing](https://github.com/laravel/framework/pull/52669) here.
 
@@ -30,17 +31,6 @@ The base button doesn't have any styling; here, we only use the `x-rapidez::tag`
 - [Outline](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/outline.blade.php)
 - [Conversion](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/conversion.blade.php)
 - [Slider](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/slider.blade.php)
-
-We provide basic prose styling for text components. To apply this styling, wrap your content in the following tag:
-`<x-rapidez::prose>Example text</x-rapidez::prose>`
-The styles are defined in a CSS file, which you can view [here](https://github.com/rapidez/blade-components/blob/master/resources/css/components/prose.css)
-
-In Rapidez, the prose styling is automatically imported from [app.js](https://github.com/rapidez/rapidez/blob/master/resources/js/app.js), for any another project you've to import it manually:
-```
-@import '../../vendor/rapidez/blade-components/resources/css/package.css';`
-```
-
-![](.github/media/prose.png)
 
 ## Installation
 
@@ -98,6 +88,12 @@ function color(variable, fallback) {
 }
 ```
 
+If you're going to use the Prose component and you're not using Rapidez; you've to import the CSS file manually:
+```
+@import '../../vendor/rapidez/blade-components/resources/css/package.css';`
+```
+With Rapidez this is already imported from the [app.js](https://github.com/rapidez/rapidez/blob/master/resources/js/app.js).
+
 ### Views
 
 If you like to change the components you can publish the views with:
@@ -126,6 +122,14 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
 <x-rapidez::input.checkbox name="something">
     @lang('Translatable label')
 </x-rapidez::input.checkbox>
+```
+
+#### Prose
+
+```blade
+<x-rapidez::prose>
+    Content
+</x-rapidez::prose>
 ```
 
 #### Accordion
