@@ -199,53 +199,49 @@
 
             <h2 class="font-bold text-lg">Prose component</h2>
             <x-rapidez::prose>
-                <h1>Prose heading 1</h1>
-                <h2>Prose heading 2</h2>
-                <h3>Prose heading 3</h3>
-                <h4>Prose heading 4</h4>
+                <h1>Wayne Enterprises</h1>
+                <h2>Wayne Foundation</h2>
+                <h3>Bat Bunker</h3>
+                <h4>Batcave</h4>
                 <p>
-                    For years <strong>parents</strong> have espoused the <i>health</i> benefits of eating garlic bread with cheese to their
-                    children, with the food earning such an iconic status in our culture that kids will often dress
-                    up as warm, cheesy loaf for <a href="/">Halloween</a>.
+                    <strong>Wayne Enterprises, Inc.</strong>, also known as <strong>WayneCorp</strong> and <strong>Wayne Industries</strong>, is a wealthy fictional company appearing in American comic books published by DC Comics, commonly in association with the superhero <a href="https://en.wikipedia.org/wiki/Batman">Batman</a>. Wayne Enterprises is a large, growing multinational company.
                 </p>
                 <ul>
-                    <li>List item</li>
-                    <li>List item</li>
-                    <li>List item</li>
-                    <li>List item</li>
+                    <li>Robert Pattinson</li>
+                    <li>Ben Affleck</li>
+                    <li>Christian Bale</li>
                 </ul>
                 <ol>
-                    <li>List item</li>
-                    <li>List item</li>
-                    <li>List item</li>
-                    <li>List item</li>
+                    <li>Christian Bale</li>
+                    <li>Ben Affleck</li>
+                    <li>Robert Pattinson</li>
                 </ol>
                 <blockquote>
-                    With the food earning such an iconic status in our culture that kids will often dress
+                    I am vengeance, I am the night, I am Batman.
                 </blockquote>
                 <table>
                     <thead>
                         <tr>
-                        <th>Song</th>
-                        <th>Artist</th>
-                        <th>Year</th>
+                            <th>Movie</th>
+                            <th>Score</th>
+                            <th>Year</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                            <td>Malcolm Lockyer</td>
-                            <td>1961</td>
+                            <td>Batman Begins</td>
+                            <td>8.2</td>
+                            <td>2005</td>
                         </tr>
                         <tr>
-                            <td>Witchy Woman</td>
-                            <td>The Eagles</td>
-                            <td>1972</td>
+                            <td>The Dark Knight</td>
+                            <td>9.0</td>
+                            <td>2008</td>
                         </tr>
                         <tr>
-                            <td>Shining Star</td>
-                            <td>Earth, Wind, and Fire</td>
-                            <td>1975</td>
+                            <td>The Dark Knight Rises</td>
+                            <td>8.4</td>
+                            <td>2012</td>
                         </tr>
                     </tbody>
                 </table>

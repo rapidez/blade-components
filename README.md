@@ -35,12 +35,10 @@ We provide basic prose styling for text components. To apply this styling, wrap 
 `<x-rapidez::prose>Example text</x-rapidez::prose>`
 The styles are defined in a CSS file, which you can view [here](https://github.com/rapidez/blade-components/blob/master/resources/css/components/prose.css)
 
-### Rapidez
-In Rapidez, prose styling is automatically applied thanks to [this configuration](https://github.com/rapidez/rapidez/blob/master/resources/js/app.js).
-
-### Statamic
-For Statamic, the prose styling from this package isn't applied automatically. You'll need to import it manually.
-To do this, add the following line to your `app.css` file: `@import '../../vendor/rapidez/blade-components/resources/css/package.css';`
+In Rapidez, the prose styling is automatically imported from [app.js](https://github.com/rapidez/rapidez/blob/master/resources/js/app.js), for any another project you've to import it manually:
+```
+@import '../../vendor/rapidez/blade-components/resources/css/package.css';`
+```
 
 ![](.github/media/prose.png)
 
