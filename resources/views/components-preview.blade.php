@@ -10,13 +10,7 @@
             Taliwind CDN docs: https://tailwindcss.com/docs/installation/play-cdn.
         --}}
         <style type="text/tailwindcss">
-            @layer utilities {
-                .prose-custom {
-                    @apply prose font-sans text-neutral text-pretty max-w-none
-                    prose-headings:text-neutral prose-a:text-primary prose-strong:text-neutral prose-blockquote:text-neutral
-                    prose-a:prose-headings:no-underline prose-a:prose-headings:text-neutral prose-th:text-left;
-                }
-            }
+            {{ file_get_contents('../../../../../resources/css/components/prose.css') }}
         </style>
 
         <title>Rapidez Blade Components Preview</title>
