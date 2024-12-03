@@ -22,28 +22,59 @@
         <title>Rapidez Blade Components Preview</title>
 
         <script>
+        function color(variable, fallback) {
+            return 'color-mix(in srgb, var(' + variable + ', ' + fallback + ') calc(100% * <alpha-value>), transparent)'
+        }
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#2FBC85',
-                        neutral: '#334155',
-                        inactive: '#64748b',
-                        border: '#e7ebef',
-                        disabled: '#ebe8de',
-                    }
+                        primary: {
+                            DEFAULT: color('--primary', '#2FBC85'),
+                            text: color('--primary-text', tailwind.colors.white),
+                        },
+                        secondary: {
+                            DEFAULT: color('--secondary', '#202F60'),
+                            text: color('--secondary-text', tailwind.colors.white),
+                        },
+                        conversion: {
+                            DEFAULT: color('--conversion', '#36B422'),
+                            text: color('--conversion-text', tailwind.colors.white),
+                        },
+                        foreground: {
+                            emphasis: color('--foreground-emphasis', tailwind.colors.slate[900]),
+                            DEFAULT: color('--foreground', tailwind.colors.slate[800]),
+                            muted: color('--foreground-muted', tailwind.colors.slate[600]),
+                        },
+                        border: {
+                            emphasis: color('--border-emphasis', tailwind.colors.slate[500]),
+                            DEFAULT: color('--border', tailwind.colors.slate[200]),
+                            muted: color('--border-muted', tailwind.colors.slate[100]),
+                        },
+                        background: {
+                            emphasis: color('--background-emphasis', tailwind.colors.slate[200]),
+                            DEFAULT: color('--background', tailwind.colors.slate[100]),
+                            muted: color('--background-muted', tailwind.colors.slate[50]),
+                        },
+                    },
+                    textColor: (theme) => theme('colors.foreground'),
+                    borderColor: (theme) => ({
+                        default: theme('colors.border'),
+                        ...theme('colors.border'),
+                    }),
+                    backgroundColor: (theme) => theme('colors.background'),
                 }
             }
         }
         </script>
     </head>
     <body>
-        <div class="flex flex-col container mx-auto my-20 gap-5">
+        <div class="flex flex-col container mx-auto my-20 gap-5 px-5">
             <h1 class="font-bold text-xl">Rapidez Blade Components preview</h1>
 
             <h2 class="font-bold text-lg">Input components</h2>
 
-            <div class="grid grid-cols-3 gap-5 [&>fieldset]:border [&>fieldset]:rounded [&>fieldset]:p-5">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 [&>fieldset]:border [&>fieldset]:rounded [&>fieldset]:p-5">
                 <h3 class="font-bold text-md">Base components</h3>
                 <h3 class="font-bold text-md">Components with a label</h3>
                 <h3 class="font-bold text-md">Components with a required label</h3>
@@ -157,7 +188,20 @@
             </div>
 
             <h2 class="font-bold text-lg">Button components</h2>
-            Soon...
+            <div class="grid grid-cols-5 gap-5">
+                <x-rapidez::button>Button</x-rapidez::button>
+                <x-rapidez::button.primary>Primary</x-rapidez::button.primary>
+                <x-rapidez::button.secondary>Secondary</x-rapidez::button.secondary>
+                <x-rapidez::button.outline>Outline</x-rapidez::button.outline>
+                <x-rapidez::button.conversion>Conversion</x-rapidez::button.conversion>
+                <div class="flex flex-col gap-2">
+                    <strong>Slider:</strong>
+                    <div class="flex items-center gap-2">
+                        <x-rapidez::button.slider>&lt;</x-rapidez::button.slider>
+                        <x-rapidez::button.slider>&gt;</x-rapidez::button.slider>
+                    </div>
+                </div>
+            </div>
 
             <h2 class="font-bold text-lg">Prose component</h2>
             <x-rapidez::prose>
@@ -215,6 +259,111 @@
 
             <h2 class="font-bold text-lg">Slideover component</h2>
             Soon...
+
+            <h2 class="font-bold text-lg">Accordion component</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                <div class="flex flex-col gap-3">
+                    <h3 class="font-bold text-md">Default</h3>
+                    <x-rapidez::accordion id="checkbox-question-1" class="rounded border p-3">
+                        <x-slot:label class="font-bold">
+                            Question 1
+                        </x-slot:label>
+                        <x-slot:content class="">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </x-slot:content>
+                    </x-rapidez::accordion>
+                    <x-rapidez::accordion id="checkbox-question-2" class="rounded border p-3">
+                        <x-slot:label class="font-bold">
+                            Question 2
+                        </x-slot:label>
+                        <x-slot:content class="">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </x-slot:content>
+                    </x-rapidez::accordion>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <h3 class="font-bold text-md">Radio</h3>
+                    <x-rapidez::accordion id="radio-question-1" type="radio" name="questions" class="rounded border p-3">
+                        <x-slot:label class="font-bold">
+                            Question 1
+                        </x-slot:label>
+                        <x-slot:content class="">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </x-slot:content>
+                    </x-rapidez::accordion>
+                    <x-rapidez::accordion id="radio-question-2" type="radio" name="questions" class="rounded border p-3">
+                        <x-slot:label class="font-bold">
+                            Question 2
+                        </x-slot:label>
+                        <x-slot:content class="">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </x-slot:content>
+                    </x-rapidez::accordion>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <h3 class="font-bold text-md">Mobile only</h3>
+                    <x-rapidez::accordion.mobile id="mobile-question-1" class="rounded border p-3">
+                        <x-slot:label class="font-bold">
+                            Question 1
+                        </x-slot:label>
+                        <x-slot:content class="">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </x-slot:content>
+                    </x-rapidez::accordion.mobile>
+                    <x-rapidez::accordion.mobile id="mobile-question-2" class="rounded border p-3">
+                        <x-slot:label class="font-bold">
+                            Question 2
+                        </x-slot:label>
+                        <x-slot:content class="">
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </x-slot:content>
+                    </x-rapidez::accordion.mobile>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <h3 class="font-bold text-md">With rotating chevron</h3>
+                    <x-rapidez::accordion class="border rounded p-4" id="rotating-accordion">
+                        <x-slot:label>
+                            <span>Click me to toggle</span>
+                            <svg class="w-5 h-5 group-has-[:checked]:rotate-180 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                            </svg>
+                        </x-slot:label>
+                        <x-slot:content>
+                            <div class="pt-4">
+                                This accordion demonstrates the rotating chevron using group-has-[:checked]:rotate-180 class.
+                                When you click the header, the chevron will rotate 180 degrees.
+                            </div>
+                        </x-slot:content>
+                    </x-rapidez::accordion>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h3 class="font-bold text-md">Navigation example with background</h3>
+                    <x-rapidez::accordion class="border rounded p-4" id="navigation-accordion">
+                        <x-slot:label>
+                            <div class="flex items-center justify-between w-full">
+                                <span>Shop Categories</span>
+                                <svg class="w-5 h-5 group-has-[:checked]:rotate-180 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </x-slot:label>
+                        <x-slot:content>
+                            <ul class="p-5 bg-red-500 text-white rounded-lg mt-2">
+                                <li><a href="/what-is-new.html" class="block hover:underline">What's New</a></li>
+                                <li><a href="/women.html" class="block hover:underline">Women</a></li>
+                                <li><a href="/men.html" class="block hover:underline">Men</a></li>
+                                <li><a href="/gear.html" class="block hover:underline">Gear</a></li>
+                                <li><a href="/training.html" class="block hover:underline">Training</a></li>
+                                <li><a href="/sale.html" class="block hover:underline">Sale</a></li>
+                            </ul>
+                        </x-slot:content>
+                    </x-rapidez::accordion>
+                </div>
+            </div>
         </div>
     </body>
 </html>

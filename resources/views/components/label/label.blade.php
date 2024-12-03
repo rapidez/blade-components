@@ -15,6 +15,6 @@ you can use the label like this:
 <x-rapidez::input.label class="after:hidden">Label</x-rapidez::input.label>
 ```
 --}}
-<span {{ $attributes->twMerge("font-medium text-inactive text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']") }}>
+<span {{ $attributes->twMerge("font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']") }}>
     {{ $slot }}
 </span>
