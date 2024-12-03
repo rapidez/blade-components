@@ -74,7 +74,7 @@ Nested slideovers:
     $closeId = $isInForm ? 'close-' . $id : $id;
 @endphp
 
-<x-tag :is="$tag">
+<x-rapidez::tag :is="$tag">
     <input id="{{ 'close-' . $id }}" class="hidden" type="reset">
     @if (!$hasParent)
         <input @checked($open) id="{{ $id }}" class="peer hidden slideover-checkbox" type="checkbox">
@@ -95,4 +95,4 @@ Nested slideovers:
             {{ $slot }}
         </div>
     </div>
-</x-tag>
+</x-rapidez::tag>
