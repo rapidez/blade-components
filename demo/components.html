@@ -38,7 +38,7 @@
                             muted: color('--border-muted', tailwind.colors.slate[100]),
                         },
                         background: {
-                            emphasis: color('--background-emphasis', tailwind.colors.slate[800]),
+                            emphasis: color('--background-emphasis', tailwind.colors.slate[200]),
                             DEFAULT: color('--background', tailwind.colors.slate[100]),
                             muted: color('--background-muted', tailwind.colors.slate[50]),
                         },
@@ -224,7 +224,7 @@
             <input  id="default-slideover" class="peer hidden slideover-checkbox" type="checkbox">
         <label
             for="default-slideover"
-            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-emphasis/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
         ></label>
         <div class="fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full -left-full peer-checked:left-0">
         <div class="slideover-header bg-primary py-5">
@@ -240,7 +240,7 @@
         </div>
     </div>
 </div>
-        <div class="slideover-wrapper flex flex-1 flex-col items-start overflow-y-auto bg-inactive-100">
+        <div class="slideover-wrapper flex flex-1 flex-col items-start overflow-y-auto">
             <div class="p-4">
                                 <p class="mb-4">This is an example of the slideover component.</p>
                                 <p>You can put any content here!</p>
@@ -260,7 +260,7 @@
             <input  id="right-slideover" class="peer hidden slideover-checkbox" type="checkbox">
         <label
             for="right-slideover"
-            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-emphasis/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
         ></label>
         <div class="fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full -right-full peer-checked:right-0">
         <div class="slideover-header bg-primary py-5">
@@ -276,7 +276,7 @@
         </div>
     </div>
 </div>
-        <div class="slideover-wrapper flex flex-1 flex-col items-start overflow-y-auto bg-inactive-100">
+        <div class="slideover-wrapper flex flex-1 flex-col items-start overflow-y-auto">
             <div class="p-4">
                                 <p class="mb-4">This slideover appears from the right side.</p>
                                 <p>It demonstrates the position property.</p>
@@ -295,7 +295,7 @@
             <input  id="mobile-slideover" class="peer hidden slideover-checkbox" type="checkbox">
         <label
             for="mobile-slideover"
-            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-emphasis/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
         ></label>
         <div class="fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full -left-full peer-checked:left-0 lg:contents [&amp;&gt;.slideover-wrapper]:lg:contents [&amp;&gt;.slideover-header]:lg:hidden">
         <div class="slideover-header bg-primary py-5">
@@ -311,7 +311,7 @@
         </div>
     </div>
 </div>
-        <div class="slideover-wrapper flex flex-1 flex-col items-start overflow-y-auto bg-inactive-100">
+        <div class="slideover-wrapper flex flex-1 flex-col items-start overflow-y-auto">
             <div class="max-lg:p-4">
                                 <p class="mb-4">This is a mobile-specific slideover that transforms on desktop.</p>
                                 <p>On mobile devices, it appears as a slideover.</p>
