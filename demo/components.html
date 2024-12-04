@@ -271,14 +271,122 @@
                 </table>
 </div>
 
-            <h2 class="font-bold text-lg">Slideover component</h2>
-            Soon...
-
-            <h2 class="font-bold text-lg">Accordion component</h2>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            <h2 class="text-lg font-bold mt-8">Slideover Component</h2>
+            <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
                 <div class="flex flex-col gap-3">
-                    <h3 class="font-bold text-md">Default</h3>
+                    <h3 class="text-md font-bold">Default</h3>
+                    <div>
+                        <label class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-primary text-primary-text" for="default-slideover">
+    Open Slideover
+</label>                        <div >
+    <input id="close-default-slideover" class="hidden" type="reset">
+            <input  id="default-slideover" class="peer hidden slideover-checkbox" type="checkbox">
+        <label
+            for="default-slideover"
+            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+        ></label>
+        <div class="fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full -left-full peer-checked:left-0">
+        <div class="slideover-header bg-primary py-5">
+    <div class="px-5">
+        <div class="relative flex items-center justify-center">
+                                        <span class="text-base max-w-full px-10 truncate font-semibold text-white antialiased">
+                    Example Slideover
+                </span>
+                        <label for="default-slideover" class="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer text-white">
+                <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+</svg>            </label>
+        </div>
+    </div>
+</div>
+        <div class="slideover-wrapper flex flex-1 flex-col items-start overflow-y-auto">
+            <div class="p-4">
+                                <p class="mb-4">This is an example of the slideover component.</p>
+                                <p>You can put any content here!</p>
+                            </div>
+        </div>
+    </div>
+</div>                    </div>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Right-positioned</h3>
+                    <div>
+                        <label class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-secondary text-secondary-text" for="right-slideover">
+    Open Right Slideover
+</label>                        <div >
+    <input id="close-right-slideover" class="hidden" type="reset">
+            <input  id="right-slideover" class="peer hidden slideover-checkbox" type="checkbox">
+        <label
+            for="right-slideover"
+            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+        ></label>
+        <div class="fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full -right-full peer-checked:right-0">
+        <div class="slideover-header bg-primary py-5">
+    <div class="px-5">
+        <div class="relative flex items-center justify-center">
+                                        <span class="text-base max-w-full px-10 truncate font-semibold text-white antialiased">
+                    Right Slideover
+                </span>
+                        <label for="right-slideover" class="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer text-white">
+                <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+</svg>            </label>
+        </div>
+    </div>
+</div>
+        <div class="slideover-wrapper flex flex-1 flex-col items-start overflow-y-auto">
+            <div class="p-4">
+                                <p class="mb-4">This slideover appears from the right side.</p>
+                                <p>It demonstrates the position property.</p>
+                            </div>
+        </div>
+    </div>
+</div>                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Mobile only</h3>
+                    <div>
+                        <label class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-transparent border text-default hover:border-emphasis lg:hidden" for="mobile-slideover">
+    Open Mobile Slideover
+</label>                        <div >
+    <input id="close-mobile-slideover" class="hidden" type="reset">
+            <input  id="mobile-slideover" class="peer hidden slideover-checkbox" type="checkbox">
+        <label
+            for="mobile-slideover"
+            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+        ></label>
+        <div class="fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full -left-full peer-checked:left-0 lg:contents [&amp;&gt;.slideover-wrapper]:lg:contents [&amp;&gt;.slideover-header]:lg:hidden">
+        <div class="slideover-header bg-primary py-5">
+    <div class="px-5">
+        <div class="relative flex items-center justify-center">
+                                        <span class="text-base max-w-full px-10 truncate font-semibold text-white antialiased">
+                    Mobile Slideover
+                </span>
+                        <label for="mobile-slideover" class="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer text-white">
+                <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+</svg>            </label>
+        </div>
+    </div>
+</div>
+        <div class="slideover-wrapper flex flex-1 flex-col items-start overflow-y-auto">
+            <div class="max-lg:p-4">
+                                <p class="mb-4">This is a mobile-specific slideover that transforms on desktop.</p>
+                                <p>On mobile devices, it appears as a slideover.</p>
+                                <p class="mt-4">On desktop screens (lg breakpoint and above), this content is directly embedded in the page instead of being in a slideover.</p>
+                            </div>
+        </div>
+    </div>
+</div>                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-lg font-bold">Accordion component</h2>
+
+            <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Default</h3>
                     <div class="flex flex-col group rounded border p-3">
     <input
         id="checkbox-question-1"

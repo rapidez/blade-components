@@ -11,6 +11,8 @@ This package includes some Tailwind CSS styled Blade components, the components 
 - [Accordion](https://github.com/rapidez/blade-components/blob/master/resources/views/components/accordion/accordion.blade.php)
 - [Buttons](#buttons)
 - [Prose](https://github.com/rapidez/blade-components/blob/master/resources/views/components/prose/prose.blade.php)
+- [Slideover](https://github.com/rapidez/blade-components/blob/master/resources/views/components/slideover/slideover.blade.php)
+- [Slideover (mobile only)](https://github.com/rapidez/blade-components/blob/master/resources/views/components/slideover/mobile.blade.php)
 
 The idea with these components is to have a good starting point and centralized styling. Most of the components use a [Anonymous Index](https://laravel.com/docs/master/blade#anonymous-index-components), this way you have a default and variants can be added next to it. We're using the (currently undocumented) [component name guessing](https://github.com/laravel/framework/pull/52669) here.
 
@@ -141,6 +143,24 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
         Accordion content goes here
     </x-slot:content>
 </x-rapidez::accordion>
+```
+
+#### Slideover
+
+```blade
+<label for="my-slideover">
+    Open Slideover
+</label>
+
+<x-rapidez::slideover id="my-slideover" title="Example Slideover">
+    Your slideover content goes here
+</x-rapidez::slideover>
+```
+
+Make sure to add this class to your body tag to prevent scrolling when the slideover is open:
+
+```html
+<body class="has-[.slideover-checkbox:checked]:overflow-hidden">
 ```
 
 #### Tag

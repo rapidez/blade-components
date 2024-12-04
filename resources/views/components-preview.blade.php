@@ -244,19 +244,64 @@
                 </table>
             </x-rapidez::prose>
 
-            <h2 class="font-bold text-lg">Slideover component</h2>
-            Soon...
-
-            <h2 class="font-bold text-lg">Accordion component</h2>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            <h2 class="text-lg font-bold mt-8">Slideover Component</h2>
+            <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
                 <div class="flex flex-col gap-3">
-                    <h3 class="font-bold text-md">Default</h3>
+                    <h3 class="text-md font-bold">Default</h3>
+                    <div>
+                        <x-rapidez::button.primary for="default-slideover">
+                            Open Slideover
+                        </x-rapidez::button.primary>
+                        <x-rapidez::slideover id="default-slideover" title="Example Slideover">
+                            <div class="p-4">
+                                <p class="mb-4">This is an example of the slideover component.</p>
+                                <p>You can put any content here!</p>
+                            </div>
+                        </x-rapidez::slideover>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Right-positioned</h3>
+                    <div>
+                        <x-rapidez::button.secondary for="right-slideover">
+                            Open Right Slideover
+                        </x-rapidez::button.secondary>
+                        <x-rapidez::slideover id="right-slideover" position="right" title="Right Slideover">
+                            <div class="p-4">
+                                <p class="mb-4">This slideover appears from the right side.</p>
+                                <p>It demonstrates the position property.</p>
+                            </div>
+                        </x-rapidez::slideover>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Mobile only</h3>
+                    <div>
+                        <x-rapidez::button.outline for="mobile-slideover" class="lg:hidden">
+                            Open Mobile Slideover
+                        </x-rapidez::button.outline>
+                        <x-rapidez::slideover.mobile id="mobile-slideover" title="Mobile Slideover">
+                            <div class="max-lg:p-4">
+                                <p class="mb-4">This is a mobile-specific slideover that transforms on desktop.</p>
+                                <p>On mobile devices, it appears as a slideover.</p>
+                                <p class="mt-4">On desktop screens (lg breakpoint and above), this content is directly embedded in the page instead of being in a slideover.</p>
+                            </div>
+                        </x-rapidez::slideover.mobile>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-lg font-bold">Accordion component</h2>
+
+            <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Default</h3>
                     <x-rapidez::accordion id="checkbox-question-1" class="rounded border p-3">
                         <x-slot:label class="font-bold">
                             Question 1
                         </x-slot:label>
-                        <x-slot:content class="">
+                        <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
@@ -264,7 +309,7 @@
                         <x-slot:label class="font-bold">
                             Question 2
                         </x-slot:label>
-                        <x-slot:content class="">
+                        <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
