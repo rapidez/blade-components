@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.1.0...1.1.0)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.2.0...1.2.0)
+## [1.2.0](https://github.com/rapidez/blade-components/releases/tag/1.2.0) - 2024-12-04
+
+### Added
+
+- Slideover component (#10)
+
 ## [1.1.0](https://github.com/rapidez/blade-components/releases/tag/1.1.0) - 2024-12-03
 
 ### Added
