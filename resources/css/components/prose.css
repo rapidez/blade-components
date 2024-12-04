@@ -1,0 +1,5 @@
+.prose-custom {
+    @apply prose font-sans text text-pretty max-w-none
+    prose-headings:text prose-a:text-primary prose-strong:text prose-blockquote:text
+    prose-a:prose-headings:no-underline prose-a:prose-headings:text prose-th:text-left;
+}

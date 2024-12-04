@@ -3,7 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+        <style type="text/tailwindcss">
+            {{ file_get_contents(base_path('../../../../resources/css/components/prose.css')) }}
+        </style>
 
         <title>Rapidez Blade Components Preview</title>
 
@@ -11,6 +15,7 @@
         function color(variable, fallback) {
             return 'color-mix(in srgb, var(' + variable + ', ' + fallback + ') calc(100% * <alpha-value>), transparent)'
         }
+
         tailwind.config = {
             theme: {
                 extend: {
@@ -188,6 +193,56 @@
                     </div>
                 </div>
             </div>
+
+            <h2 class="font-bold text-lg">Prose component</h2>
+            <x-rapidez::prose>
+                <h1>Wayne Enterprises</h1>
+                <h2>Wayne Foundation</h2>
+                <h3>Bat Bunker</h3>
+                <h4>Batcave</h4>
+                <p>
+                    <strong>Wayne Enterprises, Inc.</strong>, also known as <strong>WayneCorp</strong> and <strong>Wayne Industries</strong>, is a wealthy fictional company appearing in American comic books published by DC Comics, commonly in association with the superhero <a href="https://en.wikipedia.org/wiki/Batman">Batman</a>. Wayne Enterprises is a large, growing multinational company.
+                </p>
+                <ul>
+                    <li>Robert Pattinson</li>
+                    <li>Ben Affleck</li>
+                    <li>Christian Bale</li>
+                </ul>
+                <ol>
+                    <li>Christian Bale</li>
+                    <li>Ben Affleck</li>
+                    <li>Robert Pattinson</li>
+                </ol>
+                <blockquote>
+                    I am vengeance, I am the night, I am Batman.
+                </blockquote>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Movie</th>
+                            <th>Score</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Batman Begins</td>
+                            <td>8.2</td>
+                            <td>2005</td>
+                        </tr>
+                        <tr>
+                            <td>The Dark Knight</td>
+                            <td>9.0</td>
+                            <td>2008</td>
+                        </tr>
+                        <tr>
+                            <td>The Dark Knight Rises</td>
+                            <td>8.4</td>
+                            <td>2012</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </x-rapidez::prose>
 
             <h2 class="text-lg font-bold mt-8">Slideover Component</h2>
             <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
