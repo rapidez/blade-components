@@ -38,7 +38,7 @@
                             muted: color('--border-muted', tailwind.colors.slate[100]),
                         },
                         background: {
-                            emphasis: color('--background-emphasis', tailwind.colors.slate[800]),
+                            emphasis: color('--background-emphasis', tailwind.colors.slate[200]),
                             DEFAULT: color('--background', tailwind.colors.slate[100]),
                             muted: color('--background-muted', tailwind.colors.slate[50]),
                         },

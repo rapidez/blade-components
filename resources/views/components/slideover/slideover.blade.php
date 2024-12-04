@@ -80,7 +80,7 @@ Nested slideovers:
         <input @checked($open) id="{{ $id }}" class="peer hidden slideover-checkbox" type="checkbox">
         <label
             for="{{ $closeId }}"
-            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-emphasis/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
         ></label>
     @else
         <input @checked($open) id="{{ $id }}" class="peer hidden" type="checkbox">
@@ -91,7 +91,7 @@ Nested slideovers:
         '-left-full peer-checked:left-0' => $position === 'left',
     ]) }}>
         @include('rapidez::components.slideover.partials.header')
-        <div class="slideover-wrapper flex flex-1 flex-col items-start overflow-y-auto bg-inactive-100">
+        <div class="slideover-wrapper flex flex-1 flex-col items-start overflow-y-auto">
             {{ $slot }}
         </div>
     </div>
