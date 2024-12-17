@@ -17,7 +17,7 @@ No-js slideover component by making use of checkboxes and form reset logic for n
 ## Body Class
 Add this class to prevent scrolling when slideover is open:
 ```html
-<body class="has-[.slideover-checkbox:checked]:overflow-hidden">
+<body class="has-[.prevent-scroll:checked]:overflow-hidden">
 ```
 
 ## Nesting Slideovers
@@ -77,7 +77,7 @@ Nested slideovers:
 <x-rapidez::tag :is="$tag">
     <input id="{{ 'close-' . $id }}" class="hidden" type="reset">
     @if (!$hasParent)
-        <input @checked($open) id="{{ $id }}" class="peer hidden slideover-checkbox" type="checkbox">
+        <input @checked($open) id="{{ $id }}" class="peer hidden prevent-scroll" type="checkbox">
         <label
             for="{{ $closeId }}"
             class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
