@@ -200,22 +200,22 @@
 
             <h2 class="font-bold text-lg">Button components</h2>
             <div class="grid grid-cols-5 gap-5">
-                <button class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed">
+                <button class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed">
     Button
-</button>                <button class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-primary text-primary-text">
+</button>                <button class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-primary text-primary-text border-b border-b-black/15">
     Primary
-</button>                <button class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-secondary text-secondary-text">
+</button>                <button class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-secondary text-secondary-text border-b border-b-black/15">
     Secondary
-</button>                <button class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-transparent border text-default hover:border-emphasis">
+</button>                <button class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-transparent border text-default hover:border-emphasis">
     Outline
-</button>                <button class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-conversion text-conversion-text">
+</button>                <button class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-conversion text-conversion-text border-b border-b-black/15">
     Conversion
 </button>                <div class="flex flex-col gap-2">
                     <strong>Slider:</strong>
                     <div class="flex items-center gap-2">
-                        <button class="relative text transition bg text-base font-medium min-h-12 hover:bg-opacity-80 border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed inline-flex bg-white p-0 rounded-full size-14 items-center justify-center shadow text-default border">
+                        <button class="relative text transition bg text-base font-medium min-h-12 hover:bg-opacity-80 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed inline-flex bg-white p-0 rounded-full size-14 items-center justify-center shadow text-default border">
     &lt;
-</button>                        <button class="relative text transition bg text-base font-medium min-h-12 hover:bg-opacity-80 border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed inline-flex bg-white p-0 rounded-full size-14 items-center justify-center shadow text-default border">
+</button>                        <button class="relative text transition bg text-base font-medium min-h-12 hover:bg-opacity-80 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed inline-flex bg-white p-0 rounded-full size-14 items-center justify-center shadow text-default border">
     &gt;
 </button>                    </div>
                 </div>
@@ -276,11 +276,11 @@
                 <div class="flex flex-col gap-3">
                     <h3 class="text-md font-bold">Default</h3>
                     <div>
-                        <label class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-primary text-primary-text" for="default-slideover">
+                        <label class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-primary text-primary-text border-b border-b-black/15" for="default-slideover">
     Open Slideover
 </label>                        <div >
     <input id="close-default-slideover" class="hidden" type="reset">
-            <input  id="default-slideover" class="peer hidden slideover-checkbox" type="checkbox">
+            <input  id="default-slideover" class="peer hidden prevent-scroll" type="checkbox">
         <label
             for="default-slideover"
             class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
@@ -312,11 +312,11 @@
                 <div class="flex flex-col gap-3">
                     <h3 class="text-md font-bold">Right-positioned</h3>
                     <div>
-                        <label class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-secondary text-secondary-text" for="right-slideover">
+                        <label class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-secondary text-secondary-text border-b border-b-black/15" for="right-slideover">
     Open Right Slideover
 </label>                        <div >
     <input id="close-right-slideover" class="hidden" type="reset">
-            <input  id="right-slideover" class="peer hidden slideover-checkbox" type="checkbox">
+            <input  id="right-slideover" class="peer hidden prevent-scroll" type="checkbox">
         <label
             for="right-slideover"
             class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
@@ -347,11 +347,11 @@
                 <div class="flex flex-col gap-3">
                     <h3 class="text-md font-bold">Mobile only</h3>
                     <div>
-                        <label class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-transparent border text-default hover:border-emphasis lg:hidden" for="mobile-slideover">
+                        <label class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-transparent border text-default hover:border-emphasis lg:hidden" for="mobile-slideover">
     Open Mobile Slideover
 </label>                        <div >
     <input id="close-mobile-slideover" class="hidden" type="reset">
-            <input  id="mobile-slideover" class="peer hidden slideover-checkbox" type="checkbox">
+            <input  id="mobile-slideover" class="peer hidden prevent-scroll" type="checkbox">
         <label
             for="mobile-slideover"
             class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
