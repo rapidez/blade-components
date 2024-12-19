@@ -7,6 +7,6 @@ Example:
 <x-rapidez::button>Something</x-rapidez::button>
 ```
 --}}
-<x-rapidez::button.base {{ $attributes->twMerge('relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed') }}>
+<x-rapidez::button.base {{ $attributes->twMerge('relative inline-flex items-center justify-center transition font-medium rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5') }}>
     {{ $slot }}
 </x-rapidez::button.base>
