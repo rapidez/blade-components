@@ -17,7 +17,7 @@ No-js slideover component by making use of checkboxes and form reset logic for n
 ## Body Class
 Add this class to prevent scrolling when slideover is open:
 ```html
-<body class="has-[.prevent-scroll:checked]:overflow-hidden">
+<body class="has-[.prevent-scroll:checked]:overflow-clip">
 ```
 
 ## Nesting Slideovers
