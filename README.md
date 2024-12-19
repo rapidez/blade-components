@@ -160,7 +160,7 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
 Make sure to add this class to your body tag to prevent scrolling when the slideover is open:
 
 ```html
-<body class="has-[.slideover-checkbox:checked]:overflow-hidden">
+<body class="has-[.prevent-scroll:checked]:overflow-clip">
 ```
 
 #### Tag
