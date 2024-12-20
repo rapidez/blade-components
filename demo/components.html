@@ -43,6 +43,23 @@
                             muted: color('--background-muted', tailwind.colors.slate[50]),
                         },
                     },
+                    zIndex: {
+                        'header': '100',
+                        'header-autocomplete-overlay': '10',
+                        'header-autocomplete': '20',
+                        'header-dropdown': '30',
+                        'header-minicart': '30',
+                        'header-autocomplete-button': '30',
+
+                        'notifications': '110',
+
+                        'slideover': '120',
+                        'slideover-overlay': '10',
+                        'slideover-sidebar': '20',
+
+                        'popup': '130',
+                        'popup-actions': '10',
+                    },
                     textColor: (theme) => theme('colors.foreground'),
                     borderColor: (theme) => ({
                         default: theme('colors.border'),
@@ -54,7 +71,7 @@
         }
         </script>
     </head>
-    <body>
+    <body class="has-[.prevent-scroll:checked]:overflow-clip">
         <div class="flex flex-col container mx-auto my-20 gap-5 px-5">
             <h1 class="font-bold text-xl">Rapidez Blade Components preview</h1>
 
