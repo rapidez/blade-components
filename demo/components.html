@@ -51,6 +51,7 @@
                             DEFAULT: color('--background', tailwind.colors.slate[100]),
                             muted: color('--background-muted', tailwind.colors.slate[50]),
                         },
+                        overlay: color('--overlay', 'rgba(0, 0, 0, 0.4)'),
                     },
                     textColor: (theme) => theme('colors.foreground'),
                     borderColor: (theme) => ({
@@ -283,7 +284,7 @@
             <input  id="default-slideover" class="peer hidden slideover-checkbox" type="checkbox">
         <label
             for="default-slideover"
-            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-overlay opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
         ></label>
         <div class="fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full -left-full peer-checked:left-0">
         <div class="slideover-header bg-primary py-5">
@@ -319,7 +320,7 @@
             <input  id="right-slideover" class="peer hidden slideover-checkbox" type="checkbox">
         <label
             for="right-slideover"
-            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-overlay opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
         ></label>
         <div class="fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full -right-full peer-checked:right-0">
         <div class="slideover-header bg-primary py-5">
@@ -354,7 +355,7 @@
             <input  id="mobile-slideover" class="peer hidden slideover-checkbox" type="checkbox">
         <label
             for="mobile-slideover"
-            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-overlay opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
         ></label>
         <div class="fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full -left-full peer-checked:left-0 lg:contents [&amp;&gt;.slideover-wrapper]:lg:contents [&amp;&gt;.slideover-header]:lg:hidden">
         <div class="slideover-header bg-primary py-5">
