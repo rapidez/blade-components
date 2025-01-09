@@ -396,6 +396,28 @@
                     </x-rapidez::accordion>
                 </div>
             </div>
+
+            <h2 class="text-lg font-bold">Read more component</h2>
+            <p>Resize the window to see button show and hide.</p>
+
+            <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Long text</h3>
+
+                    <x-rapidez::readmore>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates.
+                    </x-rapidez::readmore>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Short text</h3>
+
+                    <x-rapidez::readmore>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates.
+                    </x-rapidez::readmore>
+                </div>
+            </div>
         </div>
+        @stack('foot')
     </body>
 </html>

@@ -1,13 +1,14 @@
 {{--
 Read more/less component using the Tailwind CSS `peer` utility. Only used JS for checking if content overflows line-clamp container.
+
 ## Notes
-- `Clamping`      The default of line-clamp-5 is used.
-- `Buttons`       You can't use <button tags inside the slots because it's wrapped by a <label. Simply use a <span tag.
-- `Invisible`     The read more/less buttons are shown/hidden with visible/invisible property. This prevents layout shifting
+- **Clamping** The default of line-clamp-5 is used.
+- **Buttons** You can't use <button tags inside the slots because it's wrapped by a <label. Simply use a <span tag.
+- **Invisible** The read more/less buttons are shown/hidden with visible/invisible property. This prevents layout shifting
 
 ## Slots
-- `more`          Change the clickable element that reveals the content.
-- `less`          Change the clickable element that collapses the content.
+- `more` Change the clickable element that reveals the content.
+- `less` Change the clickable element that collapses the content.
 
 ## Example
 ```
@@ -57,12 +58,19 @@ Read more/less component using the Tailwind CSS `peer` utility. Only used JS for
     </label>
 </div>
 
+@pushOnce('foot')
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.read-more-component').forEach(container => {
-            const content = container.querySelector('.content');
-            const label = container.querySelector('label');
-            label.classList.toggle('invisible', content.scrollHeight <= content.clientHeight);
-        });
+function checkReadMore() {
+    document.querySelectorAll('.read-more-component').forEach(container => {
+        const content = container.querySelector('.content');
+        const label = container.querySelector('label');
+        label.classList.toggle('invisible', content.scrollHeight <= content.clientHeight);
     });
+}
+
+// TODO: Maybe add some debouncing while resizing?
+window.addEventListener('resize', checkReadMore)
+window.addEventListener('load', checkReadMore)
+document.addEventListener('turbo:load', checkReadMore)
 </script>
+@endPushOnce
