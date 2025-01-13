@@ -34,6 +34,8 @@ The base button doesn't have any styling; here, we only use the `x-rapidez::tag`
 - [Outline](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/outline.blade.php)
 - [Conversion](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/conversion.blade.php)
 - [Slider](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/slider.blade.php)
+- [Muted](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/muted.blade.php)
+
 
 ## Installation
 
