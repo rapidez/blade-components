@@ -47,7 +47,7 @@
                             DEFAULT: color('--background', tailwind.colors.slate[100]),
                             muted: color('--background-muted', tailwind.colors.slate[50]),
                         },
-                        overlay: color('--overlay', 'rgba(0, 0, 0, 0.4)'),
+                        overlay: color('--overlay', tailwind.colors.slate[900]),
                     },
                     textColor: (theme) => theme('colors.foreground'),
                     borderColor: (theme) => ({
