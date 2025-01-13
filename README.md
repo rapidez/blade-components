@@ -65,8 +65,8 @@ colors: {
             muted: color('--foreground-muted', colors.slate[600]),
         },
         border: {
-            emphasis: color('--border-emphasis', colors.slate[500]),
-            DEFAULT: color('--border', colors.slate[200]),
+            emphasis: color('--border-emphasis', colors.slate[400]),
+            DEFAULT: color('--border', colors.slate[300]),
             muted: color('--border-muted', colors.slate[100]),
         },
         background: {
