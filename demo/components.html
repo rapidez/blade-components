@@ -3,7 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+        <style type="text/tailwindcss">
+            .prose-custom {
+    @apply prose font-sans text text-pretty max-w-none
+    prose-headings:text prose-a:text-primary prose-strong:text prose-blockquote:text
+    prose-a:prose-headings:no-underline prose-a:prose-headings:text prose-th:text-left;
+}
+        </style>
 
         <title>Rapidez Blade Components Preview</title>
 
@@ -11,6 +19,7 @@
         function color(variable, fallback) {
             return 'color-mix(in srgb, var(' + variable + ', ' + fallback + ') calc(100% * <alpha-value>), transparent)'
         }
+
         tailwind.config = {
             theme: {
                 extend: {
@@ -217,14 +226,172 @@
                 </div>
             </div>
 
-            <h2 class="font-bold text-lg">Slideover component</h2>
-            Soon...
+            <h2 class="font-bold text-lg">Prose component</h2>
+            <div class="prose-custom">
+    <h1>Wayne Enterprises</h1>
+                <h2>Wayne Foundation</h2>
+                <h3>Bat Bunker</h3>
+                <h4>Batcave</h4>
+                <p>
+                    <strong>Wayne Enterprises, Inc.</strong>, also known as <strong>WayneCorp</strong> and <strong>Wayne Industries</strong>, is a wealthy fictional company appearing in American comic books published by DC Comics, commonly in association with the superhero <a href="https://en.wikipedia.org/wiki/Batman">Batman</a>. Wayne Enterprises is a large, growing multinational company.
+                </p>
+                <ul>
+                    <li>Robert Pattinson</li>
+                    <li>Ben Affleck</li>
+                    <li>Christian Bale</li>
+                </ul>
+                <ol>
+                    <li>Christian Bale</li>
+                    <li>Ben Affleck</li>
+                    <li>Robert Pattinson</li>
+                </ol>
+                <blockquote>
+                    I am vengeance, I am the night, I am Batman.
+                </blockquote>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Movie</th>
+                            <th>Score</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Batman Begins</td>
+                            <td>8.2</td>
+                            <td>2005</td>
+                        </tr>
+                        <tr>
+                            <td>The Dark Knight</td>
+                            <td>9.0</td>
+                            <td>2008</td>
+                        </tr>
+                        <tr>
+                            <td>The Dark Knight Rises</td>
+                            <td>8.4</td>
+                            <td>2012</td>
+                        </tr>
+                    </tbody>
+                </table>
+</div>
 
-            <h2 class="font-bold text-lg">Accordion component</h2>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            <h2 class="text-lg font-bold mt-8">Slideover Component</h2>
+            <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
                 <div class="flex flex-col gap-3">
-                    <h3 class="font-bold text-md">Default</h3>
+                    <h3 class="text-md font-bold">Default</h3>
+                    <div>
+                        <label class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-primary text-primary-text" for="default-slideover">
+    Open Slideover
+</label>                        <div >
+    <input id="close-default-slideover" class="hidden" type="reset">
+            <input  id="default-slideover" class="peer hidden slideover-checkbox" type="checkbox">
+        <label
+            for="default-slideover"
+            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+        ></label>
+        <div class="fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full -left-full peer-checked:left-0">
+        <div class="slideover-header bg-primary py-5">
+    <div class="px-5">
+        <div class="relative flex items-center justify-center">
+                                        <span class="text-base max-w-full px-10 truncate font-semibold text-white antialiased">
+                    Example Slideover
+                </span>
+                        <label for="default-slideover" class="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer text-white">
+                <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+</svg>            </label>
+        </div>
+    </div>
+</div>
+        <div class="slideover-wrapper flex flex-1 flex-col items-start overflow-y-auto">
+            <div class="p-4">
+                                <p class="mb-4">This is an example of the slideover component.</p>
+                                <p>You can put any content here!</p>
+                            </div>
+        </div>
+    </div>
+</div>                    </div>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Right-positioned</h3>
+                    <div>
+                        <label class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-secondary text-secondary-text" for="right-slideover">
+    Open Right Slideover
+</label>                        <div >
+    <input id="close-right-slideover" class="hidden" type="reset">
+            <input  id="right-slideover" class="peer hidden slideover-checkbox" type="checkbox">
+        <label
+            for="right-slideover"
+            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+        ></label>
+        <div class="fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full -right-full peer-checked:right-0">
+        <div class="slideover-header bg-primary py-5">
+    <div class="px-5">
+        <div class="relative flex items-center justify-center">
+                                        <span class="text-base max-w-full px-10 truncate font-semibold text-white antialiased">
+                    Right Slideover
+                </span>
+                        <label for="right-slideover" class="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer text-white">
+                <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+</svg>            </label>
+        </div>
+    </div>
+</div>
+        <div class="slideover-wrapper flex flex-1 flex-col items-start overflow-y-auto">
+            <div class="p-4">
+                                <p class="mb-4">This slideover appears from the right side.</p>
+                                <p>It demonstrates the position property.</p>
+                            </div>
+        </div>
+    </div>
+</div>                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Mobile only</h3>
+                    <div>
+                        <label class="relative inline-flex items-center justify-center text transition bg text-base font-medium rounded min-h-12 py-1.5 px-5 hover:bg-opacity-80 border-b-black/15 disabled:text-muted disabled:bg-muted disabled:cursor-not-allowed bg-transparent border text-default hover:border-emphasis lg:hidden" for="mobile-slideover">
+    Open Mobile Slideover
+</label>                        <div >
+    <input id="close-mobile-slideover" class="hidden" type="reset">
+            <input  id="mobile-slideover" class="peer hidden slideover-checkbox" type="checkbox">
+        <label
+            for="mobile-slideover"
+            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+        ></label>
+        <div class="fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full -left-full peer-checked:left-0 lg:contents [&amp;&gt;.slideover-wrapper]:lg:contents [&amp;&gt;.slideover-header]:lg:hidden">
+        <div class="slideover-header bg-primary py-5">
+    <div class="px-5">
+        <div class="relative flex items-center justify-center">
+                                        <span class="text-base max-w-full px-10 truncate font-semibold text-white antialiased">
+                    Mobile Slideover
+                </span>
+                        <label for="mobile-slideover" class="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer text-white">
+                <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+</svg>            </label>
+        </div>
+    </div>
+</div>
+        <div class="slideover-wrapper flex flex-1 flex-col items-start overflow-y-auto">
+            <div class="max-lg:p-4">
+                                <p class="mb-4">This is a mobile-specific slideover that transforms on desktop.</p>
+                                <p>On mobile devices, it appears as a slideover.</p>
+                                <p class="mt-4">On desktop screens (lg breakpoint and above), this content is directly embedded in the page instead of being in a slideover.</p>
+                            </div>
+        </div>
+    </div>
+</div>                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-lg font-bold">Accordion component</h2>
+
+            <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Default</h3>
                     <div class="flex flex-col group rounded border p-3">
     <input
         id="checkbox-question-1"
@@ -414,6 +581,77 @@
 </div>
                 </div>
             </div>
+
+            <h2 class="text-lg font-bold">Read more component</h2>
+            <p>Resize the window to see button show and hide.</p>
+
+            <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Long text</h3>
+
+                    <div class="read-more-component group">
+    <div class="content line-clamp-5 group-has-[:checked]:line-clamp-none mb-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates.
+    </div>
+    <label class="invisible">
+        <input type="checkbox" class="hidden peer">
+        <span class="inline-flex peer-checked:hidden">
+                            <span class="hover:underline cursor-pointer flex items-center gap-1 text-primary">
+                    Read more                    <svg stroke-width="2" class="size-3.5 mt-px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
+</svg>                </span>
+                    </span>
+        <span class="hidden peer-checked:inline-flex">
+                            <span class="hover:underline cursor-pointer flex items-center gap-1 text-primary">
+                    Read less                    <svg stroke-width="2" class="size-3.5 mt-px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5"/>
+</svg>                </span>
+                    </span>
+    </label>
+</div>
+
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Short text</h3>
+
+                    <div class="read-more-component group">
+    <div class="content line-clamp-5 group-has-[:checked]:line-clamp-none mb-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates.
+    </div>
+    <label class="invisible">
+        <input type="checkbox" class="hidden peer">
+        <span class="inline-flex peer-checked:hidden">
+                            <span class="hover:underline cursor-pointer flex items-center gap-1 text-primary">
+                    Read more                    <svg stroke-width="2" class="size-3.5 mt-px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
+</svg>                </span>
+                    </span>
+        <span class="hidden peer-checked:inline-flex">
+                            <span class="hover:underline cursor-pointer flex items-center gap-1 text-primary">
+                    Read less                    <svg stroke-width="2" class="size-3.5 mt-px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5"/>
+</svg>                </span>
+                    </span>
+    </label>
+</div>
+
+                </div>
+            </div>
         </div>
+        <script>
+function checkReadMore() {
+    document.querySelectorAll('.read-more-component').forEach(container => {
+        const content = container.querySelector('.content');
+        const label = container.querySelector('label');
+        label.classList.toggle('invisible', content.scrollHeight <= content.clientHeight);
+    });
+}
+
+// TODO: Maybe add some debouncing while resizing?
+window.addEventListener('resize', checkReadMore)
+window.addEventListener('load', checkReadMore)
+document.addEventListener('turbo:load', checkReadMore)
+</script>
     </body>
 </html>

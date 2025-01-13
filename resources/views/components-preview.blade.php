@@ -3,7 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+        <style type="text/tailwindcss">
+            {{ file_get_contents(base_path('../../../../resources/css/components/prose.css')) }}
+        </style>
 
         <title>Rapidez Blade Components Preview</title>
 
@@ -11,6 +15,7 @@
         function color(variable, fallback) {
             return 'color-mix(in srgb, var(' + variable + ', ' + fallback + ') calc(100% * <alpha-value>), transparent)'
         }
+
         tailwind.config = {
             theme: {
                 extend: {
@@ -194,19 +199,114 @@
                 </div>
             </div>
 
-            <h2 class="font-bold text-lg">Slideover component</h2>
-            Soon...
+            <h2 class="font-bold text-lg">Prose component</h2>
+            <x-rapidez::prose>
+                <h1>Wayne Enterprises</h1>
+                <h2>Wayne Foundation</h2>
+                <h3>Bat Bunker</h3>
+                <h4>Batcave</h4>
+                <p>
+                    <strong>Wayne Enterprises, Inc.</strong>, also known as <strong>WayneCorp</strong> and <strong>Wayne Industries</strong>, is a wealthy fictional company appearing in American comic books published by DC Comics, commonly in association with the superhero <a href="https://en.wikipedia.org/wiki/Batman">Batman</a>. Wayne Enterprises is a large, growing multinational company.
+                </p>
+                <ul>
+                    <li>Robert Pattinson</li>
+                    <li>Ben Affleck</li>
+                    <li>Christian Bale</li>
+                </ul>
+                <ol>
+                    <li>Christian Bale</li>
+                    <li>Ben Affleck</li>
+                    <li>Robert Pattinson</li>
+                </ol>
+                <blockquote>
+                    I am vengeance, I am the night, I am Batman.
+                </blockquote>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Movie</th>
+                            <th>Score</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Batman Begins</td>
+                            <td>8.2</td>
+                            <td>2005</td>
+                        </tr>
+                        <tr>
+                            <td>The Dark Knight</td>
+                            <td>9.0</td>
+                            <td>2008</td>
+                        </tr>
+                        <tr>
+                            <td>The Dark Knight Rises</td>
+                            <td>8.4</td>
+                            <td>2012</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </x-rapidez::prose>
 
-            <h2 class="font-bold text-lg">Accordion component</h2>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            <h2 class="text-lg font-bold mt-8">Slideover Component</h2>
+            <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
                 <div class="flex flex-col gap-3">
-                    <h3 class="font-bold text-md">Default</h3>
+                    <h3 class="text-md font-bold">Default</h3>
+                    <div>
+                        <x-rapidez::button.primary for="default-slideover">
+                            Open Slideover
+                        </x-rapidez::button.primary>
+                        <x-rapidez::slideover id="default-slideover" title="Example Slideover">
+                            <div class="p-4">
+                                <p class="mb-4">This is an example of the slideover component.</p>
+                                <p>You can put any content here!</p>
+                            </div>
+                        </x-rapidez::slideover>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Right-positioned</h3>
+                    <div>
+                        <x-rapidez::button.secondary for="right-slideover">
+                            Open Right Slideover
+                        </x-rapidez::button.secondary>
+                        <x-rapidez::slideover id="right-slideover" position="right" title="Right Slideover">
+                            <div class="p-4">
+                                <p class="mb-4">This slideover appears from the right side.</p>
+                                <p>It demonstrates the position property.</p>
+                            </div>
+                        </x-rapidez::slideover>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Mobile only</h3>
+                    <div>
+                        <x-rapidez::button.outline for="mobile-slideover" class="lg:hidden">
+                            Open Mobile Slideover
+                        </x-rapidez::button.outline>
+                        <x-rapidez::slideover.mobile id="mobile-slideover" title="Mobile Slideover">
+                            <div class="max-lg:p-4">
+                                <p class="mb-4">This is a mobile-specific slideover that transforms on desktop.</p>
+                                <p>On mobile devices, it appears as a slideover.</p>
+                                <p class="mt-4">On desktop screens (lg breakpoint and above), this content is directly embedded in the page instead of being in a slideover.</p>
+                            </div>
+                        </x-rapidez::slideover.mobile>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-lg font-bold">Accordion component</h2>
+
+            <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Default</h3>
                     <x-rapidez::accordion id="checkbox-question-1" class="rounded border p-3">
                         <x-slot:label class="font-bold">
                             Question 1
                         </x-slot:label>
-                        <x-slot:content class="">
+                        <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
@@ -214,7 +314,7 @@
                         <x-slot:label class="font-bold">
                             Question 2
                         </x-slot:label>
-                        <x-slot:content class="">
+                        <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
@@ -301,6 +401,28 @@
                     </x-rapidez::accordion>
                 </div>
             </div>
+
+            <h2 class="text-lg font-bold">Read more component</h2>
+            <p>Resize the window to see button show and hide.</p>
+
+            <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Long text</h3>
+
+                    <x-rapidez::readmore>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates.
+                    </x-rapidez::readmore>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Short text</h3>
+
+                    <x-rapidez::readmore>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates.
+                    </x-rapidez::readmore>
+                </div>
+            </div>
         </div>
+        @stack('foot')
     </body>
 </html>

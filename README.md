@@ -10,6 +10,10 @@ This package includes some Tailwind CSS styled Blade components, the components 
 - [Label](https://github.com/rapidez/blade-components/blob/master/resources/views/components/label/label.blade.php)
 - [Accordion](https://github.com/rapidez/blade-components/blob/master/resources/views/components/accordion/accordion.blade.php)
 - [Buttons](#buttons)
+- [Prose](https://github.com/rapidez/blade-components/blob/master/resources/views/components/prose/prose.blade.php)
+- [Slideover](https://github.com/rapidez/blade-components/blob/master/resources/views/components/slideover/slideover.blade.php)
+- [Slideover (mobile only)](https://github.com/rapidez/blade-components/blob/master/resources/views/components/slideover/mobile.blade.php)
+- [Readmore](https://github.com/rapidez/blade-components/blob/master/resources/views/components/readmore/readmore.blade.php)
 
 The idea with these components is to have a good starting point and centralized styling. Most of the components use a [Anonymous Index](https://laravel.com/docs/master/blade#anonymous-index-components), this way you have a default and variants can be added next to it. We're using the (currently undocumented) [component name guessing](https://github.com/laravel/framework/pull/52669) here.
 
@@ -99,6 +103,18 @@ If you like to change the components you can publish the views with:
 php artisan vendor:publish --tag=rapidez-blade-components-views
 ```
 
+### Prose component
+
+If you're going to use the Prose component and you're not using Rapidez; you've to import the CSS file manually:
+```
+@import '../../vendor/rapidez/blade-components/resources/css/package.css';`
+```
+With Rapidez this is already imported from the [app.js](https://github.com/rapidez/rapidez/blob/master/resources/js/app.js).
+
+### Read more component
+
+The [readmore component](https://github.com/rapidez/blade-components/blob/master/resources/views/components/readmore/readmore.blade.php) includes some Javascript, we're using a [Blade Stack](https://laravel.com/docs/master/blade#stacks) named `foot` for that. Make sure you've an `@stack('foot')` before your closing `</body>` tag. Within Rapidez this is already present within the [`layouts/app.blade.php`](https://github.com/rapidez/core/blob/master/resources/views/layouts/app.blade.php).
+
 ## Usage
 
 Just like any other Blade component, check out the [Laravel Blade docs](https://laravel.com/docs/master/blade) and the examples within the components code linked above. All components are prefixed with `x-rapidez::` to avoid any conflicts with existing Blade components within your project.
@@ -120,6 +136,14 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
 <x-rapidez::input.checkbox name="something">
     @lang('Translatable label')
 </x-rapidez::input.checkbox>
+```
+
+#### Prose
+
+```blade
+<x-rapidez::prose>
+    Content
+</x-rapidez::prose>
 ```
 
 #### Accordion
@@ -148,6 +172,24 @@ Make sure to add this class to your body tag to prevent scrolling when the slide
 <body class="has-[.prevent-scroll:checked]:overflow-clip">
 ```
 
+#### Slideover
+
+```blade
+<label for="my-slideover">
+    Open Slideover
+</label>
+
+<x-rapidez::slideover id="my-slideover" title="Example Slideover">
+    Your slideover content goes here
+</x-rapidez::slideover>
+```
+
+Make sure to add this class to your body tag to prevent scrolling when the slideover is open:
+
+```html
+<body class="has-[.slideover-checkbox:checked]:overflow-hidden">
+```
+
 #### Tag
 
 It is a Blade version of a [dynamic Vue component](https://vuejs.org/guide/essentials/component-basics.html#dynamic-components)
@@ -166,6 +208,13 @@ which will result in
 <span class="font-bold">
     Something
 </span>
+```
+
+## Changing components
+
+If you like to change the components you can publish the views with:
+```
+php artisan vendor:publish --tag=rapidez-blade-components-views
 ```
 
 ## Preview
