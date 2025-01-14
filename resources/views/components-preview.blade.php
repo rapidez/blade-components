@@ -185,7 +185,7 @@
 
             <h2 class="font-bold text-lg">Button components</h2>
             <div class="grid grid-cols-5 gap-5">
-                <x-rapidez::button.muted>Muted</x-rapidez::button.muted>
+                <x-rapidez::button>Default</x-rapidez::button>
                 <x-rapidez::button.primary>Primary</x-rapidez::button.primary>
                 <x-rapidez::button.secondary>Secondary</x-rapidez::button.secondary>
                 <x-rapidez::button.outline>Outline</x-rapidez::button.outline>

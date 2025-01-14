@@ -7,6 +7,6 @@ Example:
 <x-rapidez::button.conversion>Something</x-rapidez::button.conversion>
 ```
 --}}
-<x-rapidez::button {{ $attributes->twMerge('bg-conversion hover:bg-opacity-80 text-conversion-text border-b border-b-black/20') }}>
+<x-rapidez::button.base {{ $attributes->twMerge('bg-conversion hover:bg-opacity-80 text-conversion-text border-b border-b-black/20') }}>
     {{ $slot }}
-</x-rapidez::button>
+</x-rapidez::button.base>

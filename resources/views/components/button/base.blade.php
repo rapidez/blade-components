@@ -1,30 +1,12 @@
 {{--
-This is the base for all the buttons. In here we don't need classes.
-If you want to change styling for buttons go to the button/button.
-- `href` attribute results in an `<a>`
-- `for` attribute results in a `<label>`
-- Fallback/default is `<button>`
-Examples:
-
-```
-<x-rapidez::button href="something">Something</x-rapidez::button>
-```
-
-```
-<x-rapidez::button for="something">Something</x-rapidez::button>
-```
+This is the default button if you use the example you get this.
+It is not recommended to use this button. Make use of the other buttons. ie: `button/primary`
+Example:
 
 ```
 <x-rapidez::button>Something</x-rapidez::button>
 ```
 --}}
-@props(['tag' => 'button'])
-
-@php
-    $tag = $attributes->hasAny('href', ':href', 'v-bind:href', 'x-bind:href') ? 'a' : $tag;
-    $tag = $attributes->has('for') ? 'label' : $tag;
-@endphp
-
-<x-rapidez::tag is="{{ $tag }}" {{ $attributes }}>
+<x-rapidez::button.tag {{ $attributes->twMerge('inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5') }}>
     {{ $slot }}
-</x-rapidez::tag>
+</x-rapidez::button.tag>
