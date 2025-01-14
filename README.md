@@ -174,24 +174,6 @@ Make sure to add this class to your body tag to prevent scrolling when the slide
 <body class="has-[.prevent-scroll:checked]:overflow-clip">
 ```
 
-#### Slideover
-
-```blade
-<label for="my-slideover">
-    Open Slideover
-</label>
-
-<x-rapidez::slideover id="my-slideover" title="Example Slideover">
-    Your slideover content goes here
-</x-rapidez::slideover>
-```
-
-Make sure to add this class to your body tag to prevent scrolling when the slideover is open:
-
-```html
-<body class="has-[.prevent-scroll:checked]:overflow-clip">
-```
-
 #### Tag
 
 It is a Blade version of a [dynamic Vue component](https://vuejs.org/guide/essentials/component-basics.html#dynamic-components)
