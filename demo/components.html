@@ -52,6 +52,11 @@
                             muted: color('--background-muted', tailwind.colors.slate[50]),
                         },
                     },
+                    zIndex: {
+                        'slideover': '120',
+                        'slideover-overlay': '10',
+                        'slideover-sidebar': '20',
+                    },
                     textColor: (theme) => theme('colors.foreground'),
                     borderColor: (theme) => ({
                         default: theme('colors.border'),
@@ -63,7 +68,7 @@
         }
         </script>
     </head>
-    <body>
+    <body class="has-[.prevent-scroll:checked]:overflow-clip">
         <div class="flex flex-col container mx-auto my-20 gap-5 px-5">
             <h1 class="font-bold text-xl">Rapidez Blade Components preview</h1>
 
@@ -280,12 +285,12 @@
     Open Slideover
 </label>                        <div >
     <input id="close-default-slideover" class="hidden" type="reset">
-            <input  id="default-slideover" class="peer hidden slideover-checkbox" type="checkbox">
+            <input  id="default-slideover" class="peer hidden prevent-scroll" type="checkbox">
         <label
             for="default-slideover"
-            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+            class="pointer-events-none fixed inset-0 z-slideover-overlay cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
         ></label>
-        <div class="fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full -left-full peer-checked:left-0">
+        <div class="fixed inset-y-0 transition-all bg-white z-slideover-sidebar flex flex-col max-w-md w-full -left-full peer-checked:left-0">
         <div class="slideover-header bg-primary py-5">
     <div class="px-5">
         <div class="relative flex items-center justify-center">
@@ -316,12 +321,12 @@
     Open Right Slideover
 </label>                        <div >
     <input id="close-right-slideover" class="hidden" type="reset">
-            <input  id="right-slideover" class="peer hidden slideover-checkbox" type="checkbox">
+            <input  id="right-slideover" class="peer hidden prevent-scroll" type="checkbox">
         <label
             for="right-slideover"
-            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+            class="pointer-events-none fixed inset-0 z-slideover-overlay cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
         ></label>
-        <div class="fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full -right-full peer-checked:right-0">
+        <div class="fixed inset-y-0 transition-all bg-white z-slideover-sidebar flex flex-col max-w-md w-full -right-full peer-checked:right-0">
         <div class="slideover-header bg-primary py-5">
     <div class="px-5">
         <div class="relative flex items-center justify-center">
@@ -351,12 +356,12 @@
     Open Mobile Slideover
 </label>                        <div >
     <input id="close-mobile-slideover" class="hidden" type="reset">
-            <input  id="mobile-slideover" class="peer hidden slideover-checkbox" type="checkbox">
+            <input  id="mobile-slideover" class="peer hidden prevent-scroll" type="checkbox">
         <label
             for="mobile-slideover"
-            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+            class="pointer-events-none fixed inset-0 z-slideover-overlay cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
         ></label>
-        <div class="fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full -left-full peer-checked:left-0 lg:contents [&amp;&gt;.slideover-wrapper]:lg:contents [&amp;&gt;.slideover-header]:lg:hidden">
+        <div class="fixed inset-y-0 transition-all bg-white z-slideover-sidebar flex flex-col max-w-md w-full -left-full peer-checked:left-0 lg:contents [&amp;&gt;.slideover-wrapper]:lg:contents [&amp;&gt;.slideover-header]:lg:hidden">
         <div class="slideover-header bg-primary py-5">
     <div class="px-5">
         <div class="relative flex items-center justify-center">

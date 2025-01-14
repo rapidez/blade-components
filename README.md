@@ -41,7 +41,7 @@ The base button doesn't have any styling; here, we only use the `x-rapidez::tag`
 composer require rapidez/blade-components
 ```
 
-Make sure these colors are present in your `tailwind.config.js` file:
+Make sure these colors and z-indexes are present in your `tailwind.config.js` file:
 ```js
 colors: {
     colors: {
@@ -73,6 +73,11 @@ colors: {
             muted: color('--background-muted', colors.slate[50]),
         },
     },
+    zIndex: {
+        'slideover': '120',
+        'slideover-overlay': '10',
+        'slideover-sidebar': '20',
+    },
     textColor: (theme) => theme('colors.foreground'),
     borderColor: (theme) => ({
         default: theme('colors.border'),
@@ -89,6 +94,13 @@ import colors from 'tailwindcss/colors'
 function color(variable, fallback) {
     return 'color-mix(in srgb, var(' + variable + ', ' + fallback + ') calc(100% * <alpha-value>), transparent)'
 }
+```
+
+### Views
+
+If you like to change the components you can publish the views with:
+```
+php artisan vendor:publish --tag=rapidez-blade-components-views
 ```
 
 ### Prose component
@@ -143,6 +155,21 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
         Accordion content goes here
     </x-slot:content>
 </x-rapidez::accordion>
+```
+
+#### Slideover
+```blade
+<label for="my-slideover">
+    Open Slideover
+</label>
+
+<x-rapidez::slideover id="my-slideover" title="Example Slideover">
+    Your slideover content goes here
+</x-rapidez::slideover>
+```
+Make sure to add this class to your body tag to prevent scrolling when the slideover is open:
+```html
+<body class="has-[.prevent-scroll:checked]:overflow-clip">
 ```
 
 #### Slideover
