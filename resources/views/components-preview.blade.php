@@ -42,6 +42,11 @@
                             DEFAULT: color('--border', tailwind.colors.slate[200]),
                             muted: color('--border-muted', tailwind.colors.slate[100]),
                         },
+                        shadow: {
+                            emphasis: color('--shadow-emphasis', tailwind.colors.slate[900]),
+                            DEFAULT: color('--shadow', tailwind.colors.slate[700]),
+                            muted: color('--shadow-muted', tailwind.colors.slate[500]),
+                        },
                         background: {
                             emphasis: color('--background-emphasis', tailwind.colors.slate[200]),
                             DEFAULT: color('--background', tailwind.colors.slate[100]),
@@ -59,6 +64,18 @@
                         ...theme('colors.border'),
                     }),
                     backgroundColor: (theme) => theme('colors.background'),
+                    ringColor: (theme) => ({
+                        default: theme('colors.border'),
+                        ...theme('colors.border'),
+                    }),
+                    outlineColor: (theme) => ({
+                        default: theme('colors.border'),
+                        ...theme('colors.border'),
+                    }),
+                    boxShadowColor: (theme) => ({
+                        default: theme('colors.shadow'),
+                        ...theme('colors.shadow'),
+                    }),
                 }
             }
         }
