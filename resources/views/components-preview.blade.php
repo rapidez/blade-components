@@ -48,6 +48,11 @@
                             muted: color('--background-muted', tailwind.colors.slate[50]),
                         },
                     },
+                    zIndex: {
+                        'slideover': '120',
+                        'slideover-overlay': '10',
+                        'slideover-sidebar': '20',
+                    },
                     textColor: (theme) => theme('colors.foreground'),
                     borderColor: (theme) => ({
                         default: theme('colors.border'),
@@ -59,7 +64,7 @@
         }
         </script>
     </head>
-    <body>
+    <body class="has-[.prevent-scroll:checked]:overflow-clip">
         <div class="flex flex-col container mx-auto my-20 gap-5 px-5">
             <h1 class="font-bold text-xl">Rapidez Blade Components preview</h1>
 

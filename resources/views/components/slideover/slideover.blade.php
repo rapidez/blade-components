@@ -80,13 +80,13 @@ Nested slideovers:
         <input @checked($open) id="{{ $id }}" class="peer hidden prevent-scroll" type="checkbox">
         <label
             for="{{ $closeId }}"
-            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+            class="pointer-events-none fixed inset-0 z-slideover-overlay cursor-pointer bg-black/40 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
         ></label>
     @else
         <input @checked($open) id="{{ $id }}" class="peer hidden" type="checkbox">
     @endif
     <div {{ $attributes->class([
-        'fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full',
+        'fixed inset-y-0 transition-all bg-white z-slideover-sidebar flex flex-col max-w-md w-full',
         '-right-full peer-checked:right-0' => $position === 'right',
         '-left-full peer-checked:left-0' => $position === 'left',
     ]) }}>
