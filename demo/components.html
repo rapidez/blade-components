@@ -37,7 +37,7 @@
                             text: color('--conversion-text', tailwind.colors.white),
                         },
                         foreground: {
-                            emphasis: color('--foreground-emphasis', colors.slate[900]),
+                            emphasis: color('--foreground-emphasis', tailwind.colors.slate[900]),
                             DEFAULT: color('--foreground', tailwind.colors.slate[800]),
                             muted: color('--foreground-muted', tailwind.colors.slate[600]),
                         },
@@ -68,6 +68,18 @@
                         ...theme('colors.border'),
                     }),
                     backgroundColor: (theme) => theme('colors.background'),
+                    ringColor: (theme) => ({
+                        default: theme('colors.border'),
+                        ...theme('colors.border'),
+                    }),
+                    outlineColor: (theme) => ({
+                        default: theme('colors.border'),
+                        ...theme('colors.border'),
+                    }),
+                    boxShadowColor: (theme) => ({
+                        default: theme('colors.shadow'),
+                        ...theme('colors.shadow'),
+                    }),
                 }
             }
         }
