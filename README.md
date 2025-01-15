@@ -28,13 +28,12 @@ The base button doesn't have any styling; here, we only use the `x-rapidez::tag`
 ![](.github/media/buttons.png)
 
 - [Base](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/base.blade.php)
-- [Button](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/button.blade.php)
+- [Default](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/button.blade.php)
 - [Primary](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/primary.blade.php)
 - [Secondary](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/secondary.blade.php)
 - [Outline](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/outline.blade.php)
 - [Conversion](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/conversion.blade.php)
 - [Slider](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/slider.blade.php)
-- [Muted](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/muted.blade.php)
 
 
 ## Installation
@@ -65,8 +64,8 @@ colors: {
             muted: color('--foreground-muted', colors.slate[600]),
         },
         border: {
-            emphasis: color('--border-emphasis', colors.slate[400]),
-            DEFAULT: color('--border', colors.slate[300]),
+            emphasis: color('--border-emphasis', colors.slate[500]),
+            DEFAULT: color('--border', colors.slate[200]),
             muted: color('--border-muted', colors.slate[100]),
         },
         background: {
