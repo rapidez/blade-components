@@ -1,6 +1,6 @@
 {{--
-This is the base for all the buttons. In here we don't need classes.
-If you want to change styling for buttons go to the button/button.
+This is the tag used for all the buttons. In here we don't need classes.
+If you want to change styling for buttons go to the button/base.
 - `href` attribute results in an `<a>`
 - `for` attribute results in a `<label>`
 - Fallback/default is `<button>`
