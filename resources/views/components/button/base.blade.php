@@ -1,5 +1,5 @@
 {{--
-This is the default button if you use the example you get this.
+The classes that are set on this button are the base for most other buttons.
 It is not recommended to use this button. Make use of the other buttons. ie: `button/primary`
 Example:
 

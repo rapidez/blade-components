@@ -1,5 +1,5 @@
 {{--
-The muted button is a variant used for basic use cases.
+The default button is a variant used for basic use cases.
 Example:
 ```
 <x-rapidez::button>Something</x-rapidez::button>
