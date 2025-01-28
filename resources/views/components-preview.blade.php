@@ -52,6 +52,7 @@
                             DEFAULT: color('--background', tailwind.colors.slate[100]),
                             muted: color('--background-muted', tailwind.colors.slate[50]),
                         },
+                        backdrop: color('--backdrop', 'rgba(0, 0, 0, 0.4)'),
                     },
                     zIndex: {
                         'slideover': '120',
