@@ -17,7 +17,7 @@ No-js slideover component by making use of checkboxes and form reset logic for n
 ## Body Class
 Add this class to prevent scrolling when slideover is open:
 ```html
-<body class="has-[.slideover-checkbox:checked]:overflow-hidden">
+<body class="has-[.prevent-scroll:checked]:overflow-clip">
 ```
 
 ## Nesting Slideovers
@@ -77,16 +77,16 @@ Nested slideovers:
 <x-rapidez::tag :is="$tag">
     <input id="{{ 'close-' . $id }}" class="hidden" type="reset">
     @if (!$hasParent)
-        <input @checked($open) id="{{ $id }}" class="peer hidden slideover-checkbox" type="checkbox">
+        <input @checked($open) id="{{ $id }}" class="peer hidden prevent-scroll" type="checkbox">
         <label
             for="{{ $closeId }}"
-            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-backdrop opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+            class="pointer-events-none fixed inset-0 z-slideover-overlay cursor-pointer bg-backdrop opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
         ></label>
     @else
         <input @checked($open) id="{{ $id }}" class="peer hidden" type="checkbox">
     @endif
     <div {{ $attributes->class([
-        'fixed inset-y-0 transition-all bg-white z-40 flex flex-col max-w-md w-full',
+        'fixed inset-y-0 transition-all bg-white z-slideover-sidebar flex flex-col max-w-md w-full',
         '-right-full peer-checked:right-0' => $position === 'right',
         '-left-full peer-checked:left-0' => $position === 'left',
     ]) }}>

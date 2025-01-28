@@ -13,6 +13,7 @@ This package includes some Tailwind CSS styled Blade components, the components 
 - [Prose](https://github.com/rapidez/blade-components/blob/master/resources/views/components/prose/prose.blade.php)
 - [Slideover](https://github.com/rapidez/blade-components/blob/master/resources/views/components/slideover/slideover.blade.php)
 - [Slideover (mobile only)](https://github.com/rapidez/blade-components/blob/master/resources/views/components/slideover/mobile.blade.php)
+- [Readmore](https://github.com/rapidez/blade-components/blob/master/resources/views/components/readmore/readmore.blade.php)
 
 The idea with these components is to have a good starting point and centralized styling. Most of the components use a [Anonymous Index](https://laravel.com/docs/master/blade#anonymous-index-components), this way you have a default and variants can be added next to it. We're using the (currently undocumented) [component name guessing](https://github.com/laravel/framework/pull/52669) here.
 
@@ -40,7 +41,7 @@ The base button doesn't have any styling; here, we only use the `x-rapidez::tag`
 composer require rapidez/blade-components
 ```
 
-Make sure these colors are present in your `tailwind.config.js` file:
+Make sure these colors and z-indexes are present in your `tailwind.config.js` file:
 ```js
 colors: {
     colors: {
@@ -62,9 +63,14 @@ colors: {
             muted: color('--foreground-muted', colors.slate[600]),
         },
         border: {
-            emphasis: color('--border-emphasis', colors.slate[500]),
-            DEFAULT: color('--border', colors.slate[200]),
+            emphasis: color('--border-emphasis', colors.slate[400]),
+            DEFAULT: color('--border', colors.slate[300]),
             muted: color('--border-muted', colors.slate[100]),
+        },
+        shadow: {
+            emphasis: color('--shadow-emphasis', colors.slate[900]),
+            DEFAULT: color('--shadow', colors.slate[700]),
+            muted: color('--shadow-muted', colors.slate[500]),
         },
         background: {
             emphasis: color('--background-emphasis', colors.slate[200]),
@@ -73,12 +79,29 @@ colors: {
         },
         backdrop: color('--backdrop', 'rgba(0, 0, 0, 0.4)'),
     },
+    zIndex: {
+        'slideover': '120',
+        'slideover-overlay': '10',
+        'slideover-sidebar': '20',
+    },
     textColor: (theme) => theme('colors.foreground'),
     borderColor: (theme) => ({
         default: theme('colors.border'),
         ...theme('colors.border'),
     }),
     backgroundColor: (theme) => theme('colors.background'),
+    ringColor: (theme) => ({
+        default: theme('colors.border'),
+        ...theme('colors.border'),
+    }),
+    outlineColor: (theme) => ({
+        default: theme('colors.border'),
+        ...theme('colors.border'),
+    }),
+    boxShadowColor: (theme) => ({
+        default: theme('colors.shadow'),
+        ...theme('colors.shadow'),
+    }),
 }
 ```
 
@@ -91,18 +114,24 @@ function color(variable, fallback) {
 }
 ```
 
-If you're going to use the Prose component and you're not using Rapidez; you've to import the CSS file manually:
-```
-@import '../../vendor/rapidez/blade-components/resources/css/package.css';`
-```
-With Rapidez this is already imported from the [app.js](https://github.com/rapidez/rapidez/blob/master/resources/js/app.js).
-
 ### Views
 
 If you like to change the components you can publish the views with:
 ```
 php artisan vendor:publish --tag=rapidez-blade-components-views
 ```
+
+### Prose component
+
+If you're going to use the Prose component and you're not using Rapidez; you've to import the CSS file manually:
+```
+@import '../../vendor/rapidez/blade-components/resources/css/package.css';`
+```
+With Rapidez this is already imported from the [app.js](https://github.com/rapidez/rapidez/blob/master/resources/js/app.js).
+
+### Read more component
+
+The [readmore component](https://github.com/rapidez/blade-components/blob/master/resources/views/components/readmore/readmore.blade.php) includes some Javascript, we're using a [Blade Stack](https://laravel.com/docs/master/blade#stacks) named `foot` for that. Make sure you've an `@stack('foot')` before your closing `</body>` tag. Within Rapidez this is already present within the [`layouts/app.blade.php`](https://github.com/rapidez/core/blob/master/resources/views/layouts/app.blade.php).
 
 ## Usage
 
@@ -147,6 +176,21 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
 ```
 
 #### Slideover
+```blade
+<label for="my-slideover">
+    Open Slideover
+</label>
+
+<x-rapidez::slideover id="my-slideover" title="Example Slideover">
+    Your slideover content goes here
+</x-rapidez::slideover>
+```
+Make sure to add this class to your body tag to prevent scrolling when the slideover is open:
+```html
+<body class="has-[.prevent-scroll:checked]:overflow-clip">
+```
+
+#### Slideover
 
 ```blade
 <label for="my-slideover">
@@ -182,6 +226,13 @@ which will result in
 <span class="font-bold">
     Something
 </span>
+```
+
+## Changing components
+
+If you like to change the components you can publish the views with:
+```
+php artisan vendor:publish --tag=rapidez-blade-components-views
 ```
 
 ## Preview

@@ -1,6 +1,22 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.2.0...1.2.0)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.4.0...1.4.0)
+## [1.4.0](https://github.com/rapidez/blade-components/releases/tag/1.4.0) - 2025-01-14
+
+### Changed
+
+- Slideover prevent-scroll and named z-indexes (#13)
+
+### Fixed
+
+- Readmore component example naming (#15)
+
+## [1.3.0](https://github.com/rapidez/blade-components/releases/tag/1.3.0) - 2025-01-09
+
+### Added
+
+- Readmore component (#5)
+
 ## [1.2.0](https://github.com/rapidez/blade-components/releases/tag/1.2.0) - 2024-12-04
 
 ### Added
