@@ -78,6 +78,7 @@ colors: {
             DEFAULT: color('--background', colors.slate[100]),
             muted: color('--background-muted', colors.slate[50]),
         },
+        backdrop: color('--backdrop', 'rgba(0, 0, 0, 0.4)'),
     },
     zIndex: {
         'slideover': '120',

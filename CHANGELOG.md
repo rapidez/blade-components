@@ -1,6 +1,18 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.4.0...1.4.0)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.5.0...1.5.0)
+## [1.5.0](https://github.com/rapidez/blade-components/releases/tag/1.5.0) - 2025-01-28
+
+### Added
+
+- Shadow, outline and ring colors (#16)
+- Backdrop color variable (#14)
+
+### Changed
+
+- Changed the default border color (#17)
+- Disabled states and updated demo (#18)
+
 ## [1.4.0](https://github.com/rapidez/blade-components/releases/tag/1.4.0) - 2025-01-14
 
 ### Changed
