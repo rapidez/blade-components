@@ -26,7 +26,7 @@ For nested slideovers:
 2. Child slideovers must set `has-parent="true"`
 3. Child slideovers should use default `tag="div"`
 
-This setup enables form reset logic and ensures proper background overlay behavior.
+This setup enables form reset logic and ensures proper background backdrop behavior.
 
 ## Examples
 Basic usage:
@@ -80,7 +80,7 @@ Nested slideovers:
         <input @checked($open) id="{{ $id }}" class="peer hidden slideover-checkbox" type="checkbox">
         <label
             for="{{ $closeId }}"
-            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-overlay opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+            class="pointer-events-none fixed inset-0 z-40 cursor-pointer bg-backdrop opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
         ></label>
     @else
         <input @checked($open) id="{{ $id }}" class="peer hidden" type="checkbox">
