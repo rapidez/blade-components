@@ -64,9 +64,14 @@ colors: {
             muted: color('--foreground-muted', colors.slate[600]),
         },
         border: {
-            emphasis: color('--border-emphasis', colors.slate[500]),
-            DEFAULT: color('--border', colors.slate[200]),
+            emphasis: color('--border-emphasis', colors.slate[400]),
+            DEFAULT: color('--border', colors.slate[300]),
             muted: color('--border-muted', colors.slate[100]),
+        },
+        shadow: {
+            emphasis: color('--shadow-emphasis', colors.slate[900]),
+            DEFAULT: color('--shadow', colors.slate[700]),
+            muted: color('--shadow-muted', colors.slate[500]),
         },
         background: {
             emphasis: color('--background-emphasis', colors.slate[200]),
@@ -85,6 +90,18 @@ colors: {
         ...theme('colors.border'),
     }),
     backgroundColor: (theme) => theme('colors.background'),
+    ringColor: (theme) => ({
+        default: theme('colors.border'),
+        ...theme('colors.border'),
+    }),
+    outlineColor: (theme) => ({
+        default: theme('colors.border'),
+        ...theme('colors.border'),
+    }),
+    boxShadowColor: (theme) => ({
+        default: theme('colors.shadow'),
+        ...theme('colors.shadow'),
+    }),
 }
 ```
 
