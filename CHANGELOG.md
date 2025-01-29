@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.5.0...1.5.0)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.6.0...1.6.0)
+## [1.6.0](https://github.com/rapidez/blade-components/releases/tag/1.6.0) - 2025-01-29
+
+### Changed
+
+- Button styling refactor (#12)
+
 ## [1.5.0](https://github.com/rapidez/blade-components/releases/tag/1.5.0) - 2025-01-28
 
 ### Added
