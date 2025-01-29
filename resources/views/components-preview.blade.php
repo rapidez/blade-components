@@ -118,8 +118,8 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-y-2">
-                    <x-rapidez::button>Button</x-rapidez::button>
-                    <x-rapidez::button disabled>Button disabled</x-rapidez::button>
+                    <x-rapidez::button>Default button</x-rapidez::button>
+                    <x-rapidez::button disabled>Default button disabled</x-rapidez::button>
                 </div>
                 <div class="flex flex-col gap-y-2">
                     <x-rapidez::button.outline>Outline</x-rapidez::button.outline>

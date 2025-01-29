@@ -28,12 +28,13 @@ The base button doesn't have any styling; here, we only use the `x-rapidez::tag`
 ![](.github/media/buttons.png)
 
 - [Base](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/base.blade.php)
-- [Button](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/button.blade.php)
+- [Default](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/button.blade.php)
 - [Primary](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/primary.blade.php)
 - [Secondary](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/secondary.blade.php)
 - [Outline](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/outline.blade.php)
 - [Conversion](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/conversion.blade.php)
 - [Slider](https://github.com/rapidez/blade-components/blob/master/resources/views/components/button/slider.blade.php)
+
 
 ## Installation
 
@@ -188,24 +189,6 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
 Make sure to add this class to your body tag to prevent scrolling when the slideover is open:
 ```html
 <body class="has-[.prevent-scroll:checked]:overflow-clip">
-```
-
-#### Slideover
-
-```blade
-<label for="my-slideover">
-    Open Slideover
-</label>
-
-<x-rapidez::slideover id="my-slideover" title="Example Slideover">
-    Your slideover content goes here
-</x-rapidez::slideover>
-```
-
-Make sure to add this class to your body tag to prevent scrolling when the slideover is open:
-
-```html
-<body class="has-[.slideover-checkbox:checked]:overflow-hidden">
 ```
 
 #### Tag
