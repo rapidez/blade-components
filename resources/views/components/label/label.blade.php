@@ -9,7 +9,7 @@ The benefit of this approach is that you don't have to deal with
 </label>
 ```
 
-By default a label has an asterix when the input is required. If you don't want an asterix
+By default a label has an asterisk when the input is required. If you don't want an asterisk
 you can use the label like this:
 ```
 <x-rapidez::input.label class="after:hidden">Label</x-rapidez::input.label>
