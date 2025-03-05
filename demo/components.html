@@ -290,7 +290,7 @@
                     <div>
                         <label class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-primary text-primary-text border-b border-b-black/20 hover:bg-opacity-80" for="default-slideover">
     Open Slideover
-</label>                        <div class="relative z-slideover">
+</label>                        <div class="relative z-slideover has-[.mobile-slideover]:lg:z-auto">
     <input id="close-default-slideover" class="hidden" type="reset">
             <input  id="default-slideover" class="peer hidden prevent-scroll" type="checkbox">
         <label
@@ -326,7 +326,7 @@
                     <div>
                         <label class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-secondary text-secondary-text border-b border-b-black/20 hover:bg-opacity-80" for="right-slideover">
     Open Right Slideover
-</label>                        <div class="relative z-slideover">
+</label>                        <div class="relative z-slideover has-[.mobile-slideover]:lg:z-auto">
     <input id="close-right-slideover" class="hidden" type="reset">
             <input  id="right-slideover" class="peer hidden prevent-scroll" type="checkbox">
         <label
@@ -361,14 +361,14 @@
                     <div>
                         <label class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-transparent border text-default hover:border-emphasis lg:hidden" for="mobile-slideover">
     Open Mobile Slideover
-</label>                        <div class="relative z-slideover">
+</label>                        <div class="relative z-slideover has-[.mobile-slideover]:lg:z-auto">
     <input id="close-mobile-slideover" class="hidden" type="reset">
             <input  id="mobile-slideover" class="peer hidden prevent-scroll" type="checkbox">
         <label
             for="mobile-slideover"
             class="pointer-events-none fixed inset-0 z-slideover-overlay cursor-pointer bg-backdrop opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
         ></label>
-        <div class="fixed inset-y-0 transition-all bg-white z-slideover-sidebar flex flex-col max-w-md w-full -left-full peer-checked:left-0 lg:contents [&amp;&gt;.slideover-wrapper]:lg:contents [&amp;&gt;.slideover-header]:lg:hidden">
+        <div class="fixed inset-y-0 transition-all bg-white z-slideover-sidebar flex flex-col max-w-md w-full -left-full peer-checked:left-0 lg:contents [&amp;&gt;.slideover-wrapper]:lg:contents [&amp;&gt;.slideover-header]:lg:hidden mobile-slideover">
         <div class="slideover-header bg-primary py-5">
     <div class="px-5">
         <div class="relative flex items-center justify-center">
