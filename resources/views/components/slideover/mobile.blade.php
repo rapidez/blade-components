@@ -16,4 +16,4 @@ This mobile version transforms into inline content on desktop. The slideover beh
 </x-rapidez::slideover.mobile>
 ```
 --}}
-@include('rapidez::components.slideover.slideover', ['attributes' => $attributes->class('lg:contents [&>.slideover-wrapper]:lg:contents [&>.slideover-header]:lg:hidden')])
+@include('rapidez::components.slideover.slideover', ['attributes' => $attributes->class('lg:contents [&>.slideover-wrapper]:lg:contents [&>.slideover-header]:lg:hidden mobile-slideover')])
