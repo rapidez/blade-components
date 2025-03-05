@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.6.1...1.6.1)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.7.0...1.7.0)
+## [1.7.0](https://github.com/rapidez/blade-components/releases/tag/1.7.0) - 2025-03-05
+
+### Removed
+
+- Remove custom shadow colors (#21)
+
 ## [1.6.1](https://github.com/rapidez/blade-components/releases/tag/1.6.1) - 2025-02-26
 
 ### Fixed
