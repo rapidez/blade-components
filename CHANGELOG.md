@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.7.0...1.7.0)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.8.0...1.8.0)
+## [1.8.0](https://github.com/rapidez/blade-components/releases/tag/1.8.0) - 2025-03-06
+
+### Added
+
+- Laravel 12 support (#23)
+
 ## [1.7.0](https://github.com/rapidez/blade-components/releases/tag/1.7.0) - 2025-03-05
 
 ### Removed
