@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.8.0...1.8.0)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.8.1...1.8.1)
+## [1.8.1](https://github.com/rapidez/blade-components/releases/tag/1.8.1) - 2025-03-18
+
+### Fixed
+
+- Slideover z-index (#22)
+
 ## [1.8.0](https://github.com/rapidez/blade-components/releases/tag/1.8.0) - 2025-03-06
 
 ### Added
