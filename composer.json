@@ -42,7 +42,7 @@
         }
     },
     "scripts": {
-        "preview-demo": "@php vendor/bin/testbench serve --ansi",
+        "preview-demo": ["Composer\\Config::disableProcessTimeout", "@php vendor/bin/testbench serve --ansi"],
         "generate-demo": "@php vendor/bin/testbench generate-demo --ansi"
     }
 }
