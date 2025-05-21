@@ -1,6 +1,16 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.8.1...1.8.1)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.9.0...1.9.0)
+## [1.9.0](https://github.com/rapidez/blade-components/releases/tag/1.9.0) - 2025-05-21
+
+### Changed
+
+- Focus styling for accessibility (#26)
+
+### Fixed
+
+- Disable the Composer timeout on the preview demo script (#24)
+
 ## [1.8.1](https://github.com/rapidez/blade-components/releases/tag/1.8.1) - 2025-03-18
 
 ### Fixed
