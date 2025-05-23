@@ -304,7 +304,8 @@
                     <h3 class="text-xl font-bold">Default usage</h3>
                     <div class="text-sm text-muted">
                         We use the default behavior from the details/summary HTML elements. This means that the
-                        component will have an chevron by default and it can have multiple open states.
+                        component will have a chevron by default and it can have multiple accordions at once. The single prop allows
+                        only one accordion to be open at the same time.
                     </div>
                 </div>
                 <div class="flex flex-col gap-3">
@@ -323,13 +324,13 @@
                 </div>
                 <div class="flex flex-col gap-3">
                     <x-rapidez::accordion class="rounded border px-3" single>
-                        <x-slot:summary class="font-bold">Question 1</x-slot:summary>
+                        <x-slot:summary class="font-bold">Single open 1</x-slot:summary>
                         <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
                     <x-rapidez::accordion class="rounded border px-3" single>
-                        <x-slot:summary class="font-bold">Question 2</x-slot:summary>
+                        <x-slot:summary class="font-bold">Single open 2</x-slot:summary>
                         <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
