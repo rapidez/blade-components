@@ -439,7 +439,8 @@
                     <h3 class="text-xl font-bold">Default usage</h3>
                     <div class="text-sm text-muted">
                         We use the default behavior from the details/summary HTML elements. This means that the
-                        component will have an chevron by default and it can have multiple open states.
+                        component will have a chevron by default and it can have multiple accordions at once. The single prop allows
+                        only one accordion to be open at the same time.
                     </div>
                 </div>
                 <div class="flex flex-col gap-3">
@@ -480,7 +481,7 @@
             onclick="document.querySelectorAll('details').forEach(d => d !== this && d.removeAttribute('open'))"
         >
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
-        Question 1
+        Single open 1
 
                                     <svg stroke-width="2" class="ml-auto size-4 flex shrink-0 text-muted group-open/details:rotate-180 transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
   <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
@@ -496,7 +497,7 @@
             onclick="document.querySelectorAll('details').forEach(d => d !== this && d.removeAttribute('open'))"
         >
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
-        Question 2
+        Single open 2
 
                                     <svg stroke-width="2" class="ml-auto size-4 flex shrink-0 text-muted group-open/details:rotate-180 transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
   <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
