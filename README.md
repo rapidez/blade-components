@@ -64,11 +64,13 @@ colors: {
             muted: color('--foreground-muted', colors.slate[600]),
         },
         border: {
+            active: color('--border-active', colors.slate[800]),
             emphasis: color('--border-emphasis', colors.slate[400]),
             DEFAULT: color('--border', colors.slate[300]),
             muted: color('--border-muted', colors.slate[100]),
         },
         background: {
+            active: color('--background-active', colors.slate[800]),
             emphasis: color('--background-emphasis', colors.slate[200]),
             DEFAULT: color('--background', colors.slate[100]),
             muted: color('--background-muted', colors.slate[50]),
@@ -80,12 +82,18 @@ colors: {
         'slideover-overlay': '10',
         'slideover-sidebar': '20',
     },
-    textColor: (theme) => theme('colors.foreground'),
+    textColor: (theme) => ({
+        default: theme('colors.foreground'),
+        ...theme('colors.foreground'),
+    }),
     borderColor: (theme) => ({
         default: theme('colors.border'),
         ...theme('colors.border'),
     }),
-    backgroundColor: (theme) => theme('colors.background'),
+    backgroundColor: (theme) => ({
+        default: theme('colors.background'),
+        ...theme('colors.background'),
+    }),
     ringColor: (theme) => ({
         default: theme('colors.border'),
         ...theme('colors.border'),
@@ -160,9 +168,9 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
 
 ```blade
 <x-rapidez::accordion>
-    <x-slot:label>Accordion Title</x-slot:label>
+    <x-slot:summary>Title</x-slot:summary>
     <x-slot:content>
-        Accordion content goes here
+        Collapsable content goes here
     </x-slot:content>
 </x-rapidez::accordion>
 ```
