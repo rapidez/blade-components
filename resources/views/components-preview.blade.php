@@ -323,13 +323,13 @@
                     </x-rapidez::accordion>
                 </div>
                 <div class="flex flex-col gap-3">
-                    <x-rapidez::accordion class="rounded border px-3" single>
+                    <x-rapidez::accordion class="rounded border px-3" name="single">
                         <x-slot:summary class="font-bold">Single open 1</x-slot:summary>
                         <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
-                    <x-rapidez::accordion class="rounded border px-3" single>
+                    <x-rapidez::accordion class="rounded border px-3" name="single">
                         <x-slot:summary class="font-bold">Single open 2</x-slot:summary>
                         <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
@@ -406,18 +406,18 @@
                         This is only an accordion on mobile devices. On desktop, it's always open.
                     </div>
                 </div>
-                <x-rapidez::accordion class="rounded border px-3" mobile>
+                <x-rapidez::accordion.mobile class="rounded border px-3" :icon="false">
                     <x-slot:summary class="font-bold">Question 1</x-slot:summary>
                     <x-slot:content>
                         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                     </x-slot:content>
-                </x-rapidez::accordion>
-                <x-rapidez::accordion class="rounded border px-3" mobile>
+                </x-rapidez::accordion.mobile>
+                <x-rapidez::accordion.mobile class="rounded border px-3" :icon="false">
                     <x-slot:summary class="font-bold">Question 2</x-slot:summary>
                     <x-slot:content>
                         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                     </x-slot:content>
-                </x-rapidez::accordion>
+                </x-rapidez::accordion.mobile>
             </div>
 
             <h2 class="text-2xl font-bold mt-5">Read more component</h2>

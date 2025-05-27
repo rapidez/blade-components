@@ -1,11 +1,6 @@
 {{--
 Accordion component using `<details>` & `<summary>` HTML elements.
 
-## Properties
-- `icon`    Show the icon with this component default `true` set it to `false` to hide the default icon.
-- `single`  Default `false`, set to `true` if you want only one accordion to be open at a time.
-- `mobile`  Default `false`, set to `true` to have it open initially from 768px.
-
 ## Slots
 - `summary` Defines the clickable title that toggles the accordion.
 - `content` The collapsible section that appears when the accordion is opened.
@@ -16,7 +11,7 @@ Basic usage:
 ```
 <x-rapidez::accordion>
     <x-slot:summary>
-        Label
+        Title
     </x-slot:summary>
     <x-slot:content>
         Content
@@ -24,11 +19,19 @@ Basic usage:
 </x-rapidez::accordion>
 ```
 
-Without icon:
+Open one accordion at the time then add a name to the accordion:
 ```
-<x-rapidez::accordion :icon="false">
+<x-rapidez::accordion name="single">
     <x-slot:summary>
-        Label
+        Title
+    </x-slot:summary>
+    <x-slot:content>
+        Content
+    </x-slot:content>
+</x-rapidez::accordion>
+<x-rapidez::accordion name="single">
+    <x-slot:summary>
+        Title
     </x-slot:summary>
     <x-slot:content>
         Content
@@ -36,18 +39,10 @@ Without icon:
 </x-rapidez::accordion>
 ```
 --}}
-
-@props(['icon', 'single' => false, 'mobile' => false])
 @slots(['summary', 'content', 'icon'])
 
 <details
     {{ $attributes->twMerge('group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto') }}
-    @if ($single)
-        onclick="document.querySelectorAll('details').forEach(d => d !== this && d.removeAttribute('open'))"
-    @endif
-    @if ($mobile)
-        data-mobile-accordion
-    @endif
 >
     <summary {{ $summary->attributes->twMerge('flex items-center font-medium py-3.5 cursor-pointer list-none') }}>
         {{ $summary }}
@@ -63,11 +58,3 @@ Without icon:
         {{ $content }}
     </div>
 </details>
-
-@pushOnce('foot')
-<script>
-if (window.innerWidth >= 768) {
-    document.querySelectorAll('details[data-mobile-accordion]').forEach(d => d.setAttribute('open', ''));
-}
-</script>
-@endPushOnce

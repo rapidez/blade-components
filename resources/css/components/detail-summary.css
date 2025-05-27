@@ -28,3 +28,13 @@
 .open\:details-content\:h-auto:is([open], :popover-open, :open)::details-content {
     height: auto;
 }
+
+@media (min-width: 768px) {
+    .md\:details-content\:\[content-visibility\:visible\]::details-content {
+        content-visibility: visible !important;
+    }
+
+    .md\:details-content\:h-auto::details-content {
+        height: auto;
+    }
+}
