@@ -1,0 +1,40 @@
+@supports (interpolate-size: allow-keywords) {
+    :root {
+        interpolate-size: allow-keywords;
+    }
+}
+
+/* All of the details-content can be removed when tailwind v4.0 is being used */
+.details-content\:h-0::details-content {
+    height: 0;
+}
+
+.details-content\:overflow-clip::details-content {
+    overflow: clip;
+}
+
+.details-content\:duration-200::details-content {
+    transition-duration: 200ms;
+}
+
+.details-content\:transition-\[height\,content-visibility\]::details-content {
+    transition-property: height, content-visibility;
+}
+
+.details-content\:transition-discrete::details-content {
+    transition-behavior: allow-discrete;
+}
+
+.open\:details-content\:h-auto:is([open], :popover-open, :open)::details-content {
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .md\:details-content\:\[content-visibility\:visible\]::details-content {
+        content-visibility: visible !important;
+    }
+
+    .md\:details-content\:h-auto::details-content {
+        height: auto;
+    }
+}
