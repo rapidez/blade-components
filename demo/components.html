@@ -42,6 +42,15 @@
     height: auto;
 }
 
+@media (min-width: 768px) {
+    .md\:details-content\:\[content-visibility\:visible\]::details-content {
+        content-visibility: visible !important;
+    }
+
+    .md\:details-content\:h-auto::details-content {
+        height: auto;
+    }
+}
         </style>
 
         <title>Rapidez Blade Components Preview</title>
@@ -446,7 +455,7 @@
                 <div class="flex flex-col gap-3">
                     <details
     class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
-        >
+>
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Question 1
 
@@ -458,10 +467,9 @@
         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
     </div>
 </details>
-
                     <details
     class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
-        >
+>
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Question 2
 
@@ -473,13 +481,11 @@
         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
     </div>
 </details>
-
                 </div>
                 <div class="flex flex-col gap-3">
                     <details
-    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
-            onclick="document.querySelectorAll('details').forEach(d => d !== this && d.removeAttribute('open'))"
-        >
+    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3" name="single"
+>
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Single open 1
 
@@ -491,11 +497,9 @@
         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
     </div>
 </details>
-
                     <details
-    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
-            onclick="document.querySelectorAll('details').forEach(d => d !== this && d.removeAttribute('open'))"
-        >
+    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3" name="single"
+>
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Single open 2
 
@@ -507,7 +511,6 @@
         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
     </div>
 </details>
-
                 </div>
             </div>
             <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
@@ -520,7 +523,7 @@
                 </div>
                 <details
     class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
-        >
+>
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Question 1
 
@@ -535,10 +538,9 @@
         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
     </div>
 </details>
-
                 <details
     class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
-        >
+>
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Question 2
 
@@ -553,7 +555,6 @@
         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
     </div>
 </details>
-
             </div>
             <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
                 <div>
@@ -565,7 +566,7 @@
                 </div>
                 <details
     class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
-        >
+>
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Question 1
 
@@ -575,10 +576,9 @@
         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
     </div>
 </details>
-
                 <details
     class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
-        >
+>
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Question 2
 
@@ -588,7 +588,6 @@
         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
     </div>
 </details>
-
             </div>
             <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
                 <div>
@@ -598,37 +597,29 @@
                     </div>
                 </div>
                 <details
-    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
-                data-mobile-accordion
-    >
-    <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
+    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto md:details-content:[content-visibility:visible] md:details-content:h-auto rounded border px-3"
+>
+    <summary class="flex items-center py-3.5 cursor-pointer list-none md:cursor-auto font-bold">
         Question 1
 
-                                    <svg stroke-width="2" class="ml-auto size-4 flex shrink-0 text-muted group-open/details:rotate-180 transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
-</svg>                        </summary>
+            </summary>
 
     <div class="pb-5">
         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
     </div>
 </details>
-
                 <details
-    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
-                data-mobile-accordion
-    >
-    <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
+    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto md:details-content:[content-visibility:visible] md:details-content:h-auto rounded border px-3"
+>
+    <summary class="flex items-center py-3.5 cursor-pointer list-none md:cursor-auto font-bold">
         Question 2
 
-                                    <svg stroke-width="2" class="ml-auto size-4 flex shrink-0 text-muted group-open/details:rotate-180 transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
-</svg>                        </summary>
+            </summary>
 
     <div class="pb-5">
         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
     </div>
 </details>
-
             </div>
 
             <h2 class="text-2xl font-bold mt-5">Read more component</h2>
@@ -741,11 +732,6 @@
 </div>
         </div>
         <script>
-if (window.innerWidth >= 768) {
-    document.querySelectorAll('details[data-mobile-accordion]').forEach(d => d.setAttribute('open', ''));
-}
-</script>
-<script>
 function checkReadMore() {
     document.querySelectorAll('.read-more-component').forEach(container => {
         const content = container.querySelector('.content');
