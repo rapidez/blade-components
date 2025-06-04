@@ -64,13 +64,11 @@ colors: {
             muted: color('--foreground-muted', colors.slate[600]),
         },
         border: {
-            active: color('--border-active', colors.slate[800]),
             emphasis: color('--border-emphasis', colors.slate[400]),
             DEFAULT: color('--border', colors.slate[300]),
             muted: color('--border-muted', colors.slate[100]),
         },
         background: {
-            active: color('--background-active', colors.slate[800]),
             emphasis: color('--background-emphasis', colors.slate[200]),
             DEFAULT: color('--background', colors.slate[100]),
             muted: color('--background-muted', colors.slate[50]),
