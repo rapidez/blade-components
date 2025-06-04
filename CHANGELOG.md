@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.9.0...1.9.0)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.10.0...1.10.0)
+## [1.10.0](https://github.com/rapidez/blade-components/releases/tag/1.10.0) - 2025-06-04
+
+### Changed
+
+- Accordion refactor to use detail/summary (#27)
+
 ## [1.9.0](https://github.com/rapidez/blade-components/releases/tag/1.9.0) - 2025-05-21
 
 ### Changed
