@@ -7,6 +7,7 @@
 
         <style type="text/tailwindcss">
             {{ file_get_contents(base_path('../../../../resources/css/components/prose.css')) }}
+            {{ file_get_contents(base_path('../../../../resources/css/components/detail-summary.css')) }}
         </style>
 
         <title>Rapidez Blade Components Preview</title>
@@ -54,12 +55,18 @@
                         'slideover-overlay': '10',
                         'slideover-sidebar': '20',
                     },
-                    textColor: (theme) => theme('colors.foreground'),
+                    textColor: (theme) => ({
+                        default: theme('colors.foreground'),
+                        ...theme('colors.foreground'),
+                    }),
                     borderColor: (theme) => ({
                         default: theme('colors.border'),
                         ...theme('colors.border'),
                     }),
-                    backgroundColor: (theme) => theme('colors.background'),
+                    backgroundColor: (theme) => ({
+                        default: theme('colors.background'),
+                        ...theme('colors.background'),
+                    }),
                     ringColor: (theme) => ({
                         default: theme('colors.border'),
                         ...theme('colors.border'),
@@ -292,44 +299,36 @@
             <h2 class="text-2xl font-bold">Accordion component</h2>
             <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
                 <div>
-                    <h3 class="text-xl font-bold">Default & radio accordion</h3>
+                    <h3 class="text-xl font-bold">Default usage</h3>
                     <div class="text-sm text-muted">
-                        The default accordion uses a checkbox, so you can have multiple accordions open at the same time.
-                        The radio variant makes use of a radio button, so you can open only one accordion at a time.
+                        We use the default behavior from the details/summary HTML elements. This means that the
+                        component will have a chevron by default and it can have multiple open accordions at once.
                     </div>
                 </div>
                 <div class="flex flex-col gap-3">
-                    <x-rapidez::accordion id="checkbox-question-1" class="rounded border p-3">
-                        <x-slot:label class="font-bold">
-                            Question 1
-                        </x-slot:label>
+                    <x-rapidez::accordion class="rounded border px-3">
+                        <x-slot:label class="font-bold">Question 1</x-slot:label>
                         <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
-                    <x-rapidez::accordion id="checkbox-question-2" class="rounded border p-3">
-                        <x-slot:label class="font-bold">
-                            Question 2
-                        </x-slot:label>
+                    <x-rapidez::accordion class="rounded border px-3">
+                        <x-slot:label class="font-bold">Question 2</x-slot:label>
                         <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
                 </div>
                 <div class="flex flex-col gap-3">
-                    <x-rapidez::accordion id="radio-question-1" type="radio" name="questions" class="rounded border p-3">
-                        <x-slot:label class="font-bold">
-                            Question 1
-                        </x-slot:label>
-                        <x-slot:content class="">
+                    <x-rapidez::accordion class="rounded border px-3" name="single">
+                        <x-slot:label class="font-bold">Single open 1</x-slot:label>
+                        <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
-                    <x-rapidez::accordion id="radio-question-2" type="radio" name="questions" class="rounded border p-3">
-                        <x-slot:label class="font-bold">
-                            Question 2
-                        </x-slot:label>
-                        <x-slot:content class="">
+                    <x-rapidez::accordion class="rounded border px-3" name="single">
+                        <x-slot:label class="font-bold">Single open 2</x-slot:label>
+                        <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
@@ -337,44 +336,63 @@
             </div>
             <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
                 <div>
-                    <h3 class="text-xl font-bold">Accordion with rotating chevron & background</h3>
+                    <h3 class="text-xl font-bold">Accordion with custom icon</h3>
                     <div class="text-sm text-muted">
-                        These accordions are more advanced. They contain an arrow that rotates when the accordion is open.
-                        It is also possible to have an accordion with content inside that has a background colour.
+                        By default the component will have a chevron that rotates when the open state is true.
+                        You can also use this component with a custom icon if you prefer that.
                     </div>
                 </div>
-                <x-rapidez::accordion class="border rounded p-4" id="rotating-accordion">
-                    <x-slot:label>
-                        <span>Click me to toggle</span>
-                        <svg class="w-5 h-5 group-has-[:checked]:rotate-180 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                        </svg>
+                <x-rapidez::accordion class="rounded border px-3" :icon="false">
+                    <x-slot:label class="font-bold">
+                        Question 1
+                        <x-slot:icon>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="ml-auto size-5 flex shrink-0 text-muted group-open/details:hidden transition">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="ml-auto size-5 flex shrink-0 text-muted hidden opacity-0 group-open/details:block group-open/details:opacity-100 transition">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                        </x-slot:icon>
                     </x-slot:label>
                     <x-slot:content>
-                        <div class="pt-4">
-                            This accordion demonstrates the rotating chevron using group-has-[:checked]:rotate-180 class.
-                            When you click the header, the chevron will rotate 180 degrees.
-                        </div>
+                        Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                     </x-slot:content>
                 </x-rapidez::accordion>
-                <x-rapidez::accordion class="border rounded p-4" id="navigation-accordion">
-                    <x-slot:label>
-                        <div class="flex items-center justify-between w-full">
-                            <span>Shop Categories</span>
-                            <svg class="w-5 h-5 group-has-[:checked]:rotate-180 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                <x-rapidez::accordion class="rounded border px-3">
+                    <x-slot:label class="font-bold">
+                        Question 2
+                        <x-slot:icon>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="ml-auto size-5 flex shrink-0 text-muted group-open/details:hidden transition">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                             </svg>
-                        </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="ml-auto size-5 flex shrink-0 text-muted hidden opacity-0 group-open/details:block group-open/details:opacity-100 transition">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                        </x-slot:icon>
                     </x-slot:label>
                     <x-slot:content>
-                        <ul class="p-5 bg-red-500 text-white rounded-lg mt-2">
-                            <li><a href="/what-is-new.html" class="block hover:underline">What's New</a></li>
-                            <li><a href="/women.html" class="block hover:underline">Women</a></li>
-                            <li><a href="/men.html" class="block hover:underline">Men</a></li>
-                            <li><a href="/gear.html" class="block hover:underline">Gear</a></li>
-                            <li><a href="/training.html" class="block hover:underline">Training</a></li>
-                            <li><a href="/sale.html" class="block hover:underline">Sale</a></li>
-                        </ul>
+                        Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                    </x-slot:content>
+                </x-rapidez::accordion>
+            </div>
+            <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
+                <div>
+                    <h3 class="text-xl font-bold">Accordion without icon</h3>
+                    <div class="text-sm text-muted">
+                        By default the component will have an chevron that rotates when the open state is true.
+                        You can also use this component without using an icon.
+                    </div>
+                </div>
+                <x-rapidez::accordion class="rounded border px-3" :icon="false">
+                    <x-slot:label class="font-bold">Question 1</x-slot:label>
+                    <x-slot:content>
+                        Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                    </x-slot:content>
+                </x-rapidez::accordion>
+                <x-rapidez::accordion class="rounded border px-3" :icon="false">
+                    <x-slot:label class="font-bold">Question 2</x-slot:label>
+                    <x-slot:content>
+                        Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                     </x-slot:content>
                 </x-rapidez::accordion>
             </div>
@@ -385,19 +403,15 @@
                         This is only an accordion on mobile devices. On desktop, it's always open.
                     </div>
                 </div>
-                <x-rapidez::accordion.mobile id="mobile-question-1" class="rounded border p-3">
-                    <x-slot:label class="font-bold">
-                        Question 1
-                    </x-slot:label>
-                    <x-slot:content class="">
+                <x-rapidez::accordion.mobile class="rounded border px-3" :icon="false">
+                    <x-slot:label class="font-bold">Question 1</x-slot:label>
+                    <x-slot:content>
                         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                     </x-slot:content>
                 </x-rapidez::accordion.mobile>
-                <x-rapidez::accordion.mobile id="mobile-question-2" class="rounded border p-3">
-                    <x-slot:label class="font-bold">
-                        Question 2
-                    </x-slot:label>
-                    <x-slot:content class="">
+                <x-rapidez::accordion.mobile class="rounded border px-3" :icon="false">
+                    <x-slot:label class="font-bold">Question 2</x-slot:label>
+                    <x-slot:content>
                         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                     </x-slot:content>
                 </x-rapidez::accordion.mobile>
