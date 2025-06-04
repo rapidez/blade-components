@@ -4,9 +4,9 @@ This mobile version only collapses on mobile, on desktop it's always open.
 ## Example
 ```
 <x-rapidez::accordion.mobile>
-    <x-slot:summary>
+    <x-slot:label>
         Title
-    </x-slot:summary>
+    </x-slot:label>
     <x-slot:content>
         Content
     </x-slot:content>
@@ -15,9 +15,9 @@ This mobile version only collapses on mobile, on desktop it's always open.
 --}}
 
 <x-rapidez::accordion :attributes="$attributes->twMerge('md:details-content:[content-visibility:visible] md:details-content:h-auto')">
-    <x-slot:summary :attributes="$summary->attributes->twMerge('md:cursor-auto')">
-        {{ $summary }}
-    </x-slot:summary>
+    <x-slot:label :attributes="$label->attributes->twMerge('md:cursor-auto')">
+        {{ $label }}
+    </x-slot:label>
     <x-slot:content>
         {{ $content }}
     </x-slot:content>

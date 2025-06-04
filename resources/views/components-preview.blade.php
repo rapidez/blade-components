@@ -304,19 +304,18 @@
                     <h3 class="text-xl font-bold">Default usage</h3>
                     <div class="text-sm text-muted">
                         We use the default behavior from the details/summary HTML elements. This means that the
-                        component will have a chevron by default and it can have multiple accordions at once. The single prop allows
-                        only one accordion to be open at the same time.
+                        component will have a chevron by default and it can have multiple open accordions at once.
                     </div>
                 </div>
                 <div class="flex flex-col gap-3">
                     <x-rapidez::accordion class="rounded border px-3">
-                        <x-slot:summary class="font-bold">Question 1</x-slot:summary>
+                        <x-slot:label class="font-bold">Question 1</x-slot:label>
                         <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
                     <x-rapidez::accordion class="rounded border px-3">
-                        <x-slot:summary class="font-bold">Question 2</x-slot:summary>
+                        <x-slot:label class="font-bold">Question 2</x-slot:label>
                         <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
@@ -324,13 +323,13 @@
                 </div>
                 <div class="flex flex-col gap-3">
                     <x-rapidez::accordion class="rounded border px-3" name="single">
-                        <x-slot:summary class="font-bold">Single open 1</x-slot:summary>
+                        <x-slot:label class="font-bold">Single open 1</x-slot:label>
                         <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
                     <x-rapidez::accordion class="rounded border px-3" name="single">
-                        <x-slot:summary class="font-bold">Single open 2</x-slot:summary>
+                        <x-slot:label class="font-bold">Single open 2</x-slot:label>
                         <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
@@ -346,7 +345,7 @@
                     </div>
                 </div>
                 <x-rapidez::accordion class="rounded border px-3" :icon="false">
-                    <x-slot:summary class="font-bold">
+                    <x-slot:label class="font-bold">
                         Question 1
                         <x-slot:icon>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="ml-auto size-5 flex shrink-0 text-muted group-open/details:hidden transition">
@@ -356,13 +355,13 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
                             </svg>
                         </x-slot:icon>
-                    </x-slot:summary>
+                    </x-slot:label>
                     <x-slot:content>
                         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                     </x-slot:content>
                 </x-rapidez::accordion>
                 <x-rapidez::accordion class="rounded border px-3">
-                    <x-slot:summary class="font-bold">
+                    <x-slot:label class="font-bold">
                         Question 2
                         <x-slot:icon>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="ml-auto size-5 flex shrink-0 text-muted group-open/details:hidden transition">
@@ -372,7 +371,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
                             </svg>
                         </x-slot:icon>
-                    </x-slot:summary>
+                    </x-slot:label>
                     <x-slot:content>
                         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                     </x-slot:content>
@@ -387,13 +386,13 @@
                     </div>
                 </div>
                 <x-rapidez::accordion class="rounded border px-3" :icon="false">
-                    <x-slot:summary class="font-bold">Question 1</x-slot:summary>
+                    <x-slot:label class="font-bold">Question 1</x-slot:label>
                     <x-slot:content>
                         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                     </x-slot:content>
                 </x-rapidez::accordion>
                 <x-rapidez::accordion class="rounded border px-3" :icon="false">
-                    <x-slot:summary class="font-bold">Question 2</x-slot:summary>
+                    <x-slot:label class="font-bold">Question 2</x-slot:label>
                     <x-slot:content>
                         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                     </x-slot:content>
@@ -407,13 +406,13 @@
                     </div>
                 </div>
                 <x-rapidez::accordion.mobile class="rounded border px-3" :icon="false">
-                    <x-slot:summary class="font-bold">Question 1</x-slot:summary>
+                    <x-slot:label class="font-bold">Question 1</x-slot:label>
                     <x-slot:content>
                         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                     </x-slot:content>
                 </x-rapidez::accordion.mobile>
                 <x-rapidez::accordion.mobile class="rounded border px-3" :icon="false">
-                    <x-slot:summary class="font-bold">Question 2</x-slot:summary>
+                    <x-slot:label class="font-bold">Question 2</x-slot:label>
                     <x-slot:content>
                         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                     </x-slot:content>

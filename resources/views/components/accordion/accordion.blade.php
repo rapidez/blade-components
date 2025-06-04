@@ -2,18 +2,17 @@
 Accordion component using `<details>` & `<summary>` HTML elements.
 
 ## Slots
-- `summary` Defines the clickable title that toggles the accordion.
+- `label`   Defines the clickable title that toggles the accordion.
 - `content` The collapsible section that appears when the accordion is opened.
 - `icon`    The icon that is shown, by default this is a chevron that rotates when accordion is opened.
-- `label`   The label that is shown when no summary is provided.
 
 ## Examples
 Basic usage:
 ```
 <x-rapidez::accordion>
-    <x-slot:summary>
+    <x-slot:label>
         Title
-    </x-slot:summary>
+    </x-slot:label>
     <x-slot:content>
         Content
     </x-slot:content>
@@ -23,38 +22,30 @@ Basic usage:
 Open one accordion at the time then add a name to the accordion:
 ```
 <x-rapidez::accordion name="single">
-    <x-slot:summary>
+    <x-slot:label>
         Title
-    </x-slot:summary>
+    </x-slot:label>
     <x-slot:content>
         Content
     </x-slot:content>
 </x-rapidez::accordion>
 <x-rapidez::accordion name="single">
-    <x-slot:summary>
+    <x-slot:label>
         Title
-    </x-slot:summary>
+    </x-slot:label>
     <x-slot:content>
         Content
     </x-slot:content>
 </x-rapidez::accordion>
 ```
-
-## Fallback
-It is recommended to use the new `summary` slot. For fallback, we have kept the `label` slot so the clickable text is still visible.
-Classes on `<x-slot:label>` won't work anymore.
 --}}
-@slots(['summary', 'content', 'icon', 'label'])
+@slots(['label', 'content', 'icon'])
 
 <details
     {{ $attributes->twMerge('group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto') }}
 >
-    <summary {{ $summary->attributes->twMerge('flex items-center font-medium py-3.5 cursor-pointer list-none') }}>
-        @if ($summary->isNotEmpty())
-            {{ $summary }}
-        @elseif ($label)
-            {{ $label }}
-        @endif
+    <summary {{ $label->attributes->twMerge('flex items-center font-medium py-3.5 cursor-pointer list-none') }}>
+        {{ $label }}
 
         @if ($icon)
             @slotdefault('icon')
