@@ -168,7 +168,7 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
 
 ```blade
 <x-rapidez::accordion>
-    <x-slot:summary>Title</x-slot:summary>
+    <x-slot:label>Title</x-slot:label>
     <x-slot:content>
         Collapsable content goes here
     </x-slot:content>
