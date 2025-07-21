@@ -22,7 +22,7 @@ Examples:
 <x-rapidez::input.checkbox.base />
 ```
 --}}
-<label class="inline-flex text-neutral text-sm cursor-pointer has-[:required]:after:content-['*']">
+<label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
     <x-rapidez::input.checkbox.base class="mr-2.5" :$attributes />
     {{ $slot }}
 </label>
