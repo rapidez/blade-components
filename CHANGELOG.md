@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.10.0...1.10.0)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.10.1...1.10.1)
+## [1.10.1](https://github.com/rapidez/blade-components/releases/tag/1.10.1) - 2025-07-22
+
+### Fixed
+
+- Use the correct text class (#28)
+
 ## [1.10.0](https://github.com/rapidez/blade-components/releases/tag/1.10.0) - 2025-06-04
 
 ### Changed
