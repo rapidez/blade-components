@@ -18,7 +18,7 @@ This mobile version only collapses on mobile, on desktop it's always open.
     <x-slot:label :attributes="$label->attributes->twMerge('md:cursor-auto')">
         {{ $label }}
     </x-slot:label>
-    <x-slot:content>
+    <x-slot:content :attributes="$content->attributes->twMerge('pb-5')">
         {{ $content }}
     </x-slot:content>
 </x-rapidez::accordion>
