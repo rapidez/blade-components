@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.10.1...1.10.1)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.10.2...1.10.2)
+## [1.10.2](https://github.com/rapidez/blade-components/releases/tag/1.10.2) - 2025-07-29
+
+### Fixed
+
+- Mobile accordion content attributes fix (#29)
+
 ## [1.10.1](https://github.com/rapidez/blade-components/releases/tag/1.10.1) - 2025-07-22
 
 ### Fixed
