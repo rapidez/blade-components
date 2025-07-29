@@ -403,18 +403,22 @@
                         This is only an accordion on mobile devices. On desktop, it's always open.
                     </div>
                 </div>
-                <x-rapidez::accordion.mobile class="rounded border px-3" :icon="false">
-                    <x-slot:label class="font-bold">Question 1</x-slot:label>
-                    <x-slot:content>
-                        Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
-                    </x-slot:content>
-                </x-rapidez::accordion.mobile>
-                <x-rapidez::accordion.mobile class="rounded border px-3" :icon="false">
-                    <x-slot:label class="font-bold">Question 2</x-slot:label>
-                    <x-slot:content>
-                        Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
-                    </x-slot:content>
-                </x-rapidez::accordion.mobile>
+                <div class="flex flex-col rounded md:border">
+                    <x-rapidez::accordion.mobile class="rounded max-md:border px-3" :icon="false">
+                        <x-slot:label class="font-bold">Question 1</x-slot:label>
+                        <x-slot:content>
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </x-slot:content>
+                    </x-rapidez::accordion.mobile>
+                </div>
+                <div class="flex flex-col rounded md:border">
+                    <x-rapidez::accordion.mobile class="rounded max-md:border px-3" :icon="false">
+                        <x-slot:label class="font-bold">Question 2</x-slot:label>
+                        <x-slot:content>
+                            Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+                        </x-slot:content>
+                    </x-rapidez::accordion.mobile>
+                </div>
             </div>
 
             <h2 class="text-2xl font-bold mt-5">Read more component</h2>
