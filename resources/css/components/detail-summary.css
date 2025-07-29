@@ -38,3 +38,9 @@
         height: auto;
     }
 }
+
+@supports (-moz-appearance:none) {
+    .firefox-only {
+        @apply md:pb-5 md:px-3 md:!block;
+    }
+}
