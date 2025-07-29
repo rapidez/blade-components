@@ -51,6 +51,12 @@
         height: auto;
     }
 }
+
+@supports (-moz-appearance:none) {
+    .firefox-only {
+        @apply md:pb-5 md:px-3 md:!block;
+    }
+}
         </style>
 
         <title>Rapidez Blade Components Preview</title>
@@ -593,10 +599,11 @@
                         This is only an accordion on mobile devices. On desktop, it's always open.
                     </div>
                 </div>
-                <details
-    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto md:details-content:[content-visibility:visible] md:details-content:h-auto rounded border px-3"
+                <div class="flex flex-col rounded md:border">
+                    <details
+    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto md:details-content:[content-visibility:visible] md:details-content:h-auto rounded max-md:border px-3"
 >
-    <summary class="flex items-center py-3.5 cursor-pointer list-none md:cursor-auto font-bold">
+    <summary class="flex items-center py-3.5 cursor-pointer list-none md:cursor-auto md:pointer-events-none font-bold">
         Question 1
 
             </summary>
@@ -605,10 +612,15 @@
         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
     </div>
 </details>
-                <details
-    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto md:details-content:[content-visibility:visible] md:details-content:h-auto rounded border px-3"
+<div class="hidden firefox-only">
+    Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+</div>
+                </div>
+                <div class="flex flex-col rounded md:border">
+                    <details
+    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto md:details-content:[content-visibility:visible] md:details-content:h-auto rounded max-md:border px-3"
 >
-    <summary class="flex items-center py-3.5 cursor-pointer list-none md:cursor-auto font-bold">
+    <summary class="flex items-center py-3.5 cursor-pointer list-none md:cursor-auto md:pointer-events-none font-bold">
         Question 2
 
             </summary>
@@ -617,6 +629,10 @@
         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
     </div>
 </details>
+<div class="hidden firefox-only">
+    Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
+</div>
+                </div>
             </div>
 
             <h2 class="text-2xl font-bold mt-5">Read more component</h2>
