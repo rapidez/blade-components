@@ -55,7 +55,7 @@ colors: {
             text: color('--secondary-text', colors.white),
         },
         conversion: {
-            DEFAULT: color('--conversion', '#36B422'),
+            DEFAULT: color('--conversion', colors.green[700]),
             text: color('--conversion-text', colors.white),
         },
         foreground: {
