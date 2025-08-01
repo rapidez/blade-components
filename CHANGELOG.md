@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.10.2...1.10.2)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.10.3...1.10.3)
+## [1.10.3](https://github.com/rapidez/blade-components/releases/tag/1.10.3) - 2025-08-01
+
+### Fixed
+
+- Conversion color change for wcag (#31)
+
 ## [1.10.2](https://github.com/rapidez/blade-components/releases/tag/1.10.2) - 2025-07-29
 
 ### Fixed
