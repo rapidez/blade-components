@@ -30,7 +30,7 @@
                             text: color('--secondary-text', tailwind.colors.white),
                         },
                         conversion: {
-                            DEFAULT: color('--conversion', colors.green[700]),
+                            DEFAULT: color('--conversion', tailwind.colors.green[700]),
                             text: color('--conversion-text', tailwind.colors.white),
                         },
                         foreground: {
