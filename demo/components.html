@@ -52,9 +52,9 @@
     }
 }
 
-@supports (-moz-appearance:none) {
-    .firefox-only {
-        @apply md:pb-5 md:px-3 md:!block;
+@supports selector(::details-content) {
+    .details-content-unsupported-only {
+        @apply md:pb-5 md:px-3 md:!hidden;
     }
 }
         </style>
@@ -612,7 +612,7 @@
         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
     </div>
 </details>
-<div class="hidden firefox-only">
+<div class="max-md:hidden md:block details-content-unsupported-only">
     Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
 </div>
                 </div>
@@ -629,7 +629,7 @@
         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
     </div>
 </details>
-<div class="hidden firefox-only">
+<div class="max-md:hidden md:block details-content-unsupported-only">
     Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
 </div>
                 </div>
