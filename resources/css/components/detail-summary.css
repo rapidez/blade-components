@@ -39,8 +39,8 @@
     }
 }
 
-@supports (-moz-appearance:none) {
-    .firefox-only {
-        @apply md:pb-5 md:px-3 md:!block;
+@supports selector(::details-content) {
+    .details-content-unsupported-only {
+        @apply md:pb-5 md:px-3 md:!hidden;
     }
 }

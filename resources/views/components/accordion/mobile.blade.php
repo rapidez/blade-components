@@ -27,6 +27,6 @@ To address this, the div below will only be visible in Firefox so that content a
         {{ $content }}
     </x-slot:content>
 </x-rapidez::accordion>
-<div class="hidden firefox-only">
+<div class="max-md:hidden md:block details-content-unsupported-only">
     {{ $content }}
 </div>
