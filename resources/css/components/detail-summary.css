@@ -38,3 +38,9 @@
         height: auto;
     }
 }
+
+@supports selector(::details-content) {
+    .details-content-unsupported-only {
+        @apply md:pb-5 md:px-3 md:!hidden;
+    }
+}
