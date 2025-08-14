@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.10.3...1.10.3)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.10.4...1.10.4)
+## [1.10.4](https://github.com/rapidez/blade-components/releases/tag/1.10.4) - 2025-08-13
+
+### Fixed
+
+- Firefox workaround mobile accordion (#33)
+
 ## [1.10.3](https://github.com/rapidez/blade-components/releases/tag/1.10.3) - 2025-08-01
 
 ### Fixed
