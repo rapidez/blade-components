@@ -14,4 +14,4 @@ Examples:
 </label>
 ```
 --}}
-<textarea {{ $attributes->twMerge('w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-emphasis disabled:border-emphasis placeholder:text-muted') }}>{{ $slot }}</textarea>
+<textarea {{ $attributes->twMerge('w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled placeholder:text-muted') }}>{{ $slot }}</textarea>

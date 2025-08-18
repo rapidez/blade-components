@@ -80,16 +80,19 @@
                             emphasis: color('--foreground-emphasis', tailwind.colors.slate[900]),
                             DEFAULT: color('--foreground', tailwind.colors.slate[800]),
                             muted: color('--foreground-muted', tailwind.colors.slate[600]),
+                            disabled: color('--foreground-disabled', tailwind.colors.slate[600]),
                         },
                         border: {
                             emphasis: color('--border-emphasis', tailwind.colors.slate[400]),
                             DEFAULT: color('--border', tailwind.colors.slate[300]),
                             muted: color('--border-muted', tailwind.colors.slate[100]),
+                            disabled: color('--border-disabled', tailwind.colors.neutral[200]),
                         },
                         background: {
                             emphasis: color('--background-emphasis', tailwind.colors.slate[200]),
                             DEFAULT: color('--background', tailwind.colors.slate[100]),
                             muted: color('--background-muted', tailwind.colors.slate[50]),
+                            disabled: color('--background-disabled', tailwind.colors.neutral[200]),
                         },
                         backdrop: color('--backdrop', 'rgba(0, 0, 0, 0.4)'),
                     },
@@ -216,45 +219,45 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-y-4">
-                    <input class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-emphasis disabled:border-emphasis placeholder:text-muted [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
+                    <input class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled placeholder:text-muted [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
                     <label>
                         <span class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
     Input
 </span>
-                        <input class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-emphasis disabled:border-emphasis placeholder:text-muted [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
+                        <input class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled placeholder:text-muted [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
                     </label>
                     <label>
                         <span class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
     Input
 </span>
-                        <input required="required" class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-emphasis disabled:border-emphasis placeholder:text-muted [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
+                        <input required="required" class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled placeholder:text-muted [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
                     </label>
                     <label>
                         <span class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
     Input
 </span>
-                        <input disabled="disabled" class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-emphasis disabled:border-emphasis placeholder:text-muted [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
+                        <input disabled="disabled" class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled placeholder:text-muted [&::-webkit-inner-spin-button]:appearance-none [&:user-invalid:not(:placeholder-shown)]:border-red-500" />
                     </label>
                 </div>
                 <div class="flex flex-col gap-y-4">
-                    <textarea class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-emphasis disabled:border-emphasis placeholder:text-muted"></textarea>
+                    <textarea class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled placeholder:text-muted"></textarea>
                     <label>
                         <span class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
     Textarea
 </span>
-                        <textarea class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-emphasis disabled:border-emphasis placeholder:text-muted"></textarea>
+                        <textarea class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled placeholder:text-muted"></textarea>
                     </label>
                     <label>
                         <span class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
     Textarea
 </span>
-                        <textarea required="required" class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-emphasis disabled:border-emphasis placeholder:text-muted"></textarea>
+                        <textarea required="required" class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled placeholder:text-muted"></textarea>
                     </label>
                     <label>
                         <span class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
     Textarea
 </span>
-                        <textarea disabled="disabled" class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-emphasis disabled:border-emphasis placeholder:text-muted"></textarea>
+                        <textarea disabled="disabled" class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled placeholder:text-muted"></textarea>
                     </label>
                 </div>
             </div>
@@ -267,22 +270,14 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-y-4">
-                    <select class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-emphasis disabled:border-emphasis placeholder:text-muted">
+                    <select class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:text-disabled disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-muted">
     <option>Option</option>
 </select>
                     <label>
                         <span class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
     Select
 </span>
-                        <select class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-emphasis disabled:border-emphasis placeholder:text-muted">
-    <option>Option</option>
-</select>
-                    </label>
-                    <label>
-                        <span class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
-    Select
-</span>
-                        <select required="required" class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-emphasis disabled:border-emphasis placeholder:text-muted">
+                        <select class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:text-disabled disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-muted">
     <option>Option</option>
 </select>
                     </label>
@@ -290,39 +285,47 @@
                         <span class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
     Select
 </span>
-                        <select disabled="disabled" class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-emphasis disabled:border-emphasis placeholder:text-muted">
+                        <select required="required" class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:text-disabled disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-muted">
+    <option>Option</option>
+</select>
+                    </label>
+                    <label>
+                        <span class="font-medium text-muted text-sm block mb-2 has-[~_*_:required,~:required]:after:content-['*']">
+    Select
+</span>
+                        <select disabled="disabled" class="w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:text-disabled disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-muted">
     <option>Option</option>
 </select>
                     </label>
                 </div>
                 <div class="flex flex-col gap-y-8 lg:gap-y-14">
                     <div class="flex flex-col gap-y-4">
-                        <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted" />
+                        <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled" />
                         <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted mr-2.5" />
+    <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled mr-2.5" />
     Checkbox
 </label>
                         <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted mr-2.5" required="required" />
+    <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled mr-2.5" required="required" />
     Checkbox
 </label>
                         <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted mr-2.5" disabled="disabled" />
+    <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled mr-2.5" disabled="disabled" />
     Checkbox
 </label>
                     </div>
                     <div class="flex flex-col gap-y-4">
-                        <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted" />
+                        <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled" />
                         <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted mr-2.5" />
+    <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled mr-2.5" />
     Radio
 </label>
                         <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted mr-2.5" required="required" />
+    <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled mr-2.5" required="required" />
     Radio
 </label>
                         <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:bg-muted disabled:border-muted mr-2.5" disabled="disabled" />
+    <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed disabled:text-disabled disabled:bg-disabled disabled:border-disabled mr-2.5" disabled="disabled" />
     Radio
 </label>
                     </div>

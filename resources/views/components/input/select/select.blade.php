@@ -18,6 +18,6 @@ Examples:
 </label>
 ```
 --}}
-<select {{ $attributes->twMerge('w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:cursor-not-allowed disabled:bg-emphasis disabled:border-emphasis placeholder:text-muted') }}>
+<select {{ $attributes->twMerge('w-full py-3 px-5 border border-default rounded-md outline-0 ring-0 text-sm transition-colors focus:ring-transparent focus:border-emphasis disabled:text-disabled disabled:cursor-not-allowed disabled:bg-disabled disabled:border-disabled placeholder:text-muted') }}>
     {{ $slot }}
 </select>
