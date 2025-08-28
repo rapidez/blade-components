@@ -37,19 +37,16 @@
                             emphasis: color('--foreground-emphasis', tailwind.colors.slate[900]),
                             DEFAULT: color('--foreground', tailwind.colors.slate[800]),
                             muted: color('--foreground-muted', tailwind.colors.slate[600]),
-                            disabled: color('--foreground-disabled', tailwind.colors.slate[600]),
                         },
                         border: {
                             emphasis: color('--border-emphasis', tailwind.colors.slate[400]),
                             DEFAULT: color('--border', tailwind.colors.slate[300]),
                             muted: color('--border-muted', tailwind.colors.slate[100]),
-                            disabled: color('--border-disabled', tailwind.colors.neutral[200]),
                         },
                         background: {
                             emphasis: color('--background-emphasis', tailwind.colors.slate[200]),
                             DEFAULT: color('--background', tailwind.colors.slate[100]),
                             muted: color('--background-muted', tailwind.colors.slate[50]),
-                            disabled: color('--background-disabled', tailwind.colors.neutral[200]),
                         },
                         backdrop: color('--backdrop', 'rgba(0, 0, 0, 0.4)'),
                     },
@@ -173,7 +170,7 @@
                     </label>
                     <label>
                         <x-rapidez::label>Input</x-rapidez::label>
-                        <x-rapidez::input disabled />
+                        <x-rapidez::input class="disabled:border-neutral-200 disabled:bg-neutral-200 disabled:text-muted" disabled />
                     </label>
                 </div>
                 <div class="flex flex-col gap-y-4">
@@ -188,7 +185,7 @@
                     </label>
                     <label>
                         <x-rapidez::label>Textarea</x-rapidez::label>
-                        <x-rapidez::input.textarea disabled />
+                        <x-rapidez::input.textarea class="disabled:border-neutral-200 disabled:bg-neutral-200 disabled:text-muted" disabled />
                     </label>
                 </div>
             </div>
@@ -218,7 +215,7 @@
                     </label>
                     <label>
                         <x-rapidez::label>Select</x-rapidez::label>
-                        <x-rapidez::input.select disabled>
+                        <x-rapidez::input.select class="disabled:border-neutral-200 disabled:bg-neutral-200 disabled:text-muted" disabled>
                             <option>Option</option>
                         </x-rapidez::input.select>
                     </label>
@@ -232,7 +229,7 @@
                         <x-rapidez::input.checkbox required>
                             Checkbox
                         </x-rapidez::input.checkbox>
-                        <x-rapidez::input.checkbox disabled>
+                        <x-rapidez::input.checkbox class="disabled:border-neutral-200 disabled:bg-neutral-200 disabled:text-muted" disabled>
                             Checkbox
                         </x-rapidez::input.checkbox>
                     </div>
@@ -244,7 +241,7 @@
                         <x-rapidez::input.radio required>
                             Radio
                         </x-rapidez::input.radio>
-                        <x-rapidez::input.radio disabled>
+                        <x-rapidez::input.radio class="disabled:border-neutral-200 disabled:bg-neutral-200 disabled:text-muted" disabled>
                             Radio
                         </x-rapidez::input.radio>
                     </div>
