@@ -170,7 +170,7 @@
                     </label>
                     <label>
                         <x-rapidez::label>Input</x-rapidez::label>
-                        <x-rapidez::input class="disabled:border-neutral-200 disabled:bg-neutral-200 disabled:text-muted" disabled />
+                        <x-rapidez::input class="disabled:border-muted disabled:bg-muted disabled:text-muted" disabled />
                     </label>
                 </div>
                 <div class="flex flex-col gap-y-4">
@@ -185,7 +185,7 @@
                     </label>
                     <label>
                         <x-rapidez::label>Textarea</x-rapidez::label>
-                        <x-rapidez::input.textarea class="disabled:border-neutral-200 disabled:bg-neutral-200 disabled:text-muted" disabled />
+                        <x-rapidez::input.textarea class="disabled:border-muted disabled:bg-muted disabled:text-muted" disabled />
                     </label>
                 </div>
             </div>
@@ -215,7 +215,7 @@
                     </label>
                     <label>
                         <x-rapidez::label>Select</x-rapidez::label>
-                        <x-rapidez::input.select class="disabled:border-neutral-200 disabled:bg-neutral-200 disabled:text-muted" disabled>
+                        <x-rapidez::input.select class="disabled:border-muted disabled:bg-muted disabled:text-muted" disabled>
                             <option>Option</option>
                         </x-rapidez::input.select>
                     </label>
@@ -229,7 +229,7 @@
                         <x-rapidez::input.checkbox required>
                             Checkbox
                         </x-rapidez::input.checkbox>
-                        <x-rapidez::input.checkbox class="disabled:border-neutral-200 disabled:bg-neutral-200 disabled:text-muted" disabled>
+                        <x-rapidez::input.checkbox class="disabled:border-muted disabled:bg-muted disabled:text-muted" disabled>
                             Checkbox
                         </x-rapidez::input.checkbox>
                     </div>
@@ -241,7 +241,7 @@
                         <x-rapidez::input.radio required>
                             Radio
                         </x-rapidez::input.radio>
-                        <x-rapidez::input.radio class="disabled:border-neutral-200 disabled:bg-neutral-200 disabled:text-muted" disabled>
+                        <x-rapidez::input.radio class="disabled:border-muted disabled:bg-muted disabled:text-muted" disabled>
                             Radio
                         </x-rapidez::input.radio>
                     </div>
