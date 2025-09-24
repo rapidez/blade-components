@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.10.4...1.10.4)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.11.0...1.11.0)
+## [1.11.0](https://github.com/rapidez/blade-components/releases/tag/1.11.0) - 2025-09-24
+
+### Changed
+
+- Remove disabled colors for disabled state (#34)
+
 ## [1.10.4](https://github.com/rapidez/blade-components/releases/tag/1.10.4) - 2025-08-13
 
 ### Fixed
