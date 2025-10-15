@@ -123,7 +123,7 @@ php artisan vendor:publish --tag=rapidez-blade-components-views
 
 If you're going to use the Prose component and you're not using Rapidez; you've to import the CSS file manually:
 ```
-@import '../../vendor/rapidez/blade-components/resources/css/package.css';`
+@import '../../vendor/rapidez/blade-components/resources/css/package.css';
 ```
 With Rapidez this is already imported from the [app.js](https://github.com/rapidez/rapidez/blob/master/resources/js/app.js).
 
