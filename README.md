@@ -42,73 +42,70 @@ The base button doesn't have any styling; here, we only use the `x-rapidez::tag`
 composer require rapidez/blade-components
 ```
 
-Make sure these colors and z-indexes are present in your `tailwind.config.js` file:
-```js
-colors: {
-    colors: {
-        primary: {
-            DEFAULT: color('--primary', '#2FBC85'),
-            text: color('--primary-text', colors.white),
-        },
-        secondary: {
-            DEFAULT: color('--secondary', '#202F60'),
-            text: color('--secondary-text', colors.white),
-        },
-        conversion: {
-            DEFAULT: color('--conversion', colors.green[700]),
-            text: color('--conversion-text', colors.white),
-        },
-        foreground: {
-            emphasis: color('--foreground-emphasis', colors.slate[900]),
-            DEFAULT: color('--foreground', colors.slate[800]),
-            muted: color('--foreground-muted', colors.slate[600]),
-        },
-        border: {
-            emphasis: color('--border-emphasis', colors.slate[400]),
-            DEFAULT: color('--border', colors.slate[300]),
-            muted: color('--border-muted', colors.slate[100]),
-        },
-        background: {
-            emphasis: color('--background-emphasis', colors.slate[200]),
-            DEFAULT: color('--background', colors.slate[100]),
-            muted: color('--background-muted', colors.slate[50]),
-        },
-        backdrop: color('--backdrop', 'rgba(0, 0, 0, 0.4)'),
-    },
-    zIndex: {
-        'slideover': '120',
-        'slideover-overlay': '10',
-        'slideover-sidebar': '20',
-    },
-    textColor: (theme) => ({
-        default: theme('colors.foreground'),
-        ...theme('colors.foreground'),
-    }),
-    borderColor: (theme) => ({
-        default: theme('colors.border'),
-        ...theme('colors.border'),
-    }),
-    backgroundColor: (theme) => ({
-        default: theme('colors.background'),
-        ...theme('colors.background'),
-    }),
-    ringColor: (theme) => ({
-        default: theme('colors.border'),
-        ...theme('colors.border'),
-    }),
-    outlineColor: (theme) => ({
-        default: theme('colors.border'),
-        ...theme('colors.border'),
-    }),
-}
-```
+Make sure these colors and z-indexes are present in your `app.css` file:
+```css
+@theme {
+    --primary: #2fbc85;
+    --primary-text: var(--color-white);
 
-And make sure you add this in your `tailwind.config.js` file:
-```js
-import colors from 'tailwindcss/colors'
+    --secondary: #202f60;
+    --secondary-text: var(--color-white);
 
-function color(variable, fallback) {
-    return 'color-mix(in srgb, var(' + variable + ', ' + fallback + ') calc(100% * <alpha-value>), transparent)'
+    --conversion: var(--color-green-500);
+    --conversion-text: var(--color-white);
+
+    --foreground-emphasis: var(--color-slate-900);
+    --foreground: var(--color-slate-800);
+    --foreground-muted: var(--color-slate-600);
+
+    --border-active: var(--color-slate-800);
+    --border-emphasis: var(--color-slate-400);
+    --border: var(--color-slate-300);
+    --border-muted: var(--color-slate-100);
+
+    --background-active: var(--color-slate-800);
+    --background-emphasis: var(--color-slate-200);
+    --background: var(--color-slate-100);
+    --background-muted: var(--color-slate-50);
+
+    --color-primary: var(--primary);
+    --color-primary-text: var(--primary-text);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-text: var(--secondary-text);
+
+    --color-conversion: var(--conversion);
+    --color-conversion-text: var(--conversion-text);
+
+    --text-color-emphasis: var(--foreground-emphasis);
+    --text-color-default: var(--foreground);
+    --text-color-muted: var(--foreground-muted);
+
+    --border-color-active: var(--border-active);
+    --border-color-emphasis: var(--border-emphasis);
+    --border-color-default: var(--border);
+    --border-color-muted: var(--border-muted);
+
+    --ring-color-active: var(--border-active);
+    --ring-color-emphasis: var(--border-emphasis);
+    --ring-color-default: var(--border);
+    --ring-color-muted: var(--border-muted);
+
+    --outline-color-active: var(--border-active);
+    --outline-color-emphasis: var(--border-emphasis);
+    --outline-color-default: var(--border);
+    --outline-color-muted: var(--border-muted);
+
+    --background-color-active: var(--background-active);
+    --background-color-emphasis: var(--background-emphasis);
+    --background-color-default: var(--background);
+    --background-color-muted: var(--background-muted);
+
+    --color-backdrop: rgba(0, 0, 0, 0.4);
+
+    --z-index-slideover: 120;
+    --z-index-slideover-overlay: 10;
+    --z-index-slideover-sidebar: 20;
 }
 ```
 

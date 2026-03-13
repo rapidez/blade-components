@@ -3,82 +3,105 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/forms@0.5.7"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.5.10"></script>
 
         <style type="text/tailwindcss">
+            @theme {
+                --primary: #2fbc85;
+                --primary-text: var(--color-white);
+
+                --secondary: #202f60;
+                --secondary-text: var(--color-white);
+
+                --conversion: var(--color-green-500);
+                --conversion-text: var(--color-white);
+
+                --foreground-emphasis: var(--color-slate-900);
+                --foreground: var(--color-slate-800);
+                --foreground-muted: var(--color-slate-600);
+
+                --border-active: var(--color-slate-800);
+                --border-emphasis: var(--color-slate-400);
+                --border: var(--color-slate-300);
+                --border-muted: var(--color-slate-100);
+
+                --background-active: var(--color-slate-800);
+                --background-emphasis: var(--color-slate-200);
+                --background: var(--color-slate-100);
+                --background-muted: var(--color-slate-50);
+
+                --color-primary: var(--primary);
+                --color-primary-text: var(--primary-text);
+
+                --color-secondary: var(--secondary);
+                --color-secondary-text: var(--secondary-text);
+
+                --color-conversion: var(--conversion);
+                --color-conversion-text: var(--conversion-text);
+
+                --text-color-emphasis: var(--foreground-emphasis);
+                --text-color-default: var(--foreground);
+                --text-color-muted: var(--foreground-muted);
+
+                --border-color-active: var(--border-active);
+                --border-color-emphasis: var(--border-emphasis);
+                --border-color-default: var(--border);
+                --border-color-muted: var(--border-muted);
+
+                --ring-color-active: var(--border-active);
+                --ring-color-emphasis: var(--border-emphasis);
+                --ring-color-default: var(--border);
+                --ring-color-muted: var(--border-muted);
+
+                --outline-color-active: var(--border-active);
+                --outline-color-emphasis: var(--border-emphasis);
+                --outline-color-default: var(--border);
+                --outline-color-muted: var(--border-muted);
+
+                --background-color-active: var(--background-active);
+                --background-color-emphasis: var(--background-emphasis);
+                --background-color-default: var(--background);
+                --background-color-muted: var(--background-muted);
+
+                --color-backdrop: rgba(0, 0, 0, 0.4);
+
+                --z-index-slideover: 120;
+                --z-index-slideover-overlay: 10;
+                --z-index-slideover-sidebar: 20;
+            }
+
+            @layer base {
+                *,
+                ::after,
+                ::before,
+                ::backdrop,
+                ::file-selector-button {
+                    border-color: var(--border);
+                }
+
+                button:not(:disabled),
+                [role='button']:not(:disabled) {
+                    cursor: pointer;
+                }
+            }
+
+            @utility text {
+                color: var(--text-color-default);
+            }
+
+            @utility bg {
+                background-color: var(--background-color-default);
+            }
+
+            /* Classes from those files are not working at the moment */
             {{ file_get_contents(base_path('../../../../resources/css/components/prose.css')) }}
             {{ file_get_contents(base_path('../../../../resources/css/components/detail-summary.css')) }}
         </style>
 
         <title>Rapidez Blade Components Preview</title>
-
-        <script>
-        function color(variable, fallback) {
-            return 'color-mix(in srgb, var(' + variable + ', ' + fallback + ') calc(100% * <alpha-value>), transparent)'
-        }
-
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            DEFAULT: color('--primary', '#2FBC85'),
-                            text: color('--primary-text', tailwind.colors.white),
-                        },
-                        secondary: {
-                            DEFAULT: color('--secondary', '#202F60'),
-                            text: color('--secondary-text', tailwind.colors.white),
-                        },
-                        conversion: {
-                            DEFAULT: color('--conversion', tailwind.colors.green[700]),
-                            text: color('--conversion-text', tailwind.colors.white),
-                        },
-                        foreground: {
-                            emphasis: color('--foreground-emphasis', tailwind.colors.slate[900]),
-                            DEFAULT: color('--foreground', tailwind.colors.slate[800]),
-                            muted: color('--foreground-muted', tailwind.colors.slate[600]),
-                        },
-                        border: {
-                            emphasis: color('--border-emphasis', tailwind.colors.slate[400]),
-                            DEFAULT: color('--border', tailwind.colors.slate[300]),
-                            muted: color('--border-muted', tailwind.colors.slate[100]),
-                        },
-                        background: {
-                            emphasis: color('--background-emphasis', tailwind.colors.slate[200]),
-                            DEFAULT: color('--background', tailwind.colors.slate[100]),
-                            muted: color('--background-muted', tailwind.colors.slate[50]),
-                        },
-                        backdrop: color('--backdrop', 'rgba(0, 0, 0, 0.4)'),
-                    },
-                    zIndex: {
-                        'slideover': '120',
-                        'slideover-overlay': '10',
-                        'slideover-sidebar': '20',
-                    },
-                    textColor: (theme) => ({
-                        default: theme('colors.foreground'),
-                        ...theme('colors.foreground'),
-                    }),
-                    borderColor: (theme) => ({
-                        default: theme('colors.border'),
-                        ...theme('colors.border'),
-                    }),
-                    backgroundColor: (theme) => ({
-                        default: theme('colors.background'),
-                        ...theme('colors.background'),
-                    }),
-                    ringColor: (theme) => ({
-                        default: theme('colors.border'),
-                        ...theme('colors.border'),
-                    }),
-                    outlineColor: (theme) => ({
-                        default: theme('colors.border'),
-                        ...theme('colors.border'),
-                    }),
-                }
-            }
-        }
-        </script>
     </head>
     <body class="has-[.prevent-scroll:checked]:overflow-clip">
         <div class="bg mb-6">
@@ -127,7 +150,7 @@
 
             <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
                 <div>
-                    <h3 class="text-xl font-bold">Conversion & Rounded button</h3>
+                    <h3 class="text-xl font-bold">Conversion & rounded button</h3>
                     <div class="text-sm text-muted">
                         The conversion button is used for anything conversion related, like adding to cart or inside a checkout.
                         The rounded button is a variant that you can use for slider navigation.
@@ -306,13 +329,13 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-3">
-                    <x-rapidez::accordion class="rounded border px-3">
+                    <x-rapidez::accordion class="rounded-sm border px-3">
                         <x-slot:label class="font-bold">Question 1</x-slot:label>
                         <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
-                    <x-rapidez::accordion class="rounded border px-3">
+                    <x-rapidez::accordion class="rounded-sm border px-3">
                         <x-slot:label class="font-bold">Question 2</x-slot:label>
                         <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
@@ -320,13 +343,13 @@
                     </x-rapidez::accordion>
                 </div>
                 <div class="flex flex-col gap-3">
-                    <x-rapidez::accordion class="rounded border px-3" name="single">
+                    <x-rapidez::accordion class="rounded-sm border px-3" name="single">
                         <x-slot:label class="font-bold">Single open 1</x-slot:label>
                         <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                         </x-slot:content>
                     </x-rapidez::accordion>
-                    <x-rapidez::accordion class="rounded border px-3" name="single">
+                    <x-rapidez::accordion class="rounded-sm border px-3" name="single">
                         <x-slot:label class="font-bold">Single open 2</x-slot:label>
                         <x-slot:content>
                             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
@@ -342,7 +365,7 @@
                         You can also use this component with a custom icon if you prefer that.
                     </div>
                 </div>
-                <x-rapidez::accordion class="rounded border px-3" :icon="false">
+                <x-rapidez::accordion class="rounded-sm border px-3" :icon="false">
                     <x-slot:label class="font-bold">
                         Question 1
                         <x-slot:icon>
@@ -358,7 +381,7 @@
                         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                     </x-slot:content>
                 </x-rapidez::accordion>
-                <x-rapidez::accordion class="rounded border px-3">
+                <x-rapidez::accordion class="rounded-sm border px-3">
                     <x-slot:label class="font-bold">
                         Question 2
                         <x-slot:icon>
@@ -383,13 +406,13 @@
                         You can also use this component without using an icon.
                     </div>
                 </div>
-                <x-rapidez::accordion class="rounded border px-3" :icon="false">
+                <x-rapidez::accordion class="rounded-sm border px-3" :icon="false">
                     <x-slot:label class="font-bold">Question 1</x-slot:label>
                     <x-slot:content>
                         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                     </x-slot:content>
                 </x-rapidez::accordion>
-                <x-rapidez::accordion class="rounded border px-3" :icon="false">
+                <x-rapidez::accordion class="rounded-sm border px-3" :icon="false">
                     <x-slot:label class="font-bold">Question 2</x-slot:label>
                     <x-slot:content>
                         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
@@ -403,13 +426,13 @@
                         This is only an accordion on mobile devices. On desktop, it's always open.
                     </div>
                 </div>
-                <x-rapidez::accordion.mobile id="1" class="rounded border p-3" :icon="false">
+                <x-rapidez::accordion.mobile id="1" class="rounded-sm border p-3" :icon="false">
                     <x-slot:label class="font-bold">Question 1</x-slot:label>
                     <x-slot:content>
                         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
                     </x-slot:content>
                 </x-rapidez::accordion.mobile>
-                <x-rapidez::accordion.mobile id="2" class="rounded border p-3" :icon="false">
+                <x-rapidez::accordion.mobile id="2" class="rounded-sm border p-3" :icon="false">
                     <x-slot:label class="font-bold">Question 2</x-slot:label>
                     <x-slot:content>
                         Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
