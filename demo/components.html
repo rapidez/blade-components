@@ -3,9 +3,100 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/forms@0.5.7"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.5.10"></script>
 
         <style type="text/tailwindcss">
+            @theme {
+                --primary: #2fbc85;
+                --primary-text: var(--color-white);
+
+                --secondary: #202f60;
+                --secondary-text: var(--color-white);
+
+                --conversion: var(--color-green-500);
+                --conversion-text: var(--color-white);
+
+                --foreground-emphasis: var(--color-slate-900);
+                --foreground: var(--color-slate-800);
+                --foreground-muted: var(--color-slate-600);
+
+                --border-active: var(--color-slate-800);
+                --border-emphasis: var(--color-slate-400);
+                --border: var(--color-slate-300);
+                --border-muted: var(--color-slate-100);
+
+                --background-active: var(--color-slate-800);
+                --background-emphasis: var(--color-slate-200);
+                --background: var(--color-slate-100);
+                --background-muted: var(--color-slate-50);
+
+                --color-primary: var(--primary);
+                --color-primary-text: var(--primary-text);
+
+                --color-secondary: var(--secondary);
+                --color-secondary-text: var(--secondary-text);
+
+                --color-conversion: var(--conversion);
+                --color-conversion-text: var(--conversion-text);
+
+                --text-color-emphasis: var(--foreground-emphasis);
+                --text-color-default: var(--foreground);
+                --text-color-muted: var(--foreground-muted);
+
+                --border-color-active: var(--border-active);
+                --border-color-emphasis: var(--border-emphasis);
+                --border-color-default: var(--border);
+                --border-color-muted: var(--border-muted);
+
+                --ring-color-active: var(--border-active);
+                --ring-color-emphasis: var(--border-emphasis);
+                --ring-color-default: var(--border);
+                --ring-color-muted: var(--border-muted);
+
+                --outline-color-active: var(--border-active);
+                --outline-color-emphasis: var(--border-emphasis);
+                --outline-color-default: var(--border);
+                --outline-color-muted: var(--border-muted);
+
+                --background-color-active: var(--background-active);
+                --background-color-emphasis: var(--background-emphasis);
+                --background-color-default: var(--background);
+                --background-color-muted: var(--background-muted);
+
+                --color-backdrop: rgba(0, 0, 0, 0.4);
+
+                --z-index-slideover: 120;
+                --z-index-slideover-overlay: 10;
+                --z-index-slideover-sidebar: 20;
+            }
+
+            @layer base {
+                *,
+                ::after,
+                ::before,
+                ::backdrop,
+                ::file-selector-button {
+                    border-color: var(--border);
+                }
+
+                button:not(:disabled),
+                [role='button']:not(:disabled) {
+                    cursor: pointer;
+                }
+            }
+
+            @utility text {
+                color: var(--text-color-default);
+            }
+
+            @utility bg {
+                background-color: var(--background-color-default);
+            }
+
+            /* Classes from those files are not working at the moment */
             .prose-custom {
     @apply prose font-sans text text-pretty max-w-none
     prose-headings:text prose-a:text-primary prose-strong:text prose-blockquote:text
@@ -54,74 +145,6 @@
         </style>
 
         <title>Rapidez Blade Components Preview</title>
-
-        <script>
-        function color(variable, fallback) {
-            return 'color-mix(in srgb, var(' + variable + ', ' + fallback + ') calc(100% * <alpha-value>), transparent)'
-        }
-
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            DEFAULT: color('--primary', '#2FBC85'),
-                            text: color('--primary-text', tailwind.colors.white),
-                        },
-                        secondary: {
-                            DEFAULT: color('--secondary', '#202F60'),
-                            text: color('--secondary-text', tailwind.colors.white),
-                        },
-                        conversion: {
-                            DEFAULT: color('--conversion', tailwind.colors.green[700]),
-                            text: color('--conversion-text', tailwind.colors.white),
-                        },
-                        foreground: {
-                            emphasis: color('--foreground-emphasis', tailwind.colors.slate[900]),
-                            DEFAULT: color('--foreground', tailwind.colors.slate[800]),
-                            muted: color('--foreground-muted', tailwind.colors.slate[600]),
-                        },
-                        border: {
-                            emphasis: color('--border-emphasis', tailwind.colors.slate[400]),
-                            DEFAULT: color('--border', tailwind.colors.slate[300]),
-                            muted: color('--border-muted', tailwind.colors.slate[100]),
-                        },
-                        background: {
-                            emphasis: color('--background-emphasis', tailwind.colors.slate[200]),
-                            DEFAULT: color('--background', tailwind.colors.slate[100]),
-                            muted: color('--background-muted', tailwind.colors.slate[50]),
-                        },
-                        backdrop: color('--backdrop', 'rgba(0, 0, 0, 0.4)'),
-                    },
-                    zIndex: {
-                        'slideover': '120',
-                        'slideover-overlay': '10',
-                        'slideover-sidebar': '20',
-                    },
-                    textColor: (theme) => ({
-                        default: theme('colors.foreground'),
-                        ...theme('colors.foreground'),
-                    }),
-                    borderColor: (theme) => ({
-                        default: theme('colors.border'),
-                        ...theme('colors.border'),
-                    }),
-                    backgroundColor: (theme) => ({
-                        default: theme('colors.background'),
-                        ...theme('colors.background'),
-                    }),
-                    ringColor: (theme) => ({
-                        default: theme('colors.border'),
-                        ...theme('colors.border'),
-                    }),
-                    outlineColor: (theme) => ({
-                        default: theme('colors.border'),
-                        ...theme('colors.border'),
-                    }),
-                }
-            }
-        }
-        </script>
     </head>
     <body class="has-[.prevent-scroll:checked]:overflow-clip">
         <div class="bg mb-6">
@@ -140,15 +163,15 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-y-2">
-                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-primary text-primary-text border-b border-b-black/20 hover:bg-opacity-80">
+                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded-sm min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-primary text-primary-text border-b border-b-black/20 hover:bg-primary/80">
     Primary
-</button>                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-primary text-primary-text border-b border-b-black/20 hover:bg-opacity-80" disabled="disabled">
+</button>                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded-sm min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-primary text-primary-text border-b border-b-black/20 hover:bg-primary/80" disabled="disabled">
     Primary disabled
 </button>                </div>
                 <div class="flex flex-col gap-y-2">
-                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-secondary text-secondary-text border-b border-b-black/20 hover:bg-opacity-80">
+                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded-sm min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-secondary text-secondary-text border-b border-b-black/20 hover:bg-secondary/80">
     Secondary
-</button>                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-secondary text-secondary-text border-b border-b-black/20 hover:bg-opacity-80" disabled="disabled">
+</button>                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded-sm min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-secondary text-secondary-text border-b border-b-black/20 hover:bg-secondary/80" disabled="disabled">
     Secondary disabled
 </button>                </div>
             </div>
@@ -163,31 +186,31 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-y-2">
-                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg text-muted hover:text hover:bg-emphasis border-b border-b-black/10">
+                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded-sm min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg text-muted hover:text hover:bg-emphasis border-b border-b-black/10">
     Default button
-</button>                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg text-muted hover:text hover:bg-emphasis border-b border-b-black/10" disabled="disabled">
+</button>                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded-sm min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg text-muted hover:text hover:bg-emphasis border-b border-b-black/10" disabled="disabled">
     Default button disabled
 </button>                </div>
                 <div class="flex flex-col gap-y-2">
-                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-transparent border text-default hover:border-emphasis">
+                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded-sm min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-transparent border text-default hover:border-emphasis">
     Outline
-</button>                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-transparent border text-default hover:border-emphasis" disabled="disabled">
+</button>                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded-sm min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-transparent border text-default hover:border-emphasis" disabled="disabled">
     Outline disabled
 </button>                </div>
             </div>
 
             <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
                 <div>
-                    <h3 class="text-xl font-bold">Conversion & Rounded button</h3>
+                    <h3 class="text-xl font-bold">Conversion & rounded button</h3>
                     <div class="text-sm text-muted">
                         The conversion button is used for anything conversion related, like adding to cart or inside a checkout.
                         The rounded button is a variant that you can use for slider navigation.
                     </div>
                 </div>
                 <div class="flex flex-col gap-y-2">
-                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-conversion hover:bg-opacity-80 text-conversion-text border-b border-b-black/20">
+                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded-sm min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-conversion hover:bg-conversion/80 text-conversion-text border-b border-b-black/20">
     Conversion
-</button>                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-conversion hover:bg-opacity-80 text-conversion-text border-b border-b-black/20" disabled="disabled">
+</button>                    <button class="inline-flex items-center justify-center transition font-medium text-base rounded-sm min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-conversion hover:bg-conversion/80 text-conversion-text border-b border-b-black/20" disabled="disabled">
     Conversion disabled
 </button>                </div>
                 <div class="flex gap-x-4">
@@ -297,32 +320,32 @@
                 </div>
                 <div class="flex flex-col gap-y-8 lg:gap-y-14">
                     <div class="flex flex-col gap-y-4">
-                        <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed" />
+                        <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-hidden focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed" />
                         <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed mr-2.5" />
+    <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-hidden focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed mr-2.5" />
     Checkbox
 </label>
                         <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed mr-2.5" required="required" />
+    <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-hidden focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed mr-2.5" required="required" />
     Checkbox
 </label>
                         <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed mr-2.5 disabled:border-muted disabled:bg-muted disabled:text-muted" disabled="disabled" />
+    <input type="checkbox" class="cursor-pointer border border-default rounded-md size-5 text focus:outline-hidden focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed mr-2.5 disabled:border-muted disabled:bg-muted disabled:text-muted" disabled="disabled" />
     Checkbox
 </label>
                     </div>
                     <div class="flex flex-col gap-y-4">
-                        <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed" />
+                        <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-hidden focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed" />
                         <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed mr-2.5" />
+    <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-hidden focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed mr-2.5" />
     Radio
 </label>
                         <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed mr-2.5" required="required" />
+    <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-hidden focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed mr-2.5" required="required" />
     Radio
 </label>
                         <label class="inline-flex text text-sm cursor-pointer has-[:required]:after:content-['*']">
-    <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-none focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed mr-2.5 disabled:border-muted disabled:bg-muted disabled:text-muted" disabled="disabled" />
+    <input type="radio" class="cursor-pointer border border-default size-5 text focus:outline-hidden focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed mr-2.5 disabled:border-muted disabled:bg-muted disabled:text-muted" disabled="disabled" />
     Radio
 </label>
                     </div>
@@ -334,7 +357,7 @@
                 <div class="flex flex-col gap-3">
                     <h3 class="text-md font-bold">Default</h3>
                     <div>
-                        <label class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-primary text-primary-text border-b border-b-black/20 hover:bg-opacity-80" for="default-slideover">
+                        <label class="inline-flex items-center justify-center transition font-medium text-base rounded-sm min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-primary text-primary-text border-b border-b-black/20 hover:bg-primary/80" for="default-slideover">
     Open Slideover
 </label>                        <div class="relative z-slideover has-[.mobile-slideover]:lg:z-auto">
     <input id="close-default-slideover" class="hidden" type="reset">
@@ -370,7 +393,7 @@
                 <div class="flex flex-col gap-3">
                     <h3 class="text-md font-bold">Right-positioned</h3>
                     <div>
-                        <label class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-secondary text-secondary-text border-b border-b-black/20 hover:bg-opacity-80" for="right-slideover">
+                        <label class="inline-flex items-center justify-center transition font-medium text-base rounded-sm min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-secondary text-secondary-text border-b border-b-black/20 hover:bg-secondary/80" for="right-slideover">
     Open Right Slideover
 </label>                        <div class="relative z-slideover has-[.mobile-slideover]:lg:z-auto">
     <input id="close-right-slideover" class="hidden" type="reset">
@@ -405,7 +428,7 @@
                 <div class="flex flex-col gap-3">
                     <h3 class="text-md font-bold">Mobile only</h3>
                     <div>
-                        <label class="inline-flex items-center justify-center transition font-medium text-base rounded min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-transparent border text-default hover:border-emphasis lg:hidden" for="mobile-slideover">
+                        <label class="inline-flex items-center justify-center transition font-medium text-base rounded-sm min-h-12 py-1.5 px-5 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer gap-x-1.5 bg-transparent border text-default hover:border-emphasis lg:hidden" for="mobile-slideover">
     Open Mobile Slideover
 </label>                        <div class="relative z-slideover has-[.mobile-slideover]:lg:z-auto">
     <input id="close-mobile-slideover" class="hidden" type="reset">
@@ -451,7 +474,7 @@
                 </div>
                 <div class="flex flex-col gap-3">
                     <details
-    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
+    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded-sm border px-3"
 >
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Question 1
@@ -465,7 +488,7 @@
     </div>
 </details>
                     <details
-    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
+    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded-sm border px-3"
 >
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Question 2
@@ -481,7 +504,7 @@
                 </div>
                 <div class="flex flex-col gap-3">
                     <details
-    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3" name="single"
+    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded-sm border px-3" name="single"
 >
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Single open 1
@@ -495,7 +518,7 @@
     </div>
 </details>
                     <details
-    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3" name="single"
+    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded-sm border px-3" name="single"
 >
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Single open 2
@@ -519,7 +542,7 @@
                     </div>
                 </div>
                 <details
-    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
+    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded-sm border px-3"
 >
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Question 1
@@ -536,7 +559,7 @@
     </div>
 </details>
                 <details
-    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
+    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded-sm border px-3"
 >
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Question 2
@@ -562,7 +585,7 @@
                     </div>
                 </div>
                 <details
-    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
+    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded-sm border px-3"
 >
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Question 1
@@ -574,7 +597,7 @@
     </div>
 </details>
                 <details
-    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded border px-3"
+    class="group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto rounded-sm border px-3"
 >
     <summary class="flex items-center py-3.5 cursor-pointer list-none font-bold">
         Question 2
@@ -593,7 +616,7 @@
                         This is only an accordion on mobile devices. On desktop, it's always open.
                     </div>
                 </div>
-                <div class="flex flex-col group rounded border p-3">
+                <div class="flex flex-col group rounded-sm border p-3">
     <input
         id="1"
         name=""
@@ -611,7 +634,7 @@
             Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Reprehenderit eum in deleniti dicta ducimus perspiciatis provident tempore. Consequuntur nemo blanditiis delectus, quasi velit illum ipsa quibusdam maiores cupiditate itaque repellendus.
         </div>
     </div>
-</div>                <div class="flex flex-col group rounded border p-3">
+</div>                <div class="flex flex-col group rounded-sm border p-3">
     <input
         id="2"
         name=""
