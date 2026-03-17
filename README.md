@@ -161,7 +161,7 @@ Route::view('components', 'rapidez::components-preview');
 
 ## Development
 
-When you're working on this package you should first install the frontend dependencies with `yarn`, to show a preview in the browser use `yarn preview`
+When you're working on this package you should first install the frontend dependencies with `yarn`, create an initial build with `yarn build`, symlink the public build with `yarn symlink-public` and to show a preview in the browser use `yarn preview`.
 
 ## License
 
