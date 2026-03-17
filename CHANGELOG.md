@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/1.11.0...1.11.0)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/2.0.0...2.0.0)
+## [2.0.0](https://github.com/rapidez/blade-components/releases/tag/2.0.0) - 2026-03-17
+
+### Changed
+
+- Tailwind 4 update + refactor using Vite and moved to colors (#36)
+
 ## [1.11.0](https://github.com/rapidez/blade-components/releases/tag/1.11.0) - 2025-09-24
 
 ### Changed
