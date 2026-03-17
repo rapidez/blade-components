@@ -7,6 +7,7 @@
         "dev": "vite",
         "build": "vite build",
         "prod": "vite build",
+        "symlink-public": "composer symlink-public",
         "preview-demo": "composer preview-demo",
         "generate-demo": "composer generate-demo",
         "preview": "concurrently 'yarn preview-demo' 'yarn dev'"

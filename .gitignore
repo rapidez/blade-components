@@ -1,5 +1,5 @@
 /composer.lock
-/public/build/
+/public
 /node_modules
 /vendor
 /yarn.lock

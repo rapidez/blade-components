@@ -37,6 +37,9 @@ jobs:
         run: yarn build
 
       - name: Generate demo
+        run: composer symlink-public
+
+      - name: Generate demo
         run: composer generate-demo
 
       - name: Commit
