@@ -1,8 +1,8 @@
-@import './package.css';
-
 @import 'tailwindcss' source(none);
 
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
 @source '../**/*.blade.php';
+
+@import './package.css';

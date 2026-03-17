@@ -70,11 +70,11 @@
 }
 
 @layer base {
-    :root *,
-    :root ::after,
-    :root ::before,
-    :root ::backdrop,
-    :root ::file-selector-button {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
         border-color: var(--border, currentColor);
     }
 
