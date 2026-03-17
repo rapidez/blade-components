@@ -57,7 +57,7 @@
 
             <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
                 <div>
-                    <h3 class="text-xl font-bold">Conversion & rounded button</h3>
+                    <h3 class="text-xl font-bold">Conversion & Rounded button</h3>
                     <div class="text-sm text-muted">
                         The conversion button is used for anything conversion related, like adding to cart or inside a checkout.
                         The rounded button is a variant that you can use for slider navigation.
