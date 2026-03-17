@@ -42,75 +42,19 @@ The base button doesn't have any styling; here, we only use the `x-rapidez::tag`
 composer require rapidez/blade-components
 ```
 
-Make sure these colors and z-indexes are present in your `tailwind.config.js` file:
-```js
-colors: {
-    colors: {
-        primary: {
-            DEFAULT: color('--primary', '#2FBC85'),
-            text: color('--primary-text', colors.white),
-        },
-        secondary: {
-            DEFAULT: color('--secondary', '#202F60'),
-            text: color('--secondary-text', colors.white),
-        },
-        conversion: {
-            DEFAULT: color('--conversion', colors.green[700]),
-            text: color('--conversion-text', colors.white),
-        },
-        foreground: {
-            emphasis: color('--foreground-emphasis', colors.slate[900]),
-            DEFAULT: color('--foreground', colors.slate[800]),
-            muted: color('--foreground-muted', colors.slate[600]),
-        },
-        border: {
-            emphasis: color('--border-emphasis', colors.slate[400]),
-            DEFAULT: color('--border', colors.slate[300]),
-            muted: color('--border-muted', colors.slate[100]),
-        },
-        background: {
-            emphasis: color('--background-emphasis', colors.slate[200]),
-            DEFAULT: color('--background', colors.slate[100]),
-            muted: color('--background-muted', colors.slate[50]),
-        },
-        backdrop: color('--backdrop', 'rgba(0, 0, 0, 0.4)'),
-    },
-    zIndex: {
-        'slideover': '120',
-        'slideover-overlay': '10',
-        'slideover-sidebar': '20',
-    },
-    textColor: (theme) => ({
-        default: theme('colors.foreground'),
-        ...theme('colors.foreground'),
-    }),
-    borderColor: (theme) => ({
-        default: theme('colors.border'),
-        ...theme('colors.border'),
-    }),
-    backgroundColor: (theme) => ({
-        default: theme('colors.background'),
-        ...theme('colors.background'),
-    }),
-    ringColor: (theme) => ({
-        default: theme('colors.border'),
-        ...theme('colors.border'),
-    }),
-    outlineColor: (theme) => ({
-        default: theme('colors.border'),
-        ...theme('colors.border'),
-    }),
-}
+And include the CSS file in your `resources/css/app.css`:
+```
+@import '../../vendor/rapidez/blade-components/resources/css/package.css';
 ```
 
-And make sure you add this in your `tailwind.config.js` file:
-```js
-import colors from 'tailwindcss/colors'
+If you're not using Tailwind yet, you've to make sure you've setup Tailwind 4 with these plugins:
 
-function color(variable, fallback) {
-    return 'color-mix(in srgb, var(' + variable + ', ' + fallback + ') calc(100% * <alpha-value>), transparent)'
-}
-```
+- [Forms](https://github.com/tailwindlabs/tailwindcss-forms)
+- [Typography](https://github.com/tailwindlabs/tailwindcss-typography)
+
+A minimal setup can be found in this repos `app.css`, `package.json` and `vite.config.js`.
+
+More information about the usage and variables can be found in the Rapidez docs: https://docs.rapidez.io/5.x/theming.html#css
 
 ### Views
 
@@ -118,14 +62,6 @@ If you like to change the components you can publish the views with:
 ```
 php artisan vendor:publish --tag=rapidez-blade-components-views
 ```
-
-### Prose component
-
-If you're going to use the Prose component and you're not using Rapidez; you've to import the CSS file manually:
-```
-@import '../../vendor/rapidez/blade-components/resources/css/package.css';
-```
-With Rapidez this is already imported from the [app.js](https://github.com/rapidez/rapidez/blob/master/resources/js/app.js).
 
 ### Read more component
 
@@ -225,7 +161,7 @@ Route::view('components', 'rapidez::components-preview');
 
 ## Development
 
-When you're working on this package you can use `composer preview-demo` to get a preview in the browser. There is also another script: `generate-demo` which runs automatically on push.
+When you're working on this package you should first install the frontend dependencies with `yarn`, create an initial build with `yarn build`, symlink the public build with `yarn symlink-public` and to show a preview in the browser use `yarn preview`.
 
 ## License
 

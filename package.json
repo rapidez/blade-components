@@ -1,0 +1,25 @@
+{
+    "name": "@rapidez/blade-components",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "prod": "vite build",
+        "symlink-public": "composer symlink-public",
+        "preview-demo": "composer preview-demo",
+        "generate-demo": "composer generate-demo",
+        "preview": "concurrently 'yarn preview-demo' 'yarn dev'"
+    },
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.5.3",
+        "@tailwindcss/typography": "^0.5.9",
+        "@tailwindcss/vite": "^4.2.1",
+        "concurrently": "^9.2.1",
+        "laravel-vite-plugin": "^2.0.0",
+        "tailwindcss": "^4.2.1",
+        "vite": "^7.0"
+    },
+    "dependencies": {}
+}
