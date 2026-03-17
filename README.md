@@ -42,72 +42,19 @@ The base button doesn't have any styling; here, we only use the `x-rapidez::tag`
 composer require rapidez/blade-components
 ```
 
-Make sure these colors and z-indexes are present in your `app.css` file:
-```css
-@theme {
-    --primary: #2fbc85;
-    --primary-text: var(--color-white);
-
-    --secondary: #202f60;
-    --secondary-text: var(--color-white);
-
-    --conversion: var(--color-green-500);
-    --conversion-text: var(--color-white);
-
-    --foreground-emphasis: var(--color-slate-900);
-    --foreground: var(--color-slate-800);
-    --foreground-muted: var(--color-slate-600);
-
-    --border-active: var(--color-slate-800);
-    --border-emphasis: var(--color-slate-400);
-    --border: var(--color-slate-300);
-    --border-muted: var(--color-slate-100);
-
-    --background-active: var(--color-slate-800);
-    --background-emphasis: var(--color-slate-200);
-    --background: var(--color-slate-100);
-    --background-muted: var(--color-slate-50);
-
-    --color-primary: var(--primary);
-    --color-primary-text: var(--primary-text);
-
-    --color-secondary: var(--secondary);
-    --color-secondary-text: var(--secondary-text);
-
-    --color-conversion: var(--conversion);
-    --color-conversion-text: var(--conversion-text);
-
-    --text-color-emphasis: var(--foreground-emphasis);
-    --text-color-default: var(--foreground);
-    --text-color-muted: var(--foreground-muted);
-
-    --border-color-active: var(--border-active);
-    --border-color-emphasis: var(--border-emphasis);
-    --border-color-default: var(--border);
-    --border-color-muted: var(--border-muted);
-
-    --ring-color-active: var(--border-active);
-    --ring-color-emphasis: var(--border-emphasis);
-    --ring-color-default: var(--border);
-    --ring-color-muted: var(--border-muted);
-
-    --outline-color-active: var(--border-active);
-    --outline-color-emphasis: var(--border-emphasis);
-    --outline-color-default: var(--border);
-    --outline-color-muted: var(--border-muted);
-
-    --background-color-active: var(--background-active);
-    --background-color-emphasis: var(--background-emphasis);
-    --background-color-default: var(--background);
-    --background-color-muted: var(--background-muted);
-
-    --color-backdrop: rgba(0, 0, 0, 0.4);
-
-    --z-index-slideover: 120;
-    --z-index-slideover-overlay: 10;
-    --z-index-slideover-sidebar: 20;
-}
+And include the CSS file in your `resources/css/app.css`:
 ```
+@import '../../vendor/rapidez/blade-components/resources/css/package.css';
+```
+
+If you're not using Tailwind yet, you've to make sure you've setup Tailwind 4 with these plugins:
+
+- [Forms](https://github.com/tailwindlabs/tailwindcss-forms)
+- [Typography](https://github.com/tailwindlabs/tailwindcss-typography)
+
+A minimal setup can be found in this repos `app.css`, `package.json` and `vite.config.js`.
+
+More information about the usage and variables can be found in the Rapidez docs: https://docs.rapidez.io/5.x/theming.html#css
 
 ### Views
 
@@ -115,14 +62,6 @@ If you like to change the components you can publish the views with:
 ```
 php artisan vendor:publish --tag=rapidez-blade-components-views
 ```
-
-### Prose component
-
-If you're going to use the Prose component and you're not using Rapidez; you've to import the CSS file manually:
-```
-@import '../../vendor/rapidez/blade-components/resources/css/package.css';
-```
-With Rapidez this is already imported from the [app.js](https://github.com/rapidez/rapidez/blob/master/resources/js/app.js).
 
 ### Read more component
 
@@ -222,7 +161,7 @@ Route::view('components', 'rapidez::components-preview');
 
 ## Development
 
-When you're working on this package you can use `composer preview-demo` to get a preview in the browser. There is also another script: `generate-demo` which runs automatically on push.
+When you're working on this package you should first install the frontend dependencies with `yarn`, to show a preview in the browser use `yarn preview`
 
 ## License
 

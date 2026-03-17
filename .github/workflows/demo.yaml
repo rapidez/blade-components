@@ -15,6 +15,10 @@ jobs:
           ref: ${{ github.event.release.target_commitish }}
           token: ${{ secrets.RAPIDEZ_ACTIONS_ACCOUNT_PAT }}
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -25,6 +29,12 @@ jobs:
 
       - name: Fix permissions
         run: sudo chmod -R 0777 vendor/orchestra/testbench-core/laravel/
+
+      - name: Install Yarn dependencies
+        run: npm install -g yarn && yarn
+
+      - name: Frontend Build
+        run: yarn build
 
       - name: Generate demo
         run: composer generate-demo

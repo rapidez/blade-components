@@ -1,0 +1,4 @@
+workbench:
+  sync:
+    - from: public/build
+      to: public/build
