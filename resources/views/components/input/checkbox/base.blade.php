@@ -6,4 +6,4 @@ Examples:
 <x-rapidez::input.checkbox.base />
 ```
 --}}
-<input type="checkbox" {{ $attributes->twMerge('cursor-pointer border border-default rounded-md size-5 text focus:outline-hidden focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed') }} />
+<input type="checkbox" {{ $attributes->twMerge('cursor-pointer border border-default rounded-md size-5 text checked:border-transparent focus:outline-hidden focus:ring-emphasis focus:ring-offset-0 disabled:cursor-not-allowed') }} />
