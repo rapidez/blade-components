@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/2.0.0...2.0.0)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/2.0.1...2.0.1)
+## [2.0.1](https://github.com/rapidez/blade-components/releases/tag/2.0.1) - 2026-03-20
+
+### Fixed
+
+- Fix check border transparent (#37)
+
 ## [2.0.0](https://github.com/rapidez/blade-components/releases/tag/2.0.0) - 2026-03-17
 
 ### Changed
