@@ -374,7 +374,7 @@
                 <div>
                     <h3 class="text-xl font-bold">Read more / Read less inline variant</h3>
                     <div class="text-sm text-muted">
-                        If you want to have the inline variant you can use the variant like the exmaple shown here
+                        If you want to have the inline variant you can use the variant like the example shown here
                     </div>
                 </div>
                 <div class="flex flex-col gap-3">
