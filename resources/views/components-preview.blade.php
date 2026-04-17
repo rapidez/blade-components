@@ -370,6 +370,30 @@
                 </div>
             </div>
 
+            <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
+                <div>
+                    <h3 class="text-xl font-bold">Read more / Read less inline variant</h3>
+                    <div class="text-sm text-muted">
+                        If you want to have the inline variant you can use the variant like the exmaple shown here
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Inline read more / read less</h3>
+                    <x-rapidez::readmore>
+                        <x-slot:wrapper class="flex items-baseline">
+                            <x-slot:slot class="line-clamp-1 break-all">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates.
+                                <span data-read-less class="hidden invisible cursor-pointer items-center gap-1 whitespace-nowrap text-primary hover:underline">
+                                    @lang('Read less')
+                                    <x-heroicon-o-chevron-up class="size-3.5 mt-px" stroke-width="2" />
+                                </span>
+                            </x-slot:slot>
+                            <x-slot:less><span></span></x-slot:less>
+                        </x-slot:wrapper>
+                    </x-rapidez::readmore>
+                </div>
+            </div>
+
             <h2 class="font-bold text-2xl mt-5">Prose component</h2>
             <x-rapidez::prose>
                 <h1>Wayne Enterprises</h1>
