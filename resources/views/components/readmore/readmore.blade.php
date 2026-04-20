@@ -19,7 +19,7 @@ Read more/less component using the Tailwind CSS `peer` utility. Only used JS for
 
 ## Changing the line-clamp quantity and using custom read more/less buttons
 ```
-<x-rapidez::readmore> 
+<x-rapidez::readmore>
     <x-slot:slot class="line-clamp-3">
         Content
     </x-slot:slot>
