@@ -381,10 +381,13 @@
                     <h3 class="text-md font-bold">Inline read more / read less</h3>
                     <x-rapidez::readmore>
                         <x-slot:wrapper class="flex items-baseline">
-                            <x-slot:slot class="line-clamp-1 break-all">
+                            <x-slot:slot class="line-clamp-1 mb-0 break-all">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates.
-                                <span data-read-less class="hidden invisible cursor-pointer items-center gap-1 whitespace-nowrap text-primary hover:underline">
-                                    @lang('Read less')
+                                <span
+                                    class="hidden invisible cursor-pointer items-center gap-1 whitespace-nowrap text-primary hover:underline"
+                                    data-read-less
+                                    data-text-less="@lang('Read less')"
+                                >
                                     <x-heroicon-o-chevron-up class="size-3.5 mt-px" stroke-width="2" />
                                 </span>
                             </x-slot:slot>

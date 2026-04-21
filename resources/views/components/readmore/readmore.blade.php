@@ -61,15 +61,21 @@ Move the read less button inside the default slot.
             {{ $slot }}
         </div>
         @slotdefault('more')
-            <span data-read-more class="invisible flex cursor-pointer items-center gap-1 whitespace-nowrap text-primary hover:underline">
-                @lang('Read more')
+            <span
+                class="invisible min-w-24 h-6 flex cursor-pointer items-center gap-1 whitespace-nowrap text-primary hover:underline"
+                data-read-more
+                data-text-more="@lang('Read more')"
+            >
                 <x-heroicon-o-chevron-down class="size-3.5 mt-px" stroke-width="2" />
             </span>
         @endslotdefault
 
         @slotdefault('less')
-            <span data-read-less class="hidden invisible cursor-pointer items-center gap-1 whitespace-nowrap text-primary hover:underline">
-                @lang('Read less')
+            <span
+                class="hidden invisible cursor-pointer items-center gap-1 whitespace-nowrap text-primary hover:underline"
+                data-read-less
+                data-text-less="@lang('Read less')"
+            >
                 <x-heroicon-o-chevron-up class="size-3.5 mt-px" stroke-width="2" />
             </span>
         @endslotdefault
@@ -84,6 +90,13 @@ function checkReadMore() {
         const readMoreBtn = container.querySelector('[data-read-more]');
         const readLessBtn = container.querySelector('[data-read-less]');
         const needsReadMore = content.scrollHeight > content.clientHeight;
+
+        if (!readMoreBtn.textContent.trim()) {
+            readMoreBtn.prepend(readMoreBtn.dataset.textMore + ' ');
+        }
+        if (!readLessBtn.textContent.trim()) {
+            readLessBtn.prepend(readLessBtn.dataset.textLess + ' ');
+        }
 
         if (!content.dataset.originalClasses) {
             const lineClampMatch = content.className.match(/line-clamp-\d+/);
@@ -101,7 +114,6 @@ function checkReadMore() {
         });
 
         readLessBtn.addEventListener("click", () => {
-            content.className = content.className.replace(/line-clamp-\d+/g, '');
             content.classList.add(content.dataset.originalClasses);
             readMoreBtn.style.display = "inline-flex";
             readLessBtn.style.display = "none";
