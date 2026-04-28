@@ -91,6 +91,16 @@
                     <x-rapidez::button.link>Link</x-rapidez::button.link>
                     <x-rapidez::button.link disabled>Link disabled</x-rapidez::button.link>
                 </div>
+                <div class="flex flex-col gap-y-2">
+                    <x-rapidez::button.link>
+                        Link
+                        <x-heroicon-o-chevron-down class="size-3.5 mt-px" stroke-width="2" />
+                    </x-rapidez::button.link>
+                    <x-rapidez::button.link disabled>
+                        Link disabled
+                        <x-heroicon-o-chevron-down class="size-3.5 mt-px" stroke-width="2" />
+                    </x-rapidez::button.link>
+                </div>
             </div>
 
             <h2 class="font-bold text-2xl mt-5 mb-2">Input components</h2>
