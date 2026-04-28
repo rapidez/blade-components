@@ -19,7 +19,7 @@ Read more/less component using the Tailwind CSS `peer` utility. Only used JS for
 
 ## Changing the line-clamp quantity and using custom read more/less buttons
 ```
-<x-rapidez::readmore> 
+<x-rapidez::readmore>
     <x-slot:slot class="line-clamp-3">
         Content
     </x-slot:slot>
@@ -41,18 +41,18 @@ Read more/less component using the Tailwind CSS `peer` utility. Only used JS for
         <input type="checkbox" class="hidden peer">
         <span {{ $more->attributes->twMerge('inline-flex peer-checked:hidden') }}>
             @slotdefault('more')
-                <span class="hover:underline cursor-pointer flex items-center gap-1 text-primary">
+                <x-rapidez::button.link tag="span" class="gap-1">
                     @lang('Read more')
                     <x-heroicon-o-chevron-down class="size-3.5 mt-px" stroke-width="2" />
-                </span>
+                </x-rapidez::button.link>
             @endslotdefault
         </span>
         <span {{ $less->attributes->twMerge('hidden peer-checked:inline-flex') }}>
             @slotdefault('less')
-                <span class="hover:underline cursor-pointer flex items-center gap-1 text-primary">
+                <x-rapidez::button.link tag="span" class="gap-1">
                     @lang('Read less')
                     <x-heroicon-o-chevron-up class="size-3.5 mt-px" stroke-width="2" />
-                </span>
+                </x-rapidez::button.link>
             @endslotdefault
         </span>
     </label>

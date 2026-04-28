@@ -79,6 +79,20 @@
                 </div>
             </div>
 
+            <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
+                <div>
+                    <h3 class="text-xl font-bold">Button link</h3>
+                    <div class="text-sm text-muted">
+                        Show a button as a simple link with an underline on hover.
+                        The button has no background or padding.
+                    </div>
+                </div>
+                <div class="flex flex-col gap-y-2">
+                    <x-rapidez::button.link>Link</x-rapidez::button.link>
+                    <x-rapidez::button.link disabled>Link disabled</x-rapidez::button.link>
+                </div>
+            </div>
+
             <h2 class="font-bold text-2xl mt-5 mb-2">Input components</h2>
             <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
                 <div>
