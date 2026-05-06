@@ -1,6 +1,11 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/2.0.1...2.0.1)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/2.1.0...2.1.0)
+## [2.1.0](https://github.com/rapidez/blade-components/releases/tag/2.1.0) - 2026-04-20
+
+### Changed
+- Laravel 13 support (#39)
+
 ## [2.0.1](https://github.com/rapidez/blade-components/releases/tag/2.0.1) - 2026-03-20
 
 ### Fixed
