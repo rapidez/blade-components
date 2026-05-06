@@ -1,6 +1,13 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/2.1.0...2.1.0)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/2.2.0...2.2.0)
+## [2.2.0](https://github.com/rapidez/blade-components/releases/tag/2.2.0) - 2026-05-06
+
+### Added
+
+- Button link variant (#41)
+- Read more / less inline variant (#38)
+
 ## [2.1.0](https://github.com/rapidez/blade-components/releases/tag/2.1.0) - 2026-04-20
 
 ### Changed
