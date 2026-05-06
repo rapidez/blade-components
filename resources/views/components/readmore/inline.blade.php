@@ -39,9 +39,10 @@ Read more/less component using the Tailwind CSS `peer` utility.
                 {{ $slot }}
                 @slotdefault('less')
                     <label for="toggle" class="shrink-0">
-                        <span class="hover:underline cursor-pointer inline items-center gap-1 text-primary">
+                        <x-rapidez::button.link tag="span" class="gap-1">
                             @lang('Read less')
-                        </span>
+                            <x-heroicon-o-chevron-up class="size-3.5 mt-px" stroke-width="2" />
+                        </x-rapidez::button.link>
                     </label>
                 @endslotdefault
             </span>
@@ -49,9 +50,10 @@ Read more/less component using the Tailwind CSS `peer` utility.
         <label for="toggle" class="shrink-0">
             <span {{ $more->attributes->twMerge('inline-flex group-peer-checked:hidden') }}>
                 @slotdefault('more')
-                    <span class="hover:underline cursor-pointer flex items-center gap-1 text-primary">
+                    <x-rapidez::button.link tag="span" class="gap-1">
                         @lang('Read more')
-                    </span>
+                        <x-heroicon-o-chevron-down class="size-3.5 mt-px" stroke-width="2" />
+                    </x-rapidez::button.link>
                 @endslotdefault
             </span>
         </label>

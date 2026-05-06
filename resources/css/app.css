@@ -2,7 +2,6 @@
 
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
-@plugin '@tushargugnani/tailwind-group-peer-checked';
 
 @source '../**/*.blade.php';
 
