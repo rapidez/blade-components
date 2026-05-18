@@ -42,7 +42,7 @@ Open one accordion at the time then add a name to the accordion:
 @slots(['label', 'content', 'icon'])
 
 <details
-    {{ $attributes->twMerge('group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto') }}
+    {{ $attributes->twMerge('group/details details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] supports-[transition:discrete]:details-content:transition-discrete details-content:duration-200 open:details-content:h-auto') }}
 >
     <summary {{ $label->attributes->twMerge('flex items-center font-medium py-3.5 cursor-pointer list-none') }}>
         {{ $label }}
