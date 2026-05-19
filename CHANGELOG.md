@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/2.2.0...2.2.0)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/2.2.1...2.2.1)
+## [2.2.1](https://github.com/rapidez/blade-components/releases/tag/2.2.1) - 2026-05-18
+
+### Fixed
+
+- Added support checks to transition discrete (#42)
+
 ## [2.2.0](https://github.com/rapidez/blade-components/releases/tag/2.2.0) - 2026-05-06
 
 ### Added
