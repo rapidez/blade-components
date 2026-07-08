@@ -21,6 +21,7 @@ class BladeComponentsServiceProvider extends ServiceProvider
     public function bootViews() : self
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'rapidez');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'blade-components');
 
         return $this;
     }
