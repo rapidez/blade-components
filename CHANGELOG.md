@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/2.2.1...2.2.1)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/2.2.2...2.2.2)
+## [2.2.2](https://github.com/rapidez/blade-components/releases/tag/2.2.2) - 2026-07-08
+
+### Fixed
+
+- Added blade components namespace (#44)
+
 ## [2.2.1](https://github.com/rapidez/blade-components/releases/tag/2.2.1) - 2026-05-18
 
 ### Fixed
