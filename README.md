@@ -47,6 +47,11 @@ And include the CSS file in your `resources/css/app.css`:
 @import '../../vendor/rapidez/blade-components/resources/css/package.css';
 ```
 
+Make sure you add the blade components to the tailwind sources:
+```
+@source "../../vendor/rapidez/blade-components/resources/views/**/*.blade.php";
+```
+
 If you're not using Tailwind yet, you've to make sure you've setup Tailwind 4 with these plugins:
 
 - [Forms](https://github.com/tailwindlabs/tailwindcss-forms)
