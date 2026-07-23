@@ -1,98 +1,71 @@
 {{--
-No-js slideover component by making use of checkboxes and form reset logic for nested slideovers.
+No-js slideover component by making use of the amazing popover html functionality.
 
 ## Properties
-- `has-parent`    Used for nested slideovers. Set to `true` when this slideover is a child of another slideover
-- `id`            Unique identifier for the checkbox input. Required for the slideover toggle
-- `open`          Default `false`, set to `true` to have it open initially
 - `position`      Position of the slideover. Can be `left` or `right`. Defaults to `left`
-- `tag`           Base tag of the slideover. Set to `form` for parent of nested slideover. Defaults to `div`
-- `title`         Title displayed in the header. Can be provided as a slot or property
 
-## Slots
-- `headerbutton`  Custom button in the header instead of the default left arrow
-- `title`         Alternative way to set the header title
-- Default slot    Main content of the slideover
-
-## Body Class
-Add this class to prevent scrolling when slideover is open:
+## HTML Class
+Add this class to prevent scrolling when popover is open:
 ```html
-<body class="has-[.prevent-scroll:checked]:overflow-clip">
+<html class="has-[:popover-open]:overflow-clip">
 ```
-
-## Nesting Slideovers
-For nested slideovers:
-1. Parent slideover must use `tag="form"`
-2. Child slideovers must set `has-parent="true"`
-3. Child slideovers should use default `tag="div"`
-
-This setup enables form reset logic and ensures proper background backdrop behavior.
 
 ## Examples
 Basic usage:
 ```blade
-<label for="my-slideover">
-    Open Menu
-</label>
-<x-rapidez::slideover id="my-slideover" title="Menu">
-    Content goes here
+<button popovertarget="example">
+    Open slideover
+</button>
+
+<x-rapidez::slideover id="example">
+    <x-rapidez::slideover.header>
+        Title
+        <x-rapidez::slideover.close popovertarget="example" />
+    </x-rapidez::slideover.header>
+    <x-rapidez::slideover.content>
+        Content
+    </x-rapidez::slideover.content>
+    <x-rapidez::slideover.footer>
+        Footer
+    </x-rapidez::slideover.footer>
 </x-rapidez::slideover>
 ```
 
 Right-positioned slideover:
 ```blade
-<label for="right-menu">
-    Open Settings
-</label>
-<x-rapidez::slideover id="right-menu" position="right" title="Settings">
-    Settings content
-</x-rapidez::slideover>
+<x-rapidez::slideover id="example" position="right">
 ```
 
-Nested slideovers:
+Nested slideovers (inside <x-rapidez::slideover.content>):
 ```blade
-<label for="parent">
-    Open Parent
-</label>
-<x-rapidez::slideover id="parent" tag="form" title="Parent">
-    Parent content
-    <label for="child">
-        Open Child
-    </label>
-    <x-rapidez::slideover id="child" has-parent="true" title="Child">
-        Child content
-    </x-rapidez::slideover>
+<button popovertarget="nested">
+    Open nested slideover
+</button>
+
+<x-rapidez::slideover id="nested" class="backdrop:hidden">
+    <x-rapidez::slideover.header>
+        <x-rapidez::slideover.back popovertarget="nested" />
+        Parent title
+        <x-rapidez::slideover.close popovertarget="example" />
+    </x-rapidez::slideover.header>
+    <x-rapidez::slideover.content>
+        Parent content
+    </x-rapidez::slideover.content>
 </x-rapidez::slideover>
 ```
 
 --}}
-@props(['id' => uniqid('slideover-'), 'title', 'hasParent' => false, 'position' => 'left', 'tag' => 'div', 'open' => false])
-@slots(['title', 'headerbutton'])
+@props(['position' => 'left'])
 
-@php
-    $isInForm = $tag === 'form' || $hasParent;
-    $closeId = $isInForm ? 'close-' . $id : $id;
-@endphp
-
-<x-rapidez::tag :is="$tag" class="relative z-slideover has-[.mobile-slideover]:lg:z-auto">
-    <input id="{{ 'close-' . $id }}" class="hidden" type="reset">
-    @if (!$hasParent)
-        <input @checked($open) id="{{ $id }}" class="peer hidden prevent-scroll" type="checkbox">
-        <label
-            for="{{ $closeId }}"
-            class="pointer-events-none fixed inset-0 z-slideover-overlay cursor-pointer bg-backdrop opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
-        ></label>
-    @else
-        <input @checked($open) id="{{ $id }}" class="peer hidden" type="checkbox">
-    @endif
-    <div {{ $attributes->class([
-        'fixed inset-y-0 transition-all bg-white z-slideover-sidebar flex flex-col max-w-md w-full',
-        '-right-full peer-checked:right-0' => $position === 'right',
-        '-left-full peer-checked:left-0' => $position === 'left',
-    ]) }}>
-        @include('rapidez::components.slideover.partials.header')
-        <div class="slideover-wrapper flex flex-1 flex-col items-start overflow-y-auto">
-            {{ $slot }}
-        </div>
-    </div>
-</x-rapidez::tag>
+<div
+    popover
+    {{ $attributes
+        ->twMerge('h-screen w-full max-w-lg shadow-xl z-slideover text open:flex flex-col overscroll-none duration-500 backdrop:bg-backdrop backdrop:opacity-0 starting:open:backdrop:opacity-0 open:backdrop:opacity-100 backdrop:transition-opacity backdrop:transition-discrete backdrop:duration-700 transition-all transition-discrete transform-gpu')
+        ->class([
+            '-translate-x-full starting:open:[transform:translateX(-100%)] open:translate-x-0' => $position === 'left',
+            'translate-x-full starting:open:[transform:translateX(100%)] open:translate-x-0 ml-auto' => $position === 'right',
+        ]) 
+    }}
+>
+    {{ $slot }}
+</div>
