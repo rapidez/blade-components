@@ -1,3 +1,3 @@
-<x-slideover.header :attributes="$attributes->twMerge('lg:hidden')">
+<x-rapidez::slideover.header :attributes="$attributes->twMerge('lg:hidden')">
     {{ $slot }}
-</x-slideover.header>
+</x-rapidez::slideover.header>

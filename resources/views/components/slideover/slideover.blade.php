@@ -17,18 +17,18 @@ Basic usage:
     Open slideover
 </button>
 
-<x-slideover id="example">
-    <x-slideover.header>
+<x-rapidez::slideover id="example">
+    <x-rapidez::slideover.header>
         Title
-        <x-slideover.close popovertarget="example" />
-    </x-slideover.header>
-    <x-slideover.content>
+        <x-rapidez::slideover.close popovertarget="example" />
+    </x-rapidez::slideover.header>
+    <x-rapidez::slideover.content>
         Content
-    </x-slideover.content>
-    <x-slideover.footer>
+    </x-rapidez::slideover.content>
+    <x-rapidez::slideover.footer>
         Footer
-    </x-slideover.footer>
-</x-slideover>
+    </x-rapidez::slideover.footer>
+</x-rapidez::slideover>
 ```
 
 Right-positioned slideover:
@@ -36,22 +36,22 @@ Right-positioned slideover:
 <x-rapidez::slideover id="example" position="right">
 ```
 
-Nested slideovers (inside <x-slideover.content):
+Nested slideovers (inside <x-rapidez::slideover.content>):
 ```blade
 <button popovertarget="nested">
-    Bikes
+    Open nested slideover
 </button>
 
-<x-slideover id="nested" class="backdrop:hidden">
-    <x-slideover.header>
-        <x-slideover.back popovertarget="nested" />
+<x-rapidez::slideover id="nested" class="backdrop:hidden">
+    <x-rapidez::slideover.header>
+        <x-rapidez::slideover.back popovertarget="nested" />
         Parent title
-        <x-slideover.close popovertarget="example" />
-    </x-slideover.header>
-    <x-slideover.content>
+        <x-rapidez::slideover.close popovertarget="example" />
+    </x-rapidez::slideover.header>
+    <x-rapidez::slideover.content>
         Parent content
-    </x-slideover.content>
-</x-slideover>
+    </x-rapidez::slideover.content>
+</x-rapidez::slideover>
 ```
 
 --}}

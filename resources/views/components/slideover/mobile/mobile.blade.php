@@ -1,5 +1,5 @@
 {{--
-This mobile version popovertargetms into inline content on desktop. The slideover behavior only applies on mobile screens.
+This mobile version popovertargets into inline content on desktop. The slideover behavior only applies on mobile screens.
 
 ## Behavior
 - On mobile: Functions as a regular slideover
@@ -12,21 +12,21 @@ This mobile version popovertargetms into inline content on desktop. The slideove
     Open Mobile Slideover
 </button>
 
-<x-slideover.mobile id="example">
-    <x-slideover.mobile.header>
+<x-rapidez::slideover.mobile id="example">
+    <x-rapidez::slideover.mobile.header>
         Title
-        <x-slideover.close popovertarget="example" />
-    </x-slideover.mobile.header>
-    <x-slideover.mobile.content>
+        <x-rapidez::slideover.close popovertarget="example" />
+    </x-rapidez::slideover.mobile.header>
+    <x-rapidez::slideover.mobile.content>
         Content
-    </x-slideover.mobile.content>
-    <x-slideover.mobile.footer>
+    </x-rapidez::slideover.mobile.content>
+    <x-rapidez::slideover.mobile.footer>
         Footer
-    </x-slideover.mobile.footer>
-</x-slideover.mobile>
+    </x-rapidez::slideover.mobile.footer>
+</x-rapidez::slideover.mobile>
 ```
 --}}
 
-<x-slideover :attributes="$attributes->twMerge('lg:contents')">
+<x-rapidez::slideover :attributes="$attributes->twMerge('lg:contents')">
     {{ $slot }}
-</x-slideover>
+</x-rapidez::slideover>

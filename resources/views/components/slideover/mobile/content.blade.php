@@ -1,3 +1,3 @@
-<x-slideover.content :attributes="$attributes->twMerge('lg:contents')">
+<x-rapidez::slideover.content :attributes="$attributes->twMerge('lg:contents')">
     {{ $slot }}
-</x-slideover.content>
+</x-rapidez::slideover.content>
