@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="has-[:popover-open]:overflow-clip">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,7 @@
 
         <title>Rapidez Blade Components Preview</title>
     </head>
-    <body class="has-[.prevent-scroll:checked]:overflow-clip">
+    <body>
         <div class="bg mb-6">
             <div class="container mx-auto px-5 py-10">
                 <h1 class="font-bold text-2xl">Rapidez Blade Components preview</h1>
@@ -207,14 +207,21 @@
                 <div class="flex flex-col gap-3">
                     <h3 class="text-md font-bold">Default</h3>
                     <div>
-                        <x-rapidez::button.primary for="default-slideover">
+                        <x-rapidez::button.primary popovertarget="default-slideover">
                             Open Slideover
                         </x-rapidez::button.primary>
-                        <x-rapidez::slideover id="default-slideover" title="Example Slideover">
-                            <div class="p-4">
-                                <p class="mb-4">This is an example of the slideover component.</p>
-                                <p>You can put any content here!</p>
-                            </div>
+                        
+                        <x-rapidez::slideover id="default-slideover">
+                            <x-rapidez::slideover.header>
+                                Title
+                                <x-rapidez::slideover.close popovertarget="default-slideover" />
+                            </x-rapidez::slideover.header>
+                            <x-rapidez::slideover.content>
+                                Content
+                            </x-rapidez::slideover.content>
+                            <x-rapidez::slideover.footer>
+                                Footer
+                            </x-rapidez::slideover.footer>
                         </x-rapidez::slideover>
                     </div>
                 </div>
@@ -222,29 +229,42 @@
                 <div class="flex flex-col gap-3">
                     <h3 class="text-md font-bold">Right-positioned</h3>
                     <div>
-                        <x-rapidez::button.secondary for="right-slideover">
+                        <x-rapidez::button.secondary popovertarget="right-slideover">
                             Open Right Slideover
                         </x-rapidez::button.secondary>
-                        <x-rapidez::slideover id="right-slideover" position="right" title="Right Slideover">
-                            <div class="p-4">
-                                <p class="mb-4">This slideover appears from the right side.</p>
-                                <p>It demonstrates the position property.</p>
-                            </div>
+
+                        <x-rapidez::slideover id="right-slideover" position="right">
+                            <x-rapidez::slideover.header>
+                                Title
+                                <x-rapidez::slideover.close popovertarget="right-slideover" />
+                            </x-rapidez::slideover.header>
+                            <x-rapidez::slideover.content>
+                                Content
+                            </x-rapidez::slideover.content>
+                            <x-rapidez::slideover.footer>
+                                Footer
+                            </x-rapidez::slideover.footer>
                         </x-rapidez::slideover>
                     </div>
                 </div>
                 <div class="flex flex-col gap-3">
                     <h3 class="text-md font-bold">Mobile only</h3>
                     <div>
-                        <x-rapidez::button.outline for="mobile-slideover" class="lg:hidden">
+                        <x-rapidez::button.outline popovertarget="example" class="lg:hidden">
                             Open Mobile Slideover
                         </x-rapidez::button.outline>
-                        <x-rapidez::slideover.mobile id="mobile-slideover" title="Mobile Slideover">
-                            <div class="max-lg:p-4">
-                                <p class="mb-4">This is a mobile-specific slideover that transforms on desktop.</p>
-                                <p>On mobile devices, it appears as a slideover.</p>
-                                <p class="mt-4">On desktop screens (lg breakpoint and above), this content is directly embedded in the page instead of being in a slideover.</p>
-                            </div>
+
+                        <x-rapidez::slideover.mobile id="example">
+                            <x-rapidez::slideover.mobile.header>
+                                Title
+                                <x-rapidez::slideover.close popovertarget="example" />
+                            </x-rapidez::slideover.mobile.header>
+                            <x-rapidez::slideover.mobile.content>
+                                Content
+                            </x-rapidez::slideover.mobile.content>
+                            <x-rapidez::slideover.mobile.footer>
+                                Footer
+                            </x-rapidez::slideover.mobile.footer>
                         </x-rapidez::slideover.mobile>
                     </div>
                 </div>
