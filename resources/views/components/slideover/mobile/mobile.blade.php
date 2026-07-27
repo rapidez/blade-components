@@ -1,5 +1,5 @@
 {{--
-This mobile version popovertargets into inline content on desktop. The slideover behavior only applies on mobile screens.
+This mobile version shows content on desktop and hides it within a slideover on mobile resolution.
 
 ## Behavior
 - On mobile: Functions as a regular slideover
@@ -8,14 +8,14 @@ This mobile version popovertargets into inline content on desktop. The slideover
 
 ## Example
 ```blade
-<button popovertarget="example" class="lg:hidden">
+<button commandfor="example" command="show-modal" class="lg:hidden">
     Open Mobile Slideover
 </button>
 
-<x-rapidez::slideover.mobile id="example">
+<x-rapidez::slideover.mobile id="example" closedby="any">
     <x-rapidez::slideover.mobile.header>
         Title
-        <x-rapidez::slideover.close popovertarget="example" />
+        <x-rapidez::slideover.close commandfor="example" command="show-modal" />
     </x-rapidez::slideover.mobile.header>
     <x-rapidez::slideover.mobile.content>
         Content
