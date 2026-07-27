@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="has-[:popover-open]:overflow-clip">
+<html class="has-[:is([popover]:popover-open,dialog[open])]:overflow-clip">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -207,14 +207,14 @@
                 <div class="flex flex-col gap-3">
                     <h3 class="text-md font-bold">Default</h3>
                     <div>
-                        <x-rapidez::button.primary popovertarget="default-slideover">
+                        <x-rapidez::button.primary command="show-modal" commandfor="default-slideover">
                             Open Slideover
                         </x-rapidez::button.primary>
                         
-                        <x-rapidez::slideover id="default-slideover">
+                        <x-rapidez::slideover id="default-slideover" closedby="any">
                             <x-rapidez::slideover.header>
                                 Title
-                                <x-rapidez::slideover.close popovertarget="default-slideover" />
+                                <x-rapidez::slideover.close command="close" commandfor="default-slideover" />
                             </x-rapidez::slideover.header>
                             <x-rapidez::slideover.content>
                                 Content
@@ -229,14 +229,14 @@
                 <div class="flex flex-col gap-3">
                     <h3 class="text-md font-bold">Right-positioned</h3>
                     <div>
-                        <x-rapidez::button.secondary popovertarget="right-slideover">
+                        <x-rapidez::button.secondary command="show-modal" commandfor="right-slideover">
                             Open Right Slideover
                         </x-rapidez::button.secondary>
 
-                        <x-rapidez::slideover id="right-slideover" position="right">
+                        <x-rapidez::slideover id="right-slideover" position="right" closedby="any">
                             <x-rapidez::slideover.header>
                                 Title
-                                <x-rapidez::slideover.close popovertarget="right-slideover" />
+                                <x-rapidez::slideover.close command="close" commandfor="right-slideover" />
                             </x-rapidez::slideover.header>
                             <x-rapidez::slideover.content>
                                 Content
@@ -250,17 +250,17 @@
                 <div class="flex flex-col gap-3">
                     <h3 class="text-md font-bold">Mobile only</h3>
                     <div>
-                        <x-rapidez::button.outline popovertarget="example" class="lg:hidden">
+                        <x-rapidez::button.outline command="show-modal" commandfor="example" class="lg:hidden">
                             Open Mobile Slideover
                         </x-rapidez::button.outline>
 
-                        <x-rapidez::slideover.mobile id="example">
+                        <x-rapidez::slideover.mobile id="example" closedby="any">
                             <x-rapidez::slideover.mobile.header>
                                 Title
-                                <x-rapidez::slideover.close popovertarget="example" />
+                                <x-rapidez::slideover.close command="close" commandfor="example" />
                             </x-rapidez::slideover.mobile.header>
                             <x-rapidez::slideover.mobile.content>
-                                Content
+                                This content will be visible on desktop, however if you scale to mobile resolution this will be hidden inside a slideover.
                             </x-rapidez::slideover.mobile.content>
                             <x-rapidez::slideover.mobile.footer>
                                 Footer
