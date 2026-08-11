@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/2.2.2...2.2.2)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/3.0.0...3.0.0)
+## [3.0.0](https://github.com/rapidez/blade-components/releases/tag/3.0.0) - 2026-08-11
+
+### Changed
+
+- Slideover refactor using dialog/popover (#46)
+
 ## [2.2.2](https://github.com/rapidez/blade-components/releases/tag/2.2.2) - 2026-07-08
 
 ### Fixed
