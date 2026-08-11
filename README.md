@@ -72,18 +72,6 @@ php artisan vendor:publish --tag=rapidez-blade-components-views
 
 The [readmore component](https://github.com/rapidez/blade-components/blob/master/resources/views/components/readmore/readmore.blade.php) includes some Javascript, we're using a [Blade Stack](https://laravel.com/docs/master/blade#stacks) named `foot` for that. Make sure you've an `@stack('foot')` before your closing `</body>` tag. Within Rapidez this is already present within the [`layouts/app.blade.php`](https://github.com/rapidez/core/blob/master/resources/views/layouts/app.blade.php).
 
-### Slideover
-
-The slideover component uses a dialog with commandfor, with browser support since 2025. It also has a secondary variant using a popover, which only has browser support since mid-2024.
-
-If you want to use a polyfill for the dialog variant, you should add the `invokers-polyfill` npm package to your project:
-
-```
-yarn add -D invokers-polyfill
-```
-
-If you also wish to use the popover variant, we provide an extension to this polyfill that essentially just turns all popover variant slideovers into the dialog variant on unsupported browsers. To use this polyfill, include the `.../js/polyfill.js` file that comes with this package.
-
 ## Usage
 
 Just like any other Blade component, check out the [Laravel Blade docs](https://laravel.com/docs/master/blade) and the examples within the components code linked above. All components are prefixed with `x-rapidez::` to avoid any conflicts with existing Blade components within your project.
@@ -126,29 +114,6 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
 </x-rapidez::accordion>
 ```
 
-
-
-## Examples
-Basic usage:
-```blade
-<button commandfor="example" command="show-modal">
-    Open slideover
-</button>
-
-<x-rapidez::slideover id="example" closedby="any">
-    <x-rapidez::slideover.header>
-        Title
-        <x-rapidez::slideover.close commandfor="example" command="close" />
-    </x-rapidez::slideover.header>
-    <x-rapidez::slideover.content>
-        Content
-    </x-rapidez::slideover.content>
-    <x-rapidez::slideover.footer>
-        Footer
-    </x-rapidez::slideover.footer>
-</x-rapidez::slideover>
-```
-
 #### Slideover
 ```blade
 <button commandfor="example" command="show-modal">
@@ -172,6 +137,7 @@ Make sure to add this class to your html tag to prevent scrolling when the slide
 ```html
 <html class="has-[:is([popover]:popover-open,dialog[open])]:overflow-clip">
 ```
+gst
 
 #### Tag
 
