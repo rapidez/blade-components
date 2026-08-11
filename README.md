@@ -150,7 +150,6 @@ Make sure to add this class to your html tag to prevent scrolling when the slide
 ```html
 <html class="has-[:is([popover]:popover-open,dialog[open])]:overflow-clip">
 ```
-gst
 
 #### Tag
 
