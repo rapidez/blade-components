@@ -126,19 +126,51 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
 </x-rapidez::accordion>
 ```
 
-#### Slideover
-```blade
-<label for="my-slideover">
-    Open Slideover
-</label>
 
-<x-rapidez::slideover id="my-slideover" title="Example Slideover">
-    Your slideover content goes here
+
+## Examples
+Basic usage:
+```blade
+<button commandfor="example" command="show-modal">
+    Open slideover
+</button>
+
+<x-rapidez::slideover id="example" closedby="any">
+    <x-rapidez::slideover.header>
+        Title
+        <x-rapidez::slideover.close commandfor="example" command="close" />
+    </x-rapidez::slideover.header>
+    <x-rapidez::slideover.content>
+        Content
+    </x-rapidez::slideover.content>
+    <x-rapidez::slideover.footer>
+        Footer
+    </x-rapidez::slideover.footer>
 </x-rapidez::slideover>
 ```
-Make sure to add this class to your body tag to prevent scrolling when the slideover is open:
+
+#### Slideover
+```blade
+<button commandfor="example" command="show-modal">
+    Open slideover
+</button>
+
+<x-rapidez::slideover id="example" closedby="any">
+    <x-rapidez::slideover.header>
+        Title
+        <x-rapidez::slideover.close commandfor="example" command="close" />
+    </x-rapidez::slideover.header>
+    <x-rapidez::slideover.content>
+        Content
+    </x-rapidez::slideover.content>
+    <x-rapidez::slideover.footer>
+        Footer
+    </x-rapidez::slideover.footer>
+</x-rapidez::slideover>
+```
+Make sure to add this class to your html tag to prevent scrolling when the slideover is open:
 ```html
-<body class="has-[.prevent-scroll:checked]:overflow-clip">
+<html class="has-[:is([popover]:popover-open,dialog[open])]:overflow-clip">
 ```
 
 #### Tag
