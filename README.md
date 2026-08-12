@@ -72,6 +72,7 @@ php artisan vendor:publish --tag=rapidez-blade-components-views
 
 The [readmore component](https://github.com/rapidez/blade-components/blob/master/resources/views/components/readmore/readmore.blade.php) includes some Javascript, we're using a [Blade Stack](https://laravel.com/docs/master/blade#stacks) named `foot` for that. Make sure you've an `@stack('foot')` before your closing `</body>` tag. Within Rapidez this is already present within the [`layouts/app.blade.php`](https://github.com/rapidez/core/blob/master/resources/views/layouts/app.blade.php).
 
+
 ### Slideover
 
 The slideover component uses a dialog with commandfor, with browser support since 2025. It also has a secondary variant using a popover, which only has browser support since mid-2024.
@@ -128,17 +129,26 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
 
 #### Slideover
 ```blade
-<label for="my-slideover">
-    Open Slideover
-</label>
+<button commandfor="example" command="show-modal">
+    Open slideover
+</button>
 
-<x-rapidez::slideover id="my-slideover" title="Example Slideover">
-    Your slideover content goes here
+<x-rapidez::slideover id="example" closedby="any">
+    <x-rapidez::slideover.header>
+        Title
+        <x-rapidez::slideover.close commandfor="example" command="close" />
+    </x-rapidez::slideover.header>
+    <x-rapidez::slideover.content>
+        Content
+    </x-rapidez::slideover.content>
+    <x-rapidez::slideover.footer>
+        Footer
+    </x-rapidez::slideover.footer>
 </x-rapidez::slideover>
 ```
-Make sure to add this class to your body tag to prevent scrolling when the slideover is open:
+Make sure to add this class to your html tag to prevent scrolling when the slideover is open:
 ```html
-<body class="has-[.prevent-scroll:checked]:overflow-clip">
+<html class="has-[:is([popover]:popover-open,dialog[open])]:overflow-clip">
 ```
 
 #### Tag
