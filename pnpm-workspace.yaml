@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: true
+minimumReleaseAge: 4320
+packages:
+  - vendor/rapidez/*
+shamefullyHoist: true
