@@ -80,7 +80,7 @@ The slideover component uses a dialog with commandfor, with browser support sinc
 If you want to use a polyfill for the dialog variant, you should add the `invokers-polyfill` npm package to your project:
 
 ```
-yarn add -D invokers-polyfill
+pnpm add -D invokers-polyfill
 ```
 
 If you also wish to use the popover variant, we provide an extension to this polyfill that essentially just turns all popover variant slideovers into the dialog variant on unsupported browsers. To use this polyfill, include the `.../js/polyfill.js` file that comes with this package.
@@ -188,7 +188,7 @@ Route::view('components', 'rapidez::components-preview');
 
 ## Development
 
-When you're working on this package you should first install the frontend dependencies with `yarn`, create an initial build with `yarn build`, symlink the public build with `yarn symlink-public` and to show a preview in the browser use `yarn preview`.
+When you're working on this package you should first install the frontend dependencies with `pnpm install`, create an initial build with `pnpm build`, symlink the public build with `pnpm symlink-public` and to show a preview in the browser use `pnpm preview`.
 
 ## License
 

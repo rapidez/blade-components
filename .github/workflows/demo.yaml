@@ -30,11 +30,16 @@ jobs:
       - name: Fix permissions
         run: sudo chmod -R 0777 vendor/orchestra/testbench-core/laravel/
 
-      - name: Install Yarn dependencies
-        run: npm install -g yarn && yarn
+      - name: Install Node dependencies
+        uses: pnpm/setup@v1
+        with:
+          version: 11
+          runtime: node@lts
+          cache: false
+          install: true
 
       - name: Frontend Build
-        run: yarn build
+        run: pnpm build
 
       - name: Generate demo
         run: composer symlink-public
