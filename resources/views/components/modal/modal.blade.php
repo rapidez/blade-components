@@ -68,7 +68,7 @@ Positioned modal (center, top, top-right, right, bottom-right, bottom, bottom-le
 }}>
     {{ $slot }}
 
-    {{-- Safari - Close modal when clicking outside of the modal on the backdrop --}}
+    {{-- Safari - Close modal when clicking outside of the modal. This already works by default on chrome and firefox --}}
     @if ($attributes->get('closedby') === 'any')
         <form method="dialog" class="contents">
             <button tabindex="-1" aria-hidden="true" class="fixed inset-0 -z-10 cursor-default"></button>
