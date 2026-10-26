@@ -70,11 +70,18 @@ Nested slideovers (inside <x-rapidez::slideover.content>):
 
 <dialog {{ $attributes
     ->merge(['popover' => ''])
-    ->twMerge('h-screen w-full max-w-lg shadow-xl z-slideover text open:flex flex-col overscroll-none max-h-full duration-500 backdrop:bg-backdrop backdrop:opacity-0 starting:open:backdrop:opacity-0 open:backdrop:opacity-100 backdrop:transition-opacity backdrop:transition-discrete backdrop:duration-700 transition-all transition-discrete transform-gpu')
+    ->twMerge('h-screen w-full max-w-lg shadow-xl z-slideover text open:flex flex-col overscroll-none max-h-full duration-500 backdrop:bg-backdrop backdrop:opacity-0 starting:open:backdrop:opacity-0 open:backdrop:opacity-100 backdrop:transition-opacity backdrop:transition-discrete backdrop:duration-700 transition-all transition-discrete open:transform-none')
     ->class([
-        '-translate-x-full starting:open:[transform:translateX(-100%)] open:translate-x-0' => $position === 'left',
-        'translate-x-full starting:open:[transform:translateX(100%)] open:translate-x-0 ml-auto' => $position === 'right',
+        '[transform:translateX(-100%)] starting:open:[transform:translateX(-100%)]' => $position === 'left',
+        '[transform:translateX(100%)] starting:open:[transform:translateX(100%)] ml-auto' => $position === 'right',
     ]) 
 }}>
     {{ $slot }} 
+
+    {{-- Safari - Close modal when clicking outside of the modal on the backdrop --}}
+    @if ($attributes->get('closedby') === 'any')
+        <form method="dialog" class="contents">
+            <button tabindex="-1" aria-hidden="true" class="fixed inset-0 -z-10 cursor-default"></button>
+        </form>
+    @endif
 </dialog>
