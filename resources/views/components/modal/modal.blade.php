@@ -64,7 +64,7 @@ Positioned modal (center, top, top-right, right, bottom-right, bottom, bottom-le
 
 <dialog {{ $attributes
     ->merge(['popover' => ''])
-    ->twMerge($positionClasses . ' h-fit w-[calc(100%-2rem)] max-h-[calc(100dvh-2rem)] max-w-2xl inset-4 shadow-2xl rounded-2xl z-modal text open:flex flex-col overscroll-none supports-[max-height:-webkit-fill-available]:max-h-[-webkit-fill-available] supports-[max-height:stretch]:max-h-[stretch] overflow-hidden duration-300 ease-[cubic-bezier(0.36,0,0.66,-0.56)] open:ease-[cubic-bezier(0.34,1.56,0.64,1)] backdrop:bg-backdrop backdrop:opacity-0 starting:open:backdrop:opacity-0 open:backdrop:opacity-100 backdrop:transition-opacity backdrop:transition-discrete backdrop:duration-500 transition-all transition-discrete opacity-0 starting:open:opacity-0 open:opacity-100 [transform:scale(0.9)] open:transform-none starting:open:[transform:scale(0.9)]')
+    ->twMerge($positionClasses . ' w-[calc(100%-2rem)] max-h-[calc(100dvh-2rem)] max-w-xl inset-0 shadow-2xl rounded-2xl z-modal text open:flex flex-col overflow-hidden duration-300 ease-in-out open:ease-in-out backdrop:bg-backdrop backdrop:opacity-0 starting:open:backdrop:opacity-0 open:backdrop:opacity-100 backdrop:transition-opacity backdrop:transition-discrete backdrop:duration-300 transition-all transition-discrete opacity-0 starting:open:opacity-0 open:opacity-100 scale-95 open:scale-none starting:open:scale-95')
 }}>
     {{ $slot }}
 
