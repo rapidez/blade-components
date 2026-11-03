@@ -270,6 +270,77 @@
                 </div>
             </div>
 
+            <h2 class="text-2xl font-bold mt-8">Modal Component</h2>
+            <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Default</h3>
+                    <div>
+                        <x-rapidez::button.primary command="show-modal" commandfor="default-modal">
+                            Open Modal
+                        </x-rapidez::button.primary>
+
+                        <x-rapidez::modal id="default-modal" closedby="any">
+                            <x-rapidez::modal.header>
+                                Title
+                                <x-rapidez::modal.close command="close" commandfor="default-modal" />
+                            </x-rapidez::modal.header>
+                            <x-rapidez::modal.content>
+                                Content
+                            </x-rapidez::modal.content>
+                            <x-rapidez::modal.footer>
+                                Footer
+                            </x-rapidez::modal.footer>
+                        </x-rapidez::modal>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Positioned</h3>
+                    <div class="flex flex-wrap gap-2">
+                        @foreach (['top', 'top-right', 'right', 'bottom-right', 'bottom', 'bottom-left', 'left', 'top-left'] as $position)
+                            <x-rapidez::button.secondary command="show-modal" commandfor="{{ $position }}-modal">
+                                {{ ucfirst(str_replace('-', ' ', $position)) }}
+                            </x-rapidez::button.secondary>
+
+                            <x-rapidez::modal id="{{ $position }}-modal" :position="$position" closedby="any">
+                                <x-rapidez::modal.header>
+                                    {{ ucfirst(str_replace('-', ' ', $position)) }}
+                                    <x-rapidez::modal.close command="close" commandfor="{{ $position }}-modal" />
+                                </x-rapidez::modal.header>
+                                <x-rapidez::modal.content>
+                                    Content
+                                </x-rapidez::modal.content>
+                                <x-rapidez::modal.footer>
+                                    Footer
+                                </x-rapidez::modal.footer>
+                            </x-rapidez::modal>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Popover</h3>
+                    <div>
+                        <x-rapidez::button.outline popovertarget="popover-modal" popovertargetaction="show">
+                            Open Modal as popover
+                        </x-rapidez::button.outline>
+
+                        <x-rapidez::modal id="popover-modal">
+                            <x-rapidez::modal.header>
+                                Title
+                                <x-rapidez::modal.close popovertarget="popover-modal" popovertargetaction="hide" />
+                            </x-rapidez::modal.header>
+                            <x-rapidez::modal.content>
+                                Opened as a popover, which closes automatically when clicking outside or pressing escape.
+                            </x-rapidez::modal.content>
+                            <x-rapidez::modal.footer>
+                                Footer
+                            </x-rapidez::modal.footer>
+                        </x-rapidez::modal>
+                    </div>
+                </div>
+            </div>
+
             <h2 class="text-2xl font-bold">Accordion component</h2>
             <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
                 <div>
