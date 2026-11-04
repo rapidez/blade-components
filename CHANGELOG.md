@@ -1,6 +1,16 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/3.0.0...3.0.0)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/3.1.0...3.1.0)
+## [3.1.0](https://github.com/rapidez/blade-components/releases/tag/3.1.0) - 2026-11-04
+
+### Added
+
+- Modal component (#51)
+
+### Changed
+
+- Use pnpm as package manager (#49)
+
 ## [3.0.0](https://github.com/rapidez/blade-components/releases/tag/3.0.0) - 2026-08-11
 
 ### Changed
