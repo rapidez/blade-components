@@ -499,6 +499,53 @@
                     </x-rapidez::readmore.inline>
                 </div>
             </div>
+            <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
+                <div>
+                    <h3 class="text-xl font-bold mt-5">Custom clamp & buttons</h3>
+                    <div class="text-sm text-muted">
+                        Change the line-clamp with the slot class and use the more/less slots for custom buttons.
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3 lg:col-span-2">
+                    <x-rapidez::readmore>
+                        <x-slot:slot class="line-clamp-2">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates.
+                        </x-slot:slot>
+                        <x-slot:more>
+                            <span class="font-bold underline">+ Show the whole story</span>
+                        </x-slot:more>
+                        <x-slot:less>
+                            <span class="font-bold underline">- Show less</span>
+                        </x-slot:less>
+                    </x-rapidez::readmore>
+                </div>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-5">Show more component</h2>
+            <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
+                <div>
+                    <h3 class="text-xl font-bold">Show more / Show less</h3>
+                    <div class="text-sm text-muted">
+                        Hides every item after the visible items amount. Useful for long lists like filters.
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">Default (5 visible)</h3>
+                    <x-rapidez::showmore>
+                        @foreach (range(1, 10) as $item)
+                            <div>Item {{ $item }}</div>
+                        @endforeach
+                    </x-rapidez::showmore>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-md font-bold">3 visible</h3>
+                    <x-rapidez::showmore :visible-items="3">
+                        @foreach (range(1, 8) as $item)
+                            <div>Item {{ $item }}</div>
+                        @endforeach
+                    </x-rapidez::showmore>
+                </div>
+            </div>
 
             <h2 class="font-bold text-2xl mt-5">Prose component</h2>
             <x-rapidez::prose>

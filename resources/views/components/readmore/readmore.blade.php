@@ -1,10 +1,10 @@
-{{--
-Read more/less component using the Tailwind CSS `peer` utility. Only used JS for checking if content overflows line-clamp container.
+{{-- 
+Read more/less component using a native `<details>`/`<summary>` as toggle state. Only uses JS for checking if content overflows line-clamp container.
 
 ## Notes
-- **Clamping** The default of line-clamp-5 is used.
-- **Buttons** You can't use <button tags inside the slots because it's wrapped by a <label. Simply use a <span tag.
+- **Buttons** You can't use <button tags inside the slots because they're wrapped by a <summary. Simply use a <span tag.
 - **Invisible** The read more/less buttons are shown/hidden with visible/invisible property. This prevents layout shifting
+- **Clamping** The default of line-clamp-5 is used.
 
 ## Slots
 - `more` Change the clickable element that reveals the content.
@@ -24,38 +24,40 @@ Read more/less component using the Tailwind CSS `peer` utility. Only used JS for
         Content
     </x-slot:slot>
     <x-slot:more>
-        Custom read more button
+        <span>Custom read more button</span>
     </x-slot:more>
     <x-slot:less>
-        Custom read less button
+        <span>Custom read less button</span>
     </x-slot:less>
 </x-rapidez::readmore>
-```
---}}
+``` --}}
+
 @slots(['more', 'less'])
-<div {{ $attributes->twMerge('read-more-component group') }}>
-    <div {{ $slot->attributes->twMerge('content line-clamp-5 group-has-[:checked]:line-clamp-none mb-2') }}>
+<div {{ $attributes->twMerge('read-more-component group/read-more') }}>
+    <div {{ $slot->attributes->twMerge('content line-clamp-5 group-has-open/read-more:line-clamp-none mb-2') }}>
         {{ $slot }}
     </div>
-    <label class="invisible">
-        <input type="checkbox" class="hidden peer">
-        <span {{ $more->attributes->twMerge('inline-flex peer-checked:hidden') }}>
-            @slotdefault('more')
-                <x-rapidez::button.link tag="span" class="gap-1">
-                    @lang('Read more')
-                    <x-heroicon-o-chevron-down class="size-3.5 mt-px" stroke-width="2" />
-                </x-rapidez::button.link>
-            @endslotdefault
-        </span>
-        <span {{ $less->attributes->twMerge('hidden peer-checked:inline-flex') }}>
-            @slotdefault('less')
-                <x-rapidez::button.link tag="span" class="gap-1">
-                    @lang('Read less')
-                    <x-heroicon-o-chevron-up class="size-3.5 mt-px" stroke-width="2" />
-                </x-rapidez::button.link>
-            @endslotdefault
-        </span>
-    </label>
+    
+    <details class="invisible">
+        <summary class="inline-flex list-none cursor-pointer [&::-webkit-details-marker]:hidden">
+            <span {{ $more->attributes->twMerge('inline-flex group-has-open/read-more:hidden') }}>
+                @slotdefault('more')
+                    <x-rapidez::button.link tag="span">
+                        @lang('Read more')
+                        <x-heroicon-o-chevron-down class="size-3.5 mt-px stroke-2" />
+                    </x-rapidez::button.link>
+                @endslotdefault
+            </span>
+            <span {{ $less->attributes->twMerge('hidden group-has-open/read-more:inline-flex') }}>
+                @slotdefault('less')
+                    <x-rapidez::button.link tag="span">
+                        @lang('Read less')
+                        <x-heroicon-o-chevron-up class="size-3.5 mt-px stroke-2" />
+                    </x-rapidez::button.link>
+                @endslotdefault
+            </span>
+        </summary>
+    </details>
 </div>
 
 @pushOnce('foot')
@@ -63,8 +65,9 @@ Read more/less component using the Tailwind CSS `peer` utility. Only used JS for
 function checkReadMore() {
     document.querySelectorAll('.read-more-component').forEach(container => {
         const content = container.querySelector('.content');
-        const label = container.querySelector('label');
-        label.classList.toggle('invisible', content.scrollHeight <= content.clientHeight);
+        const details = container.querySelector('details');
+        if (!details || details.open) return;
+        details.classList.toggle('invisible', content.scrollHeight <= content.clientHeight);
     });
 }
 
