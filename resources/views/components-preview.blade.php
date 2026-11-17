@@ -486,21 +486,6 @@
             </div>
             <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
                 <div>
-                    <h3 class="text-xl font-bold mt-5">Inline</h3>
-                    <div class="text-sm text-muted">
-                        This component is a variant for the read more / read less component. This content has a default line-clamp-1,
-                        the buttons will show inside the text instead of below the text.
-                    </div>
-                </div>
-                <div class="flex flex-col gap-3">
-                    <h3 class="text-md font-bold">Inline</h3>
-                    <x-rapidez::readmore.inline>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, repellat incidunt placeat. Quo accusantium laudantium, adipisci culpa ad enim dolores molestiae alias ducimus officiis labore facilis modi provident cupiditate? Voluptates.
-                    </x-rapidez::readmore.inline>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 gap-5 items-start lg:grid-cols-3">
-                <div>
                     <h3 class="text-xl font-bold mt-5">Custom clamp & buttons</h3>
                     <div class="text-sm text-muted">
                         Change the line-clamp with the slot class and use the more/less slots for custom buttons.
