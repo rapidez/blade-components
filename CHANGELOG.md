@@ -1,6 +1,17 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/blade-components/compare/3.1.0...3.1.0)
+[Unreleased changes](https://github.com/rapidez/blade-components/compare/3.2.0...3.2.0)
+## [3.2.0](https://github.com/rapidez/blade-components/releases/tag/3.2.0) - 2026-11-17
+
+### Added
+
+- Changed peer utility and added show more (#52)
+- AI Guidelines (#50)
+
+### Removed
+
+- Removed inline readmore (#53)
+
 ## [3.1.0](https://github.com/rapidez/blade-components/releases/tag/3.1.0) - 2026-11-04
 
 ### Added
