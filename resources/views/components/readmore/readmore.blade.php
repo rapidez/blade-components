@@ -39,7 +39,7 @@ Read more/less component using a native `<details>`/`<summary>` as toggle state.
     </div>
     
     <details class="invisible">
-        <summary class="inline-flex list-none cursor-pointer [&::-webkit-details-marker]:hidden">
+        <summary class="inline-flex list-none cursor-pointer">
             <span {{ $more->attributes->twMerge('inline-flex group-has-open/read-more:hidden') }}>
                 @slotdefault('more')
                     <x-rapidez::button.link tag="span">
