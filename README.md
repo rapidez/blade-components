@@ -116,6 +116,15 @@ Just like any other Blade component, check out the [Laravel Blade docs](https://
 </x-rapidez::prose>
 ```
 
+The prose styling isn't included in the package CSS, so you can change it to your needs. Copy this into your `resources/css/app.css`:
+```css
+.prose-custom {
+    @apply prose font-sans text text-pretty max-w-none
+    prose-headings:text prose-a:text-primary prose-strong:text prose-blockquote:text
+    prose-a:prose-headings:no-underline prose-a:prose-headings:text prose-th:text-left;
+}
+```
+
 #### Accordion
 
 ```blade
