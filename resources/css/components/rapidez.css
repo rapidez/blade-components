@@ -67,6 +67,9 @@
     --z-index-slideover: 120;
     --z-index-slideover-overlay: 10;
     --z-index-slideover-sidebar: 20;
+
+    --z-index-modal: 130;
+    --z-index-modal-actions: 10;
 }
 
 @layer base {
